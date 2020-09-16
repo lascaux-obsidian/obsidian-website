@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+    - docker
+before_install:
+    - docker build -t Alonsog66/ObsidianWebsite .
+script:
+    - docker run Alonsog66/ObsidianWebsite test -A --unstable deno.test.ts
