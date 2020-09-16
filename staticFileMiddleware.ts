@@ -1,4 +1,4 @@
-import { Context, send } from './deps.ts';
+import { Context, send } from './serverDeps.ts';
 
 export const staticFileMiddleware = async (ctx: Context, next: Function) => {
   const path = `${Deno.cwd()}/client${ctx.request.url.pathname}`;
