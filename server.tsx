@@ -1,5 +1,7 @@
 import { Application, Router, React, ReactDomServer } from './deps.ts';
 import App from './client/app.tsx';
+import { staticFileMiddleware } from './staticFileMiddleware.ts';
+
 const PORT = 3000;
 
 // Create a new server
@@ -24,6 +26,7 @@ const initialState = {};
 
 // Router for base path
 const router = new Router();
+
 router.get('/', handlePage);
 
 // Bundle the client-side code
@@ -37,6 +40,7 @@ serverrouter.get('/static/client.js', (context) => {
 });
 
 // Implement the routes on the server
+app.use(staticFileMiddleware);
 app.use(router.routes());
 app.use(serverrouter.routes());
 app.use(router.allowedMethods());
@@ -60,6 +64,7 @@ function handlePage(ctx: any) {
   <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -70,7 +75,7 @@ function handlePage(ctx: any) {
   </head>
   <body >
     <div id="root">${body}</div>
-    <script  src="http://localhost:8000/static/client.js" defer></script>
+    <script  src="http://localhost:${PORT}/static/client.js" defer></script>
   </body>
   </html>`;
   } catch (error) {
