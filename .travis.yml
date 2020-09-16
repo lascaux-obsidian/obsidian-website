@@ -3,9 +3,9 @@ sudo: required
 services:
     - docker
 before_install:
-    - docker build -t travisfrankmtg/obsidianwebsite .
+    - docker build -t lascaux-obsidian/obsidian-website .
 script:
-    - docker run travisfrankmtg/obsidianwebsite test -A --unstable deno.test.ts
+    - docker run lascaux-obsidian/obsidian-website test -A --unstable deno.test.ts
 deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
