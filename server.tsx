@@ -1,4 +1,5 @@
-import { Application, Router, React, ReactDomServer } from './deps.ts';
+import { Application, Router } from './serverDeps.ts';
+import { React, ReactDomServer } from './deps.ts';
 import App from './client/app.tsx';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
 
@@ -75,7 +76,7 @@ function handlePage(ctx: any) {
   </head>
   <body >
     <div id="root">${body}</div>
-    <script  src="http://localhost:${PORT}/static/client.js" defer></script>
+    <script  src="/static/client.js" defer></script>
   </body>
   </html>`;
   } catch (error) {
