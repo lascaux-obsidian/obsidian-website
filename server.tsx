@@ -67,6 +67,10 @@ function handlePage(ctx: any) {
     <script>
       window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
     </script>
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; width: 100%;}
+      div#root { margin: 0; padding: 0; height: 100%; width: 100%; }
+    </style>
   </head>
   <body >
     <div id="root">${body}</div>

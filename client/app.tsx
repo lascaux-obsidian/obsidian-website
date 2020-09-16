@@ -1,6 +1,6 @@
 import { React } from '../deps.ts';
-// import NavBar from './Components/NavBar.tsx';
-// import MainContainer from './Components/MainContainer.tsx';
+import NavBar from './Components/NavBar.tsx';
+import MainContainer from './Components/MainContainer.tsx';
 import { mainContainerStyle } from './style.ts';
 
 declare global {
@@ -13,7 +13,10 @@ declare global {
 }
 
 const App = () => {
-  return <div style={mainContainerStyle}>Hola Mundo!</div>;
+  return <div style={mainContainerStyle}>
+    <NavBar />
+    <MainContainer />
+  </div>;
 };
 
 export default App;

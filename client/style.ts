@@ -1,9 +1,9 @@
 export const mainContainerStyle = {
-  height: '100vh',
-  width: '100vw',
-  backgroundColor: 'AliceBlue',
+  height: '100%',
+  width: '100%',
+  // backgroundColor: 'AliceBlue',
+  backgroundColor: '#383E4A',
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
+  alignItems: 'start',
   fontFamily: 'Playfair Display',
 };
