@@ -11,7 +11,7 @@ declare global {
 
 const About = (props: any) => {
   return (
-    <div id='about'>
+    <div id='about' className='animate__animated animate__fadeInDown'>
       <Carousel />
     </div>
   );
