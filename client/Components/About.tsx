@@ -20,6 +20,16 @@ const users = [
     lastName: 'Frank',
     image: '/static/travis.png',
   },
+  {
+    firstName: 'Alonso',
+    lastName: 'Garza',
+    image: '/static/alonso.jpg',
+  },
+  {
+    firstName: 'Travis',
+    lastName: 'Frank',
+    image: '/static/travis.png',
+  },
 ];
 
 const About = (props: any) => {
