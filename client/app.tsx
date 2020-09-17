@@ -1,19 +1,27 @@
 import { React } from '../deps.ts';
-// import NavBar from './Components/NavBar.tsx';
-// import MainContainer from './Components/MainContainer.tsx';
+import NavBar from './Components/NavBar.tsx';
+import MainContainer from './Components/MainContainer.tsx';
+import SideBar from './Components/SideBar.tsx';
 import { mainContainerStyle } from './style.ts';
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      h1: any;
       div: any;
     }
   }
 }
 
 const App = () => {
-  return <div style={mainContainerStyle}>Hola Mundo!</div>;
+  const [page, setPage] = (React as any).useState('home'); 
+
+  return (
+    <div className="app">
+      <NavBar setPage={setPage}/>
+      <MainContainer page={page}/>
+      <SideBar />
+    </div>
+  );
 };
 
 export default App;

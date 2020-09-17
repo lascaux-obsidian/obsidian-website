@@ -4,16 +4,22 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       div: any;
+
     }
   }
 }
 
 
-const Docs = (props: any) => {
+
+
+const NavBar = (props: any) => {
+
 
   return (
-    <div>WE'RE IN DOCS</div>
-  )
+    <div className="sidebar">
+     
+    </div>
+  );
 }
 
-export default Docs;
+export default NavBar;
