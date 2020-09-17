@@ -7,17 +7,28 @@ html, body {
   width: 100%;
 }
 
-div#root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
+  /* A bit bright... red and gray rock */
+  /* background-image: url(https://images.unsplash.com/photo-1599885179850-135d7c6b7f31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);  */
+  /* Better but vertical so stretched too far */
+  /* background-image: url(https://images.unsplash.com/photo-1599389931990-ffb2373161b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); */
+
+
+div#root { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  width: 100%; 
 }
 
 .app {
   height: 100%;
   width: 100%;
-  background-color: #383E4A;
+  /* background-color: #383E4A; */
+  /* background-image: url(https://images.unsplash.com/photo-1550684851-d6b87c1cfdba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
+  /* background-image: url(https://images.unsplash.com/photo-1574110537361-ff1948fc4a57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+  background-image: url(https://images.unsplash.com/photo-1597871119022-42906cd7c9b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,18 +47,22 @@ div#root {
 }
 
 .navBtn {
-  border-radius: 6px;
+  border-radius: 10px;
   /* // border: '1px solid #EBEBEC', */
   background-color: #737780;
   padding: 6% 3%;
+  animation: fadeInDown;
+  animation-duration: 1s;
+  /* animation-delay: 4s; */
 }
 
 .mainContainer {
   width: 70vw;
   height: 94vh;
-  background-color: antiquewhite;
+  background-color: rgba(219, 219, 219, 0.514);
   margin: 3vh 0 3vh 0;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 /* SIDEBAR STYLING */
@@ -63,6 +78,33 @@ div#root {
   margin: auto 15px;
 }
 
+.homePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  height: 100%;
+  width: 100%;
+}
+
+div#logo {
+  width: 100%;
+  height: 100%;
+}
+
+#logo svg {
+  border-radius: 10px;
+}
+
+/* path#frontLeg {
+  animation: bounce;
+  animation-duration: 2s;
+}
+
+path.bullHead {
+  animation: headShake;
+  animation-duration: 2s;
+} */
 .sidebar a:hover {
   text-decoration: none;
 }

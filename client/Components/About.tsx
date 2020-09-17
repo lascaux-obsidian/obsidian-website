@@ -12,7 +12,7 @@ declare global {
 const About = (props: any) => {
 
   return (
-    <div>WE'RE IN ABOUT</div>
+    <div className="animate__animated animate__fadeInDown">WE'RE IN ABOUT</div>
   )
 }
 
