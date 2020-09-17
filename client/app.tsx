@@ -15,7 +15,7 @@ declare global {
 const App = () => {
 
   return (
-    <div style={mainContainerStyle}>
+    <div className="app">
       <NavBar />
       <MainContainer />
     </div>

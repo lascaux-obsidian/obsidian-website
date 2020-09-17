@@ -18,7 +18,7 @@ declare global {
 const MainContainer = (props: any) => {
 
   return (
-    <div style={mainContainerStyle}>
+    <div >
     </div>
   );
 }
