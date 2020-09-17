@@ -1,9 +1,10 @@
-import React from 'https://dev.jspm.io/react@16.13.1';
+import React from 'https://dev.jspm.io/react@16.13.1'; // from deps
 
 import clientStorage from 'https://deno.land/x/obsidian@v0.1.1/ObsidianWrapper/clientStorage.js';
 
 import normalizeResult from 'https://deno.land/x/obsidian@v0.1.1/src/normalize.js';
 import destructureQueries from 'https://deno.land/x/obsidian@v0.1.1/src/destructureQueries.js';
+
 
 // Context will be used to create a custom provider for the application
 export const cacheContext = React.createContext();
