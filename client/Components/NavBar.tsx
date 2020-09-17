@@ -33,6 +33,17 @@ const buttonStyle = {
 
 
 const NavBar = (props: any) => {
+  // let history = useHistory();
+
+  // const handleHome = () => {
+  //   history.pushState('/');
+  // } 
+
+  // const handleBios = () => {
+  //   history.push('/bios');
+  // }
+
+
   return (
     <div style={navStyle}>
       <button className="homeBtn" style={buttonStyle}>

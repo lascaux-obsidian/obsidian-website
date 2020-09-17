@@ -13,10 +13,13 @@ declare global {
 }
 
 const App = () => {
-  return <div style={mainContainerStyle}>
-    <NavBar />
-    <MainContainer />
-  </div>;
+
+  return (
+    <div style={mainContainerStyle}>
+      <NavBar />
+      <MainContainer />
+    </div>
+  );
 };
 
 export default App;

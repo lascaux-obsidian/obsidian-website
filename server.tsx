@@ -74,7 +74,7 @@ function handlePage(ctx: any) {
   </head>
   <body >
     <div id="root">${body}</div>
-    <script  src="http://localhost:8000/static/client.js" defer></script>
+    <script  src="http://localhost:3000/static/client.js" defer></script>
   </body>
   </html>`;
   } catch (error) {
