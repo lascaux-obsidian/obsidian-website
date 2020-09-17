@@ -1,28 +1,27 @@
-
-html, body {
+html,
+body,
+div#root,
+.app {
   font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* A bit bright... red and gray rock */
+/* background-image: url(https://images.unsplash.com/photo-1599885179850-135d7c6b7f31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);  */
+/* Better but vertical so stretched too far */
+/* background-image: url(https://images.unsplash.com/photo-1599389931990-ffb2373161b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); */
+
+/* {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-}
-
-  /* A bit bright... red and gray rock */
-  /* background-image: url(https://images.unsplash.com/photo-1599885179850-135d7c6b7f31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);  */
-  /* Better but vertical so stretched too far */
-  /* background-image: url(https://images.unsplash.com/photo-1599389931990-ffb2373161b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); */
-
-
-div#root { 
-  margin: 0; 
-  padding: 0; 
-  height: 100%; 
-  width: 100%; 
-}
+} */
 
 .app {
-  height: 100%;
-  width: 100%;
   /* background-color: #383E4A; */
   /* background-image: url(https://images.unsplash.com/photo-1550684851-d6b87c1cfdba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
   /* background-image: url(https://images.unsplash.com/photo-1574110537361-ff1948fc4a57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
@@ -159,9 +158,7 @@ path.bullHead {
   height: 85%;
 }
 
-
 @media screen and (max-width: 700px) {
-
   html {
     font-size: 18px;
   }
@@ -176,14 +173,14 @@ path.bullHead {
     flex-direction: row;
     width: 100%;
     height: 15%;
-    /* min-height: ; */
+
     max-width: 100%;
     justify-content: center;
   }
 
   .navBtn {
     max-width: 15%;
-    /* height: 100%; */
+
     padding: 0;
   }
 
@@ -199,4 +196,144 @@ path.bullHead {
     height: 20%;
     max-width: 100%;
   }
+}
+
+/* Carousel Styling! */
+#about::before,
+#about::after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+#about {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 3vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slides {
+  display: grid;
+}
+
+.slides > .slide {
+  grid-area: 1 / -1;
+}
+
+.slides > button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: black;
+  position: relative;
+  font-size: 5rem;
+  width: 5rem;
+  height: 5rem;
+  top: 30%;
+  transition: opacity 0.3s;
+  opacity: 0.7;
+  z-index: 5;
+}
+
+.slides > button:hover {
+  opacity: 1;
+}
+
+.slides > button:focus {
+  outline: none;
+}
+
+.slides > button:first-child {
+  left: -50%;
+}
+
+.slides > button:last-child {
+  right: -50%;
+}
+
+.slideContent {
+  width: 60vw;
+  height: 80vw;
+  background-size: fill;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0.7;
+  display: grid;
+  align-content: center;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) translateX(calc(100% * var(--offset)))
+    rotateY(calc(-45deg * var(--dir)));
+}
+
+.slideContentInner {
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: translateZ(2rem);
+  transition: opacity 0.3s linear;
+  text-shadow: 0 0.1rem 1rem #000;
+  opacity: 0;
+}
+
+.slideContentInner .slideSubtitle,
+.slideContentInner .slideTitle {
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.2ch;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* .slideContentInner .slideDescription {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.2ch;
+} */
+
+.slideBackground {
+  /* position: fixed;
+  top: 0;
+  left: -10%;
+  right: -10%;
+  bottom: 0; */
+  width: 100%;
+  height: 100%;
+  /* background-size: cover; */
+  background-position: center center;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+  pointer-events: none;
+  transform: translateX(calc(10% * var(--dir)));
+}
+
+.slide[data-active] {
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.slide[data-active] .slideBackground {
+  opacity: 0.2;
+  transform: none;
+}
+
+.slide[data-active] .slideContentInner {
+  opacity: 1;
+}
+
+.slide[data-active] .slideContent {
+  --x: calc(var(--px) - 0.5);
+  --y: calc(var(--py) - 0.5);
+  opacity: 1;
+  transform: perspective(1000px);
+}
+
+.slide[data-active] .slideContent:hover {
+  transition: none;
+  transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
+    rotateX(calc(var(--y) * -45deg));
 }

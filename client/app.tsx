@@ -15,10 +15,10 @@ const App = () => {
   const [page, setPage] = (React as any).useState('home');
 
   return (
-    <div className="app">
-      <NavBar setPage={setPage}/>
-      <MainContainer page={page}/>
-      <SideBar page={page}/>
+    <div className='app'>
+      <NavBar setPage={setPage} />
+      <MainContainer page={page} />
+      <SideBar page={page} />
     </div>
   );
 };
