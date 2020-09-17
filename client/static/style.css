@@ -31,7 +31,7 @@ div#root,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Playfair Display';
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .navbar {
@@ -336,4 +336,37 @@ path.bullHead {
   transition: none;
   transform: perspective(1000px) rotateY(calc(var(--x) * 45deg))
     rotateX(calc(var(--y) * -45deg));
+}
+
+
+/* STYLES DOCS PAGE */
+
+.docContainer {
+  padding: 2rem 3rem;
+}
+
+.docContainer h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer code {
+  font-family: monospace;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
 }

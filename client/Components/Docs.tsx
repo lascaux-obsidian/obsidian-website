@@ -1,4 +1,5 @@
 import { React } from '../../deps.ts';
+import QuickStart from './DocPages/QuickStart.tsx';
 
 declare global {
   namespace JSX {
@@ -12,7 +13,9 @@ declare global {
 const Docs = (props: any) => {
 
   return (
-    <div>WE'RE IN DOCS</div>
+    <div>
+      <QuickStart />
+    </div>
   )
 }
 
