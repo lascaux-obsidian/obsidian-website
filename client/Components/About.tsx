@@ -1,4 +1,5 @@
 import { React } from '../../deps.ts';
+import Carousel from './Carousel.jsx';
 
 declare global {
   namespace JSX {
@@ -8,12 +9,12 @@ declare global {
   }
 }
 
-
 const About = (props: any) => {
-
   return (
-    <div>WE'RE IN ABOUT</div>
-  )
-}
+    <div id='about'>
+      <Carousel />
+    </div>
+  );
+};
 
 export default About;
