@@ -21,7 +21,7 @@ const MainContainer = (props: any) => {
   if (page === 'demo') curPage = <Demo />;
   if (page === 'docs') curPage = <Docs />;
 
-  return <div className='mainContainer'>{curPage}</div>;
+  return <>{curPage}</>;
 };
 
 export default MainContainer;
