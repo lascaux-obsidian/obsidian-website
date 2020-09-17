@@ -252,8 +252,8 @@ path.bullHead {
 }
 
 .slideContent {
-  width: 30vw;
-  height: 40vw;
+  width: 50vw;
+  height: 65vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -320,8 +320,8 @@ path.bullHead {
   transform: perspective(1000px);
 }
 
-/* .slide[data-active] .slideContent:hover {
+.slide[data-active] .slideContent:hover {
   transition: none;
-  transform: perspective(1000px) rotateY(calc(var(--x) * 10deg))
-    rotateX(calc(var(--y) * -10deg));
-} */
+  transform: perspective(1000px) rotateY(calc(var(--x) * 20deg))
+    rotateX(calc(var(--y) * -20deg));
+}
