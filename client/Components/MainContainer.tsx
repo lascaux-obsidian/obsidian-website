@@ -8,10 +8,6 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       div: any;
-      a: any;
-      p: any;
-      h5: any;
-      button: any;
     }
   }
 }
@@ -20,7 +16,6 @@ const MainContainer = (props: any) => {
   const { page } = props;
 
   let curPage;
-
   if (page === 'home') curPage = <Main />;
   if (page === 'about') curPage = <About />;
   if (page === 'demo') curPage = <Demo />;
