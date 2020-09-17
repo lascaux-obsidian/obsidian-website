@@ -1,5 +1,6 @@
 import { React } from '../../deps.ts';
 import { useObsidian } from '../../ObsidianWrapper.jsx';
+import SideBar from './SideBar.tsx';
 
 declare global {
   namespace JSX {
@@ -32,13 +33,18 @@ const Demo = (props: any) => {
   };
 
   return (
-    <div>
-      Query:{query}
-      <br></br>
-      Response:{response}
-      <br></br>
-      <button onClick={fetchData}>Fetch</button>
-    </div>
+    <>
+      <div className='mainContainer'>
+        <div>
+          Query:{query}
+          <br></br>
+          Response:{response}
+          <br></br>
+          <button onClick={fetchData}>Fetch</button>
+        </div>
+      </div>
+      <SideBar page={props.page} />
+    </>
   );
 };
 
