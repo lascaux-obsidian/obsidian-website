@@ -1,5 +1,6 @@
 import { React } from '../../deps.ts';
 import { useObsidian } from '../../ObsidianWrapper.jsx';
+import SideBar from './SideBar.tsx';
 
 declare global {
   namespace JSX {
@@ -83,8 +84,8 @@ const Demo = (props: any) => {
   
 
   return (
-    <div>
-      <div>
+    <>
+      <div className='mainContainer'>
         <label htmlFor="country">Choose a country: </label>
         <select name="country" id="country">
           <option value="United States of America" selected onClick={() => {setCountry('United States of America')}}>United States</option>
@@ -103,18 +104,20 @@ const Demo = (props: any) => {
         <label htmlFor="borders">Border Countries</label><br></br>
         
         <button>Send Query</button>
-      </div>
+      
 
-      <div>
-        <p>{query}</p>
+        <div>
+          <p>{query}</p>
+        </div>
+        Query:{query}
+        <br></br>
+        Response:{response}
+        <br></br>
+        <button onClick={fetchData}>Fetch</button>
+        <pre style={{ width: '150px', height: '300px'}}>{response}<code class="language-css"></code></pre>
       </div>
-      Query:{query}
-      <br></br>
-      Response:{response}
-      <br></br>
-      <button onClick={fetchData}>Fetch</button>
-  <pre style={{ width: '150px', height: '300px'}}>{response}<code class="language-css"></code></pre>
-    </div>
+      <SideBar page={props.page} />
+    </>
   );
 };
 

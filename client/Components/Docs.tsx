@@ -1,4 +1,5 @@
 import { React } from '../../deps.ts';
+import SideBar from './SideBar.tsx';
 
 declare global {
   namespace JSX {
@@ -8,12 +9,15 @@ declare global {
   }
 }
 
-
 const Docs = (props: any) => {
-
   return (
-    <div>WE'RE IN DOCS</div>
-  )
-}
+    <>
+      <div className='mainContainer'>
+        <div>WE'RE IN DOCS</div>
+      </div>
+      <SideBar page={props.page} />
+    </>
+  );
+};
 
 export default Docs;
