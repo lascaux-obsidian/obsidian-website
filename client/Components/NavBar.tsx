@@ -13,24 +13,6 @@ declare global {
   }
 }
 
-// const navStyle = {
-//   display: 'flex',
-//   flexDirection: 'column',
-//   justifyContent: 'space-around',
-//   width: '15%',
-//   height: '100%',
-//   maxHeight: '550px',
-//   maxWidth: '140px',
-//   padding: '15px',
-// }
-
-// const buttonStyle = {
-//   borderRadius: '6px',
-//   // border: '1px solid #EBEBEC',
-//   backgroundColor: '#737780',
-//   padding: '6% 3%',
-// }
-
 
 const NavBar = (props: any) => {
 

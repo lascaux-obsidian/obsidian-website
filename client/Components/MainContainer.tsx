@@ -11,6 +11,7 @@ declare global {
       p: any;
       h5: any;
       button: any;
+
     }
   }
 }
@@ -18,7 +19,8 @@ declare global {
 const MainContainer = (props: any) => {
 
   return (
-    <div >
+    <div className="mainContainer">
+
     </div>
   );
 }
