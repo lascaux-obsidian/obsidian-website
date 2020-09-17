@@ -11,7 +11,6 @@ declare global {
       p: any;
       h5: any;
       button: any;
-
     }
   }
 }
