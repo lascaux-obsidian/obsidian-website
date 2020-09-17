@@ -4,10 +4,10 @@ console.clear();
 
 const slides = [
   {
-    subtitle: 'Matt Meigs',
+    subtitle: 'Alonso Garza',
 
     image:
-      'https://media-exp1.licdn.com/dms/image/C4D03AQEzJiV7ot59DQ/profile-displayphoto-shrink_800_800/0?e=1605744000&v=beta&t=8nUUPFtA-qbu8bmxXazE-ordLUNGdkXEn5QmOdp2_cc',
+      'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/72142482_10162242588135548_8015587676570779648_o.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=rwYksz2TMIAAX_gBQEG&_nc_ht=scontent-dfw5-1.xx&oh=31529fceb58423f02d40bde0926a87dc&oe=5F8A9A30',
   },
   {
     subtitle: 'Alonso Garza',
