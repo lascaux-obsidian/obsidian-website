@@ -21,31 +21,19 @@ declare global {
 const MainContainer = (props: any) => {
   const { page } = props;
 
-  if (page === 'home') {
-    return (
-      <div className="mainContainer">
-        <Main />
-      </div>
-    );
-  } else if (page === 'about') {
-    return (
-      <div className="mainContainer">
-        <About />
-      </div>
-    );
-  } else if (page === 'demo') {
-    return (
-      <div className="mainContainer">
-        <Demo />
-      </div>
-    );
-  } else if (page === 'docs') {
-    return (
-      <div className="mainContainer">
-        <Docs />
-      </div>
-    );
-  }
+  let curPage;
+
+  if (page === 'home') curPage = <Main />
+  if (page === 'about') curPage = <About />
+  if (page === 'demo') curPage = <Demo />
+  if (page === 'docs') curPage = <Docs />
+
+  
+  return (
+    <div className="mainContainer">
+      {curPage}
+    </div>
+  );
 }
 
 export default MainContainer;

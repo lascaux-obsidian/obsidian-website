@@ -15,7 +15,6 @@ declare global {
 const App = () => {
   const [page, setPage] = (React as any).useState('home'); 
 
-
   return (
     <div className="app">
       <NavBar setPage={setPage}/>
