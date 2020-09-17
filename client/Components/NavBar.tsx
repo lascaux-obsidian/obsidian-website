@@ -17,6 +17,11 @@ declare global {
 const NavBar = (props: any) => {
   const { setPage } = props;
 
+  // const changePage = (page: any) => {
+  //   document.getElementsByClassName('homePage')...
+  //   setTimeout(() => {setPage(page)}, 1000);
+  // }
+
   return (
     <div className="navbar">
       <button className="navBtn" onClick={() => {setPage('home')}}>
