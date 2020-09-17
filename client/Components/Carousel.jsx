@@ -1,39 +1,17 @@
 import { React } from '../../deps.ts';
 
-console.clear();
+// console.clear();
 
 const slides = [
   {
-    subtitle: 'Alonso Garza',
-
-    image:
-      'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/72142482_10162242588135548_8015587676570779648_o.jpg?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=rwYksz2TMIAAX_gBQEG&_nc_ht=scontent-dfw5-1.xx&oh=31529fceb58423f02d40bde0926a87dc&oe=5F8A9A30',
+    title: 'Alonso',
+    subtitle: 'Garza',
+    image: '/static/alonso.jpg',
   },
   {
-    subtitle: 'Alonso Garza',
-    image:
-      'https://media-exp1.licdn.com/dms/image/C4E03AQEX3whvC_Q__Q/profile-displayphoto-shrink_400_400/0?e=1605744000&v=beta&t=wzAdeD6XV5O7vz23f3hdzoZ43lSlDO8uRIZ01RBn1CA',
-  },
-  {
-    title: 'Mimisa Rocks',
-    subtitle: 'Australia',
-    description: 'A piece of heaven',
-    image:
-      'https://images.unsplash.com/photo-1566522650166-bd8b3e3a2b4b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ',
-  },
-  {
-    title: 'Four',
-    subtitle: 'Australia',
-    description: 'A piece of heaven',
-    image:
-      'https://images.unsplash.com/flagged/photo-1564918031455-72f4e35ba7a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ',
-  },
-  {
-    title: 'Five',
-    subtitle: 'Australia',
-    description: 'A piece of heaven',
-    image:
-      'https://images.unsplash.com/photo-1579130781921-76e18892b57b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ',
+    title: 'Travis',
+    subtitle: 'Frank',
+    image: '/static/travis.png',
   },
 ];
 
@@ -116,9 +94,9 @@ function Slide({ slide, offset }) {
     >
       <div
         className='slideBackground'
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
+        // style={{
+        //   backgroundImage: `url('${slide.image}')`,
+        // }}
       />
       <div
         className='slideContent'
@@ -136,18 +114,31 @@ function Slide({ slide, offset }) {
   );
 }
 
-function Carousel() {
+function Carousel({ user, index, changeUser }) {
   const [state, dispatch] = React.useReducer(slidesReducer, initialState);
 
   return (
     <div className='slides'>
-      <button onClick={() => dispatch({ type: 'NEXT' })}>‹</button>
-
-      {[...slides, ...slides, ...slides].map((slide, i) => {
+      <button onClick={() => changeUser(index, -1)}>‹</button>
+      <div className='slide'>
+        <div className='slideBackground' />
+        <div
+          className='slideContent'
+          style={{
+            backgroundImage: `url('${user.image}')`,
+          }}
+        >
+          <div className='slideContentInner'>
+            <h2 className='slideTitle'>{user.firstName}</h2>
+            <h3 className='slideSubtitle'>{user.lastName}</h3>
+          </div>
+        </div>
+      </div>
+      {/* {[...slides, ...slides, ...slides].map((slide, i) => {
         let offset = slides.length + (state.slideIndex - i);
         return <Slide slide={slide} offset={offset} key={i} />;
-      })}
-      <button onClick={() => dispatch({ type: 'PREV' })}>›</button>
+      })} */}
+      <button onClick={() => changeUser(index, 1)}>›</button>
     </div>
   );
 }
