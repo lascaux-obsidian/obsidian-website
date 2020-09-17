@@ -18,7 +18,7 @@ const App = () => {
     <div className='app'>
       <NavBar setPage={setPage} />
       <MainContainer page={page} />
-      <SideBar />
+      <SideBar page={page} />
     </div>
   );
 };

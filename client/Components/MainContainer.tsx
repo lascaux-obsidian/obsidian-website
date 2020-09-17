@@ -8,10 +8,6 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       div: any;
-      a: any;
-      p: any;
-      h5: any;
-      button: any;
     }
   }
 }

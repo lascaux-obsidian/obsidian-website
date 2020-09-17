@@ -2,11 +2,17 @@ html,
 body,
 div#root,
 .app {
+  font-size: 14px;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
 }
+
+/* A bit bright... red and gray rock */
+/* background-image: url(https://images.unsplash.com/photo-1599885179850-135d7c6b7f31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80);  */
+/* Better but vertical so stretched too far */
+/* background-image: url(https://images.unsplash.com/photo-1599389931990-ffb2373161b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); */
 
 /* {
   margin: 0;
@@ -16,7 +22,12 @@ div#root,
 } */
 
 .app {
-  background-color: #383e4a;
+  /* background-color: #383E4A; */
+  /* background-image: url(https://images.unsplash.com/photo-1550684851-d6b87c1cfdba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
+  /* background-image: url(https://images.unsplash.com/photo-1574110537361-ff1948fc4a57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); */
+  background-image: url(https://images.unsplash.com/photo-1597871119022-42906cd7c9b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,18 +46,25 @@ div#root,
 }
 
 .navBtn {
-  border-radius: 6px;
+  border-radius: 10px;
+  /* // border: '1px solid #EBEBEC', */
   background-color: #737780;
   padding: 6% 3%;
+  animation: fadeInDown;
+  animation-duration: 1s;
+  /* animation-delay: 4s; */
 }
 
 .mainContainer {
   width: 70vw;
   height: 94vh;
-  background-color: antiquewhite;
+  background-color: rgba(219, 219, 219, 0.514);
   margin: 3vh 0 3vh 0;
   border-radius: 10px;
+  overflow: hidden;
 }
+
+/* SIDEBAR STYLING */
 
 .sidebar {
   display: flex;
@@ -59,7 +77,92 @@ div#root,
   margin: auto 15px;
 }
 
+.homePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  height: 100%;
+  width: 100%;
+}
+
+div#logo {
+  width: 100%;
+  height: 100%;
+}
+
+#logo svg {
+  border-radius: 10px;
+}
+
+/* path#frontLeg {
+  animation: bounce;
+  animation-duration: 2s;
+}
+
+path.bullHead {
+  animation: headShake;
+  animation-duration: 2s;
+} */
+.sidebar a:hover {
+  text-decoration: none;
+}
+
+.sidebar .codeLinks .codeLinkDiv::before {
+  content: '';
+  display: block;
+  height: 25px;
+  width: 0%;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  transition: all ease-in-out 350ms;
+}
+
+.sidebar .codeLinks .codeLinkDiv:hover::before {
+  width: 16%;
+}
+
+.sidebar .codeLinks {
+  height: 15%;
+  max-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sidebar .codeLinks .codeLinkDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar .codeLinks img {
+  display: inline-block;
+  z-index: 2;
+}
+
+#githubLogo {
+  margin-right: 2.5px;
+}
+
+.sidebar .codeLinks h4 {
+  display: inline-block;
+  margin: 0;
+  color: black;
+  z-index: 2;
+}
+
+.sidebar .sideContent {
+  height: 85%;
+}
+
 @media screen and (max-width: 700px) {
+  html {
+    font-size: 18px;
+  }
+
   .app {
     flex-direction: column;
     justify-content: center;
@@ -161,7 +264,7 @@ div#root,
   transition: transform 0.5s ease-in-out;
   opacity: 0.7;
   display: grid;
-  align-content: end;
+  align-content: center;
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)))
     rotateY(calc(-45deg * var(--dir)));
