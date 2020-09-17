@@ -2,6 +2,7 @@ import { Application, Router } from './serverDeps.ts';
 import { React, ReactDomServer } from './deps.ts';
 import App from './client/app.tsx';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
+import { ObsidianWrapper } from './ObsidianWrapper.jsx';
 
 const PORT = 3000;
 
@@ -59,7 +60,9 @@ export { app };
 function handlePage(ctx: any) {
   try {
     const body = (ReactDomServer as any).renderToString(
-      <App state={initialState} />
+      <ObsidianWrapper>
+        <App state={initialState} />
+      </ObsidianWrapper>
     );
     ctx.response.body = `<!DOCTYPE html>
   <html lang="en">
@@ -80,6 +83,7 @@ function handlePage(ctx: any) {
   </head>
   <body >
     <div id="root">${body}</div>
+    
     <script  src="/static/client.js" defer></script>
   </body>
   </html>`;
