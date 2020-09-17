@@ -1,16 +1,17 @@
 
-html, body { 
-  margin: 0; 
-  padding: 0; 
-  height: 100%; 
+html, body {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   width: 100%;
 }
 
-div#root { 
-  margin: 0; 
-  padding: 0; 
-  height: 100%; 
-  width: 100%; 
+div#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .app {
@@ -49,6 +50,8 @@ div#root {
   border-radius: 10px;
 }
 
+/* SIDEBAR STYLING */
+
 .sidebar {
   display: flex;
   flex-direction: column;
@@ -60,15 +63,73 @@ div#root {
   margin: auto 15px;
 }
 
+.sidebar a:hover {
+  text-decoration: none;
+}
+
+.sidebar .codeLinks .codeLinkDiv::before {
+  content: '';
+  display: block;
+  height: 25px;
+  width: 0%;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  transition: all ease-in-out 350ms;
+}
+
+.sidebar .codeLinks .codeLinkDiv:hover::before {
+  width: 16%;
+}
+
+.sidebar .codeLinks {
+  height: 15%;
+  max-height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sidebar .codeLinks .codeLinkDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar .codeLinks img {
+  display: inline-block;
+  z-index: 2;
+}
+
+#githubLogo {
+  margin-right: 2.5px;
+}
+
+.sidebar .codeLinks h4 {
+  display: inline-block;
+  margin: 0;
+  color: black;
+  z-index: 2;
+}
+
+.sidebar .sideContent {
+  height: 85%;
+}
 
 
 @media screen and (max-width: 700px) {
+
+  html {
+    font-size: 18px;
+  }
+
   .app {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
+
   .navbar {
     flex-direction: row;
     width: 100%;
