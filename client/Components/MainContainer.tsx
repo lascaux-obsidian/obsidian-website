@@ -4,8 +4,6 @@ import About from './About.tsx';
 import Demo from './Demo.tsx';
 import Docs from './Docs.tsx';
 
-import { mainContainerStyle } from '../style.ts';
-
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -24,7 +22,7 @@ const MainContainer = (props: any) => {
   if (page === 'demo') curPage = <Demo />
   if (page === 'docs') curPage = <Docs />
 
-  
+
   return (
     <div className="mainContainer">
       {curPage}
