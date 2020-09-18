@@ -225,6 +225,7 @@ path.bullHead {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 1vw;
 }
 pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
@@ -376,5 +377,5 @@ pre {
 }
 
 .key {
-  color: darkblue;
+  color: rgb(0, 139, 23);
 }
