@@ -107,7 +107,7 @@ function handlePage(ctx: any) {
   </head>
   <body >
     <div id="root">${body}</div>
-    
+
     <script  src="/static/client.js" defer></script>
   </body>
   </html>`;

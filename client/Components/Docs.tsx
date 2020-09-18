@@ -1,4 +1,5 @@
 import { React } from '../../deps.ts';
+import QuickStart from './DocPages/QuickStart.tsx';
 import SideBar from './SideBar.tsx';
 
 declare global {
@@ -13,7 +14,9 @@ const Docs = (props: any) => {
   return (
     <>
       <div className='mainContainer'>
-        <div>WE'RE IN DOCS</div>
+        <div style={{height: "100%"}}>
+          <QuickStart />
+        </div>
       </div>
       <SideBar page={props.page} />
     </>
