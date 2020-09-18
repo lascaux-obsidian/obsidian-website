@@ -9,26 +9,19 @@ declare global {
     }
   }
 }
+
 const users = [
   {
     firstName: 'Alonso',
     lastName: 'Garza',
-    image: '/static/alonso.jpg',
+    image:
+      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462327/Obsidian/alonso_tjoj05.jpg',
   },
   {
     firstName: 'Travis',
     lastName: 'Frank',
-    image: '/static/travis.png',
-  },
-  {
-    firstName: 'Matt',
-    lastName: 'Meigs',
-    image: '/static/alonso.jpg',
-  },
-  {
-    firstName: 'Travis',
-    lastName: 'Frank',
-    image: '/static/travis.png',
+    image:
+      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462327/Obsidian/alonso_tjoj05.jpg',
   },
 ];
 
