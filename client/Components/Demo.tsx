@@ -1,5 +1,5 @@
-import { React } from '../../deps.ts';
-import { useObsidian } from '../../ObsidianWrapper.jsx';
+import { React, useObsidian } from '../../deps.ts';
+// import { useObsidian } from '../../ObsidianWrapper.jsx';
 import SideBar from './SideBar.tsx';
 
 declare global {
@@ -17,42 +17,10 @@ declare global {
     }
   }
 }
-const code = `{
-  countries {
-    name
-    code
-    emoji
-  }
-}
-`.trim();
-
-// Peru 3297
-// Iraq 2071
-// China 973
-// India 1995
-// France 1528
-
-// `{
-//   Country (_id: "4425") {
-//     _id
-//     name
-//     population
-//     flag {
-//       _id
-//       emoji
-//     }
-//     borders {
-//       _id
-//       name
-//       capital
-//     }
-//   }
-// }
-// `
 
 const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
-  const { fetcher } = useObsidian();
+  const { fetcher, cache } = useObsidian();
 
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
@@ -87,7 +55,9 @@ const Demo = (props: any) => {
     fetcher(query, {
       endpoint: 'https://countries-274616.ew.r.appspot.com',
       destructure: true,
-    }).then((resp: any) => setResponse(JSON.stringify(resp.data)));
+    }).then((resp: any) =>
+      setTimeout(setResponse(JSON.stringify(resp.data)), 1000)
+    );
   };
   return (
     <>
@@ -165,6 +135,10 @@ const Demo = (props: any) => {
           <pre className='pre-block'>
             Response:
             <code className='code-block'>{response}</code>
+          </pre>
+          <pre className='pre-block'>
+            Cache:
+            <code className='code-block'>{JSON.stringify(cache)}</code>
           </pre>
         </div>
       </div>
