@@ -7,21 +7,22 @@ declare global {
     interface IntrinsicElements {
       div: any;
       br: any;
+      pre: any;
+      code: any;
     }
   }
 }
+const code = `{
+  countries {
+    name
+    code
+    emoji
+  }
+}
+`.trim();
 
 const Demo = (props: any) => {
-  const [query, setQuery] = (React as any).useState(
-    `{
-      countries {
-        name
-        code
-        emoji
-      }
-    }
-    `
-  );
+  const [query, setQuery] = (React as any).useState(code);
   const [response, setResponse] = (React as any).useState('');
   const { fetcher } = useObsidian();
 
@@ -35,12 +36,18 @@ const Demo = (props: any) => {
   return (
     <>
       <div className='mainContainer'>
-        <div>
+        <div id='demo-block'>
           Query:{query}
           <br></br>
-          Response:{response}
-          <br></br>
+          <pre className='pre-block'>
+            <code className='code-block'>{code}</code>
+          </pre>
           <button onClick={fetchData}>Fetch</button>
+          Response:{response}
+          <pre className='pre-block'>
+            <code className='code-block'>{code}</code>
+          </pre>
+          <br></br>
         </div>
       </div>
       <SideBar page={props.page} />
