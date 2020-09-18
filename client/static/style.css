@@ -361,3 +361,20 @@ pre {
   transform: perspective(1000px) rotateY(calc(var(--x) * 20deg))
     rotateX(calc(var(--y) * -20deg));
 }
+
+
+.tab {
+  margin-left: 30px;
+}
+
+.nested {
+  margin: 10px 0 0 30px;
+}
+
+.p {
+  margin-bottom: 1rem;
+}
+
+.key {
+  color: darkblue;
+}
