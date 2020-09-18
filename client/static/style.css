@@ -235,6 +235,53 @@ pre {
   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
+.demoInput {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.buildQueryTitle {
+  text-align: center;
+}
+
+.showQuery, .buildQuery {
+  display: inline-block;
+}
+
+#stretchQuery {
+  margin: auto;
+  width: 80%;
+}
+
+.buildQuery {
+  color: rgb(20, 20, 20);
+  border-radius: 10px;
+  background-color: rgb(212, 212, 212);
+  width: 40%;
+  padding: 2%;
+}
+
+.showQuery {
+  width: 40%;
+}
+
+#code-black {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+#code-yellow {
+  background-color: rgb(20, 20, 20);
+  color: rgb(255, 255, 138);
+}
+
+#code-pink {
+  background-color: rgb(20, 20, 20);
+  color: pink;
+}
+
+
 /* Carousel Styling! */
 #about::before,
 #about::after {
