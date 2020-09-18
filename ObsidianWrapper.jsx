@@ -1,16 +1,14 @@
-import React from 'https://dev.jspm.io/react@16.13.1';
+import React from 'https://dev.jspm.io/react@16.13.1'; // from deps
 
-import clientStorage from 'https://deno.land/x/obsidian@v0.1.1/ObsidianWrapper/clientStorage.js';
-
-import normalizeResult from 'https://deno.land/x/obsidian@v0.1.1/src/normalize.js';
-import destructureQueries from 'https://deno.land/x/obsidian@v0.1.1/src/destructureQueries.js';
+import normalizeResult from 'https://deno.land/x/obsidian@v0.1.2/src/normalize.js';
+import destructureQueries from 'https://deno.land/x/obsidian@v0.1.2/src/destructureQueries.js';
 
 // Context will be used to create a custom provider for the application
 export const cacheContext = React.createContext();
 
 // Declaration of custom Obsidian Wrapper
 function ObsidianWrapper(props) {
-  const [cache, setCache] = React.useState(clientStorage);
+  const [cache, setCache] = React.useState({});
 
   // Primary function, provides access to fetching and caching capabilities
   async function fetcher(query, options = {}) {
@@ -73,13 +71,11 @@ function ObsidianWrapper(props) {
   }
   // Function to update the global cache with new response data
   function updateCache(query, response) {
-    console.log('BEFORE: ', cache);
     // Declaring new object with new data to store in cache
     const newObj = Object.assign(cache, { [query]: response });
     // React hook to update global cache object
     setCache(newObj);
-    console.log('AFTER: ', newObj);
-    console.log('CACHEEE: ', cache);
+
     // Can be uncommeted to store data in session storage
     // sessionStorage.setItem(query, JSON.stringify(response));
   }

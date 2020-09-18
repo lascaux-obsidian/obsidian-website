@@ -15,7 +15,7 @@ const slides = [
   },
 ];
 
-function useTilt(active) {
+function useTilt(active = true) {
   const ref = React.useRef(null);
 
   React.useEffect(() => {
@@ -61,21 +61,21 @@ const initialState = {
   slideIndex: 0,
 };
 
-const slidesReducer = (state, event) => {
-  if (event.type === 'NEXT') {
-    return {
-      ...state,
-      slideIndex: (state.slideIndex + 1) % slides.length,
-    };
-  }
-  if (event.type === 'PREV') {
-    return {
-      ...state,
-      slideIndex:
-        state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
-    };
-  }
-};
+// const slidesReducer = (state, event) => {
+//   if (event.type === 'NEXT') {
+//     return {
+//       ...state,
+//       slideIndex: (state.slideIndex + 1) % slides.length,
+//     };
+//   }
+//   if (event.type === 'PREV') {
+//     return {
+//       ...state,
+//       slideIndex:
+//         state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
+//     };
+//   }
+// };
 
 function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
@@ -115,12 +115,12 @@ function Slide({ slide, offset }) {
 }
 
 function Carousel({ user, index, changeUser }) {
-  const [state, dispatch] = React.useReducer(slidesReducer, initialState);
+  // const [state, dispatch] = React.useReducer(slidesReducer, initialState);
 
   return (
     <div className='slides'>
       <button onClick={() => changeUser(index, -1)}>‹</button>
-      <div className='slide'>
+      <div ref={useTilt()} className='slide' data-active={true}>
         <div className='slideBackground' />
         <div
           className='slideContent'

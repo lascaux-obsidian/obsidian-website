@@ -1,8 +1,8 @@
 import { Application, Router } from './serverDeps.ts';
-import { React, ReactDomServer } from './deps.ts';
+import { React, ReactDomServer, ObsidianWrapper } from './deps.ts';
 import App from './client/app.tsx';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
-import { ObsidianWrapper } from './ObsidianWrapper.jsx';
+// import { ObsidianWrapper } from './ObsidianWrapper.jsx';
 
 const PORT = 3000;
 
@@ -24,7 +24,30 @@ app.use(async (ctx, next) => {
 });
 
 // Initial state
-const initialState = {};
+const initialState = {
+  obsidianSchema: {
+    returnTypes: {
+      Country: { kind: 'NamedType', type: 'Country' },
+    },
+    argTypes: {
+      Country: { _id: 'ID' },
+    },
+    obsidianTypeSchema: {
+      Country: {
+        _id: { type: 'ID', scalar: true },
+        name: { type: 'String', scalar: true },
+        capital: { type: 'String', scalar: true },
+        population: { type: 'Int', scalar: true },
+        flag: { type: 'Flag', scalar: false },
+        borders: { type: 'Country', scalar: false },
+      },
+      Flag: {
+        _id: { type: 'ID', scalar: true },
+        emoji: { type: 'String', scalar: true },
+      },
+    },
+  },
+};
 
 // Router for base path
 const router = new Router();
@@ -72,6 +95,7 @@ function handlePage(ctx: any) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="/static/prism.css" rel="stylesheet" />
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -85,6 +109,7 @@ function handlePage(ctx: any) {
     <div id="root">${body}</div>
 
     <script  src="/static/client.js" defer></script>
+    <script src="/static/prism.js"></script>
   </body>
   </html>`;
   } catch (error) {
