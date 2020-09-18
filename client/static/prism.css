@@ -6,6 +6,8 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
  * @author Lea Verou
  */
 
+ /*
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
@@ -141,3 +143,4 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
+*/
