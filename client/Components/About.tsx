@@ -21,9 +21,9 @@ const users = [
     image: '/static/travis.png',
   },
   {
-    firstName: 'Alonso',
-    lastName: 'Garza',
-    image: '/static/alonso.jpg',
+    firstName: 'Matt',
+    lastName: 'Meigs',
+    image: '/static/matt.jpeg',
   },
   {
     firstName: 'Travis',
