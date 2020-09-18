@@ -31,25 +31,36 @@
   font-family: 'Playfair Display';
 }
 
-.navbar {
+.navBar {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 20%;
   height: 100%;
-  max-height: 550px;
   max-width: 140px;
-  padding: 15px;
+  max-height: 600px;
+  padding: 3.0rem 0.5rem;
 }
 
 .navBtn {
   border-radius: 10px;
   /* // border: '1px solid #EBEBEC', */
   background-color: #737780;
-  padding: 6% 3%;
+  padding: 2% 3%;
+  height: 20%;
+  max-height: 100px;
+  min-height: 60px;
   animation: fadeInDown;
   animation-duration: 1s;
-  /* animation-delay: 4s; */
+}
+
+.navBtnText {
+  font-size: 1.0em;
+  color: white;
+}
+
+.navBtn svg {
+  width: 40%;
 }
 
 .mainContainer {
@@ -166,7 +177,7 @@ path.bullHead {
     align-items: center;
   }
 
-  .navbar {
+  .navBar {
     flex-direction: row;
     width: 100%;
     height: 15%;
