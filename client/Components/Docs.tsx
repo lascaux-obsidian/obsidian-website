@@ -14,7 +14,7 @@ const Docs = (props: any) => {
   return (
     <>
       <div className='mainContainer'>
-        <div>
+        <div style={{height: "100%"}}>
           <QuickStart />
         </div>
       </div>

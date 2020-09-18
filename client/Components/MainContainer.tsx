@@ -16,10 +16,10 @@ const MainContainer = (props: any) => {
   const { page } = props;
 
   let curPage;
-  if (page === 'home') curPage = <Main />;
-  if (page === 'about') curPage = <About />;
-  if (page === 'demo') curPage = <Demo />;
-  if (page === 'docs') curPage = <Docs />;
+  if (page === 'home') curPage = <Main page={props.page}/>;
+  if (page === 'about') curPage = <About page={props.page}/>;
+  if (page === 'demo') curPage = <Demo page={props.page}/>;
+  if (page === 'docs') curPage = <Docs page={props.page}/>;
 
   return <>{curPage}</>;
 };
