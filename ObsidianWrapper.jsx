@@ -1,7 +1,5 @@
 import React from 'https://dev.jspm.io/react@16.13.1'; // from deps
 
-// import clientStorage from 'https://deno.land/x/obsidian@v0.1.2/ObsidianWrapper/clientStorage.js';
-
 import normalizeResult from 'https://deno.land/x/obsidian@v0.1.2/src/normalize.js';
 import destructureQueries from 'https://deno.land/x/obsidian@v0.1.2/src/destructureQueries.js';
 
