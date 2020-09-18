@@ -1,5 +1,5 @@
-import { React, ReactDom } from '../deps.ts';
-import { ObsidianWrapper } from '../ObsidianWrapper.jsx';
+import { React, ReactDom, ObsidianWrapper } from '../deps.ts';
+// import { ObsidianWrapper } from '../ObsidianWrapper.jsx';
 import App from './app.tsx';
 
 declare global {

@@ -1,7 +1,6 @@
 import { React } from '../deps.ts';
 import NavBar from './Components/NavBar.tsx';
 import MainContainer from './Components/MainContainer.tsx';
-import SideBar from './Components/SideBar.tsx';
 
 declare global {
   namespace JSX {
