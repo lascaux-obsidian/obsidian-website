@@ -5,5 +5,9 @@ import {
   ObsidianWrapper,
   useObsidian,
 } from 'https://deno.land/x/obsidian@v0.1.4/ObsidianWrapper/ObsidianWrapper.jsx';
+import rcb from 'https://dev.jspm.io/react-code-blocks';
 
-export { React, ReactDomServer, ReactDom, ObsidianWrapper, useObsidian };
+const realRCB: any = rcb;
+const { CodeBlock, CopyBlock, dracula, monokai } = realRCB;
+
+export { React, ReactDomServer, ReactDom, ObsidianWrapper, useObsidian, CodeBlock, CopyBlock, dracula, monokai };

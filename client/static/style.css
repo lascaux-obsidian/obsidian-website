@@ -18,6 +18,10 @@
   width: 100%;
 } */
 
+body {
+  font-family: 'Nunito Sans', sans-serif !important;
+}
+
 .app {
   /* background-color: #383E4A; */
   /* background-image: url(https://images.unsplash.com/photo-1550684851-d6b87c1cfdba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80); */
@@ -28,7 +32,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Playfair Display';
 }
 
 .navBar {
@@ -360,4 +363,40 @@ pre {
   transition: none;
   transform: perspective(1000px) rotateY(calc(var(--x) * 20deg))
     rotateX(calc(var(--y) * -20deg));
+}
+
+
+/* STYLES DOCS PAGE */
+
+.docContainer {
+  padding: 2rem 3rem;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.docContainer h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer .codeBlock {
+  margin-bottom: 1.5rem;
+}
+
+.docContainer code {
+  font-family: monospace !important;
 }
