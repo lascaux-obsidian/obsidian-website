@@ -23,7 +23,7 @@ const users = [
   {
     firstName: 'Matt',
     lastName: 'Meigs',
-    image: '/static/matt.jpeg',
+    image: '/static/alonso.jpg',
   },
   {
     firstName: 'Travis',
