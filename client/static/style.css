@@ -195,6 +195,31 @@ path.bullHead {
   }
 }
 
+/* Demo Styling */
+
+.pre-block {
+  width: 60%;
+}
+.pre-block,
+.code-block {
+  background-color: #fff;
+  border: 1px solid black;
+  display: block;
+  padding: 20px;
+  margin: 1vw;
+}
+#demo-block {
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+pre {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
 /* Carousel Styling! */
 #about::before,
 #about::after {
