@@ -69,7 +69,8 @@
   background-color: rgba(219, 219, 219, 0.514);
   margin: 3vh 0 3vh 0;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* SIDEBAR STYLING */

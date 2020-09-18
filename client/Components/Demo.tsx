@@ -1,6 +1,7 @@
 import { React, useObsidian } from '../../deps.ts';
 // import { useObsidian } from '../../ObsidianWrapper.jsx';
 import SideBar from './SideBar.tsx';
+import CachePair from './CachePair.tsx';
 
 declare global {
   namespace JSX {
@@ -21,6 +22,7 @@ declare global {
 const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
   const { fetcher, cache } = useObsidian();
+  const [ prettyCache, setPrettyCache ] = (React as any).useState([]);
 
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
@@ -59,6 +61,13 @@ const Demo = (props: any) => {
       setTimeout(setResponse(JSON.stringify(resp.data)), 1000)
     );
   };
+
+  const pretty: any = [];
+
+  Object.entries(cache).forEach(pair => {
+      pretty.push(<CachePair pair={pair} />)
+  })
+
   return (
     <>
       <div className='mainContainer'>
@@ -138,7 +147,7 @@ const Demo = (props: any) => {
           </pre>
           <pre className='pre-block'>
             Cache:
-            <code className='code-block'>{JSON.stringify(cache)}</code>
+            <code className='code-block'>{pretty}</code>
           </pre>
         </div>
       </div>
