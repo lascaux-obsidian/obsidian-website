@@ -11,6 +11,8 @@ declare global {
       img: any;
       h4: any;
       a: any;
+      hr: any;
+      footer: any;
     }
   }
 }
@@ -21,7 +23,7 @@ const NavBar = (props: any) => {
   let curContext;
 
   if (page === 'home') curContext = <MainContext />;
-  if (page === 'about') curContext = <AboutContext />;
+  if (page === 'about') curContext = <AboutContext user={props.user} />;
   if (page === 'demo') curContext = <DemoContext />;
   if (page === 'docs') curContext = <DocsContext />;
 
