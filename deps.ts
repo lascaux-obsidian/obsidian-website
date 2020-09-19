@@ -8,16 +8,8 @@ import { ObsidianWrapper, useObsidian } from './ObsidianWrapper.jsx';
 import rcb from 'https://dev.jspm.io/react-code-blocks';
 
 const realRCB: any = rcb;
-const { CodeBlock, CopyBlock, dracula, monokai } = realRCB;
+const { CodeBlock, CopyBlock, monokai } = realRCB;
 
-export {
-  React,
-  ReactDomServer,
-  ReactDom,
-  ObsidianWrapper,
-  useObsidian,
-  CodeBlock,
-  CopyBlock,
-  dracula,
-  monokai,
-};
+monokai.backgroundColor = "rgba(5, 5, 5, 0.93)";
+
+export { React, ReactDomServer, ReactDom, ObsidianWrapper, useObsidian, CodeBlock, CopyBlock, monokai };

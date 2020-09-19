@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai, dracula } from '../../../deps.ts';
+import { React, CodeBlock, monokai } from '../../../deps.ts';
 
 const QuickStart = (props: any) => {
 
@@ -10,7 +10,7 @@ const QuickStart = (props: any) => {
       <h2>Installation</h2>
       <p>In the server:</p>
       <CodeBlock
-        text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts'"}
+        text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';"}
         language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
@@ -18,7 +18,7 @@ const QuickStart = (props: any) => {
       <br/>
       <p>In the app:</p>
       <CodeBlock
-        text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts'"}
+        text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';"}
         language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
@@ -62,8 +62,76 @@ await app.listen({ port: PORT });`}
       />
       <br/>
       <h2>Sending ObsidianSchema</h2>
+      <CodeBlock
+        text={`import React from 'https://dev.jspm.io/react@16.13.1';
+import ReactDomServer from 'https://dev.jspm.io/react-dom@16.13.1/server';
+import App from './app.tsx';
+
+interface initialState {
+  obsidianSchema?: any;
+}
+
+const initialState: initialState = {};
+
+initialState.obsidianSchema = GraphQLRouter.obsidianSchema;
+
+const router = new Router();
+router.get('/', handlePage);
+
+app.use(router.routes(), router.allowedMethods());
+
+function handlePage(ctx: any) {
+  try {
+    const body = (ReactDomServer as any).renderToString(<App />);
+    ctx.response.body = \`<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>SSR React App</title>
+        <script>
+          window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
+        </script>
+      </head>
+      <body >
+        <div id="root">\${body}</div>
+        <script src="/static/client.js" defer></script>
+      </body>
+      </html>\`;
+  } catch (error) {
+    console.error(error);
+  }
+}`}
+        language={"tsx"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
       <h2>Creating the Wrapper</h2>
+      <CodeBlock
+        text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+
+const App = () => {
+  return (
+    <ObsidianWrapper>
+      <div>
+        <h1>Hello World</h1>
+      </div>
+    </ObsidianWrapper>
+  );
+};`}
+        language={"tsx"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
       <h2>Making a Query</h2>
+      <CodeBlock
+        text={``}
+        language={"tsx"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
     </div>
   )
 }

@@ -28,7 +28,7 @@ const users = [
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462593/Obsidian/image_1_c7sggv.jpg',
     info: 'Hello there! Did you read my book "Dont forget your tie!"?',
-    linkedin: 'https://www.linkedin.com/in/travis-frank-89a526a5/',
+    linkedin: 'https://linkedin.com/in/travis-m-frank',
     github: 'https://github.com/TravisFrankMTG',
   },
   {
