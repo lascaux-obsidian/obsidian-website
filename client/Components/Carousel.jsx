@@ -61,22 +61,6 @@ const initialState = {
   slideIndex: 0,
 };
 
-// const slidesReducer = (state, event) => {
-//   if (event.type === 'NEXT') {
-//     return {
-//       ...state,
-//       slideIndex: (state.slideIndex + 1) % slides.length,
-//     };
-//   }
-//   if (event.type === 'PREV') {
-//     return {
-//       ...state,
-//       slideIndex:
-//         state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
-//     };
-//   }
-// };
-
 function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
@@ -100,9 +84,9 @@ function Slide({ slide, offset }) {
       />
       <div
         className='slideContent'
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
+        // style={{
+        //   backgroundImage: `url('${slide.image}')`,
+        // }}
       >
         <div className='slideContentInner'>
           <h2 className='slideTitle'>{slide.title}</h2>
@@ -115,8 +99,6 @@ function Slide({ slide, offset }) {
 }
 
 function Carousel({ user, index, changeUser }) {
-  // const [state, dispatch] = React.useReducer(slidesReducer, initialState);
-
   return (
     <div className='slides'>
       <button onClick={() => changeUser(index, -1)}>‹</button>
@@ -134,10 +116,6 @@ function Carousel({ user, index, changeUser }) {
           </div>
         </div>
       </div>
-      {/* {[...slides, ...slides, ...slides].map((slide, i) => {
-        let offset = slides.length + (state.slideIndex - i);
-        return <Slide slide={slide} offset={offset} key={i} />;
-      })} */}
       <button onClick={() => changeUser(index, 1)}>›</button>
     </div>
   );
