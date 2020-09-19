@@ -1,6 +1,7 @@
 import { React, useObsidian } from '../../deps.ts';
 // import { useObsidian } from '../../ObsidianWrapper.jsx';
 import SideBar from './SideBar.tsx';
+import Cache from './Cache.tsx';
 
 declare global {
   namespace JSX {
@@ -59,10 +60,14 @@ const Demo = (props: any) => {
       setTimeout(setResponse(JSON.stringify(resp.data)), 1000)
     );
   };
+
   return (
     <>
       <div className='mainContainer'>
         <div id='demo-block'>
+          <div className="demoInput">
+          <div className="buildQuery">
+            <h2 className="buildQueryTitle">Build A Query</h2>
           <br></br>
 
           <br></br>
@@ -82,7 +87,6 @@ const Demo = (props: any) => {
             <option value='Iraq #2071'>Iraq</option>
           </select>
           <p>What info would you like to request about this country?</p>
-          <label htmlFor='name'>Name of Country</label>
           <input
             type='checkbox'
             id='name'
@@ -92,8 +96,8 @@ const Demo = (props: any) => {
               setName(!name);
             }}
           ></input>
+          <label htmlFor='name'>Name of Country</label>
           <br></br>
-          <label htmlFor='population'>Population</label>
           <input
             type='checkbox'
             id='population'
@@ -103,8 +107,8 @@ const Demo = (props: any) => {
               setPopulation(!population);
             }}
           ></input>
+          <label htmlFor='population'>Population</label>
           <br></br>
-          <label htmlFor='flag'>Flag</label>
           <input
             type='checkbox'
             id='flag'
@@ -114,8 +118,8 @@ const Demo = (props: any) => {
               setFlag(!flag);
             }}
           ></input>
+          <label htmlFor='flag'>Flag</label>
           <br></br>
-          <label htmlFor='borders'>Border Countries</label>
           <input
             type='checkbox'
             id='borders'
@@ -125,20 +129,27 @@ const Demo = (props: any) => {
               setBorders(!borders);
             }}
           ></input>
+          <label htmlFor='borders'>Border Countries</label>
           <br></br>
           <button onClick={fetchData}>Fetch</button>
-          <pre className='pre-block'>
+          </div>
+          <div className="showQuery">
+          <pre className='pre-block' id="stretchQuery">
             Query:
-            <code className='code-block'>{query}</code>
+            <code className='code-block' id="code-black">{query}</code>
           </pre>
+          </div>
+          </div>
           <br></br>
           <pre className='pre-block'>
             Response:
-            <code className='code-block'>{response}</code>
+            <code className='code-block' id="code-yellow">{response}</code>
           </pre>
           <pre className='pre-block'>
             Cache:
-            <code className='code-block'>{JSON.stringify(cache)}</code>
+            <code className='code-block' id="code-pink">
+              <Cache cache={cache}/>
+            </code>
           </pre>
         </div>
       </div>
