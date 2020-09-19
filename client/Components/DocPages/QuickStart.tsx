@@ -1,7 +1,5 @@
 import { React, CodeBlock, monokai, dracula } from '../../../deps.ts';
 
-
-
 const QuickStart = (props: any) => {
 
   return (

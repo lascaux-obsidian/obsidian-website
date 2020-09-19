@@ -1,13 +1,5 @@
 import { React } from '../../../deps.ts';
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      [elemName: string]: any;
-    }
-  }
-}
-
 
 const DocsContext = (props: any) => {
   const { setDocsPage } = props;
