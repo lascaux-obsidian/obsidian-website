@@ -155,6 +155,27 @@ path.bullHead {
   height: 85%;
 }
 
+/* SIDEBAR SOCIAL ACCOUNT BUTTONS  */
+.social-button {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.fab {
+  color: grey;
+  margin: 5px;
+}
+
+.fab:hover {
+  color: black;
+}
+
+.user-info {
+  text-align: center;
+  padding: 20px 3px 0 3px;
+}
+
 @media screen and (max-width: 700px) {
   html {
     font-size: 18px;
@@ -325,3 +346,4 @@ path.bullHead {
   transform: perspective(1000px) rotateY(calc(var(--x) * 20deg))
     rotateX(calc(var(--y) * -20deg));
 }
+
