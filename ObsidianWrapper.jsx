@@ -77,7 +77,7 @@ function ObsidianWrapper(props) {
   function updateCache(query, response, sessionStore) {
     // Declaring new object with new data to store in cache
     const newObj = Object.assign(cache, { [query]: response });
-    console.log('UPDATING CACHE', newObj);
+
     // React hook to update global cache object
     sessionStore
       ? sessionStorage.setItem(query, JSON.stringify(response))
@@ -103,7 +103,7 @@ function ObsidianWrapper(props) {
       // Excecute function to update the cache with new response
       if (destructure) {
         const obsidianSchema = window.__INITIAL_STATE__.obsidianSchema;
-        /* COMMENT OUT THESE LINES FOR SERVER CACHE */
+
         const deepCache = Object.assign({}, cache);
 
         return new Promise((resolve, reject) => {
@@ -120,8 +120,6 @@ function ObsidianWrapper(props) {
             )
           );
         });
-
-        /* COMMENT OUT THESE LINES FOR SERVER CACHE */
       } else {
         updateCache(query, resp, sessionStore);
         return resp;
@@ -143,14 +141,3 @@ function useObsidian() {
 }
 // Exporting of Custom wrapper and hook to access wrapper cache
 export { ObsidianWrapper, useObsidian };
-
-// normalizeResult(query, resp, obsidianSchema, deepCache).then(
-//   (updatedCache) => {
-//     for (let key in updatedCache) {
-//       for (let hash in updatedCache[key]) {
-//         updateCache(hash, updatedCache[key][hash]);
-//       }
-//     }
-//     return resp;
-//   }
-// );
