@@ -8,12 +8,8 @@ declare global {
   }
 }
 
-
 const MainContext = (props: any) => {
-
-  return (
-    <div>MAIN CONTEXT</div>
-  )
-}
+  return <div></div>;
+};
 
 export default MainContext;
