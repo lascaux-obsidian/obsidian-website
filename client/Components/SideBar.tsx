@@ -25,7 +25,7 @@ const NavBar = (props: any) => {
   if (page === 'home') curContext = <MainContext />;
   if (page === 'about') curContext = <AboutContext user={props.user} />;
   if (page === 'demo') curContext = <DemoContext />;
-  if (page === 'docs') curContext = <DocsContext docsPage={props.docsPage} setDocsPage={props.setDocsPage} />;
+  if (page === 'docs') curContext = <DocsContext />;
 
   return (
     <div
@@ -40,19 +40,23 @@ const NavBar = (props: any) => {
               src='../static/github-icon.svg'
               alt='GitHub Logo'
             />
-            <h4> · GitHub</h4>
+            <h4>·GitHub</h4>
           </div>
         </a>
         <a href='https://deno.land/x/obsidian'>
           <div className='codeLinkDiv'>
             <img src='../static/Deno-Logo.svg' alt='Deno Logo' />
-            <h4> · deno.land</h4>
+            <h4>·deno.land</h4>
           </div>
         </a>
       </div>
       <div
         className='sideContent'
-        style={page === 'home' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
+        style={
+          page === 'home'
+            ? { backgroundColor: 'rgba(0,0,0,0)', overflow: 'visible' }
+            : {}
+        }
       >
         {curContext}
       </div>
