@@ -14,7 +14,7 @@ declare global {
 const Main = (props: any) => {
   return (
     <>
-      <div className='mainContainer'>
+      <div className='mainContainerLogo'>
         <div className='homePage'>
           {/* <img src="static/logo.svg" alt="obsidianLogo" className="animate__animated animate__fadeInDown" id="logo"/> */}
           <ObsidianLogo />
