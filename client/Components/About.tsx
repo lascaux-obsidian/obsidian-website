@@ -15,7 +15,7 @@ const users = [
     firstName: 'Alonso',
     lastName: 'Garza',
     image:
-      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462327/Obsidian/alonso_tjoj05.jpg',
+      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600479739/Obsidian/WhatsApp_Image_2020-09-18_at_8.38.09_PM_pgshgj.jpg',
 
     info: 'Hello there! Did you read my book "Jane Austin: The Alonso Story"?',
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
