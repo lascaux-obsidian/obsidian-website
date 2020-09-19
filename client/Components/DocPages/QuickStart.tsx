@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai, dracula } from '../../../deps.ts';
+import { React, CodeBlock, monokai } from '../../../deps.ts';
 
 const QuickStart = (props: any) => {
 
@@ -62,8 +62,69 @@ await app.listen({ port: PORT });`}
       />
       <br/>
       <h2>Sending ObsidianSchema</h2>
+      <CodeBlock
+        text={`import App from './app.tsx';
+
+interface initialState {
+  obsidianSchema?: any;
+}
+
+const initialState: initialState = {};
+
+initialState.obsidianSchema = GraphQLRouter.obsidianSchema;
+
+const router = new Router();
+router.get('/', handlePage);
+
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+function handlePage(ctx: any) {
+  try {
+    const body = (ReactDomServer as any).renderToString(
+      <ObsidianWrapper>
+        <App />
+      </ObsidianWrapper>
+    );
+    ctx.response.body = \`<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>SSR React App</title>
+        <script>
+          window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
+        </script>
+      </head>
+      <body >
+        <div id="root">\${body}</div>
+        <script src="/static/client.js" defer></script>
+      </body>
+      </html>\`;
+  } catch (error) {
+    console.error(error);
+  }
+}`}
+        language={"typescript"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
       <h2>Creating the Wrapper</h2>
+      <CodeBlock
+        text={``}
+        language={"typescript"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
       <h2>Making a Query</h2>
+      <CodeBlock
+        text={``}
+        language={"typescript"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
     </div>
   )
 }
