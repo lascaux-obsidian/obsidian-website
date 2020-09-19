@@ -1,47 +1,118 @@
 import { React } from '../../../deps.ts';
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      [elemName: string]: any;
-    }
-  }
-}
-
 
 const DocsContext = (props: any) => {
+  const { setDocsPage } = props;
 
   return (
-    <div>
-      <ul id="docsTOC">
-        <li>Quick Start</li>
-        <li>Overview</li>
-        <li>Basics
-          <ul>
-            <li>Getting Started</li>
-            <li>Server-Side Rendering</li>
-            <li>Queries</li>
-            <li>Mutations</li>
-            <li>Errors</li>
-          </ul>
-        </li>
-        <li>Philosophy</li>
-        <li>Caching
-          <ul>
-            <li>Strategies</li>
-            <li>Client</li>
-            <li>Server</li>
-            <li>Errors</li>
-          </ul>
-        </li>
-        <li>Advanced
-          <ul>
-            <li>Persistence</li>
-            <li>Polling</li>
-            <li>Subscriptions</li>
-          </ul>
-        </li>
-      </ul>
+    <div id="docsTOC">
+      <div className="list-group">
+        <button
+          className={`list-group-item list-group-item-action ${props.docsPage === 'QuickStart' ? "active" : ""}`}
+          onClick={() => {
+            setDocsPage('QuickStart');
+          }}
+        >Quick Start</button>
+        <button
+          className={`list-group-item list-group-item-action ${props.docsPage === 'Overview' ? "active" : ""}`}
+          onClick={() => {
+            setDocsPage('Overview');
+          }}
+        >Overview</button>
+        <div className="list-group-item">
+          <h6>Basics</h6>
+          <div className="list-group">
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'GettingStarted' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('GettingStarted');
+              }}
+            >Getting Started</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'ServerSideRendering' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('ServerSideRendering');
+              }}
+            >Server-Side Rendering</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Queries' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Queries');
+              }}
+            >Queries</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Mutations' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Mutations');
+              }}
+            >Mutations</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'BasicsErrors' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('BasicsErrors');
+              }}
+            >Errors</button>
+          </div>
+        </div>
+        <button
+          className={`list-group-item list-group-item-action ${props.docsPage === 'Philosophy' ? "active" : ""}`}
+          onClick={() => {
+            setDocsPage('Philosophy');
+          }}
+        >Philosophy</button>
+        <div className="list-group-item">
+          <h6>Caching</h6>
+          <div className="list-group">
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Strategies' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Strategies');
+              }}
+            >Strategies</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Client' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Client');
+              }}
+            >Client</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Server' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Server');
+              }}
+            >Server</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'CachingErrors' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('CachingErrors');
+              }}
+            >Errors</button>
+          </div>
+        </div>
+        <div className="list-group-item">
+          <h6>Advanced</h6>
+          <div className="list-group">
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Persistence' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Persistence');
+              }}
+            >Persistence</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Polling' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Polling');
+              }}
+            >Polling</button>
+            <button
+              className={`list-group-item list-group-item-action ${props.docsPage === 'Subscriptions' ? "active" : ""}`}
+              onClick={() => {
+                setDocsPage('Subscriptions');
+              }}
+            >Subscriptions</button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

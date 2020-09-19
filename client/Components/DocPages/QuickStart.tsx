@@ -1,65 +1,146 @@
-import { React, CodeBlock, monokai, dracula } from '../../../deps.ts';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      div: any;
-      h1: any;
-      h2: any;
-      h3: any;
-      p: any;
-      code: any;
-    }
-  }
-}
+import { React, CodeBlock, monokai } from '../../../deps.ts';
 
 const QuickStart = (props: any) => {
 
   return (
     <div className="docContainer">
       <h1>Quick Start</h1>
-      <p><code>obsidian</code> is Deno's first native GraphQL caching client and server module.  Boasting lightning-fast caching and fetching capabilities alongside headlining normalization and destructuring strategies, <code>obsidian</code> is equipped to support scalable, highly performant applications.</p>
-      <p>Optimized for use in server-side rendered React apps built with Deno, fullstack integration of <code>obsidian</code> enables many of its most powerful features, including optimized caching exchanges between client and server as well as server-side user session storage, maintaining the benefits of server-side rendering even after client-side caches have expired.</p>
+      <p><code className="obsidianInline">obsidian</code> is Deno's first native GraphQL caching client and server module.  Boasting lightning-fast caching and fetching capabilities alongside headlining normalization and destructuring strategies, <code className="obsidianInline">obsidian</code> is equipped to support scalable, highly performant applications.</p>
+      <p>Optimized for use in server-side rendered React apps built with Deno, fullstack integration of <code className="obsidianInline">obsidian</code> enables many of its most powerful features, including optimized caching exchanges between client and server as well as server-side user session storage, maintaining the benefits of server-side rendering even after client-side caches have expired.</p>
       <h2>Installation</h2>
       <p>In the server:</p>
       <CodeBlock
-        text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts'"}
-        language={"jsx"}
+        text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';"}
+        language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
-        className="codeBlock"
       />
+      <br/>
       <p>In the app:</p>
       <CodeBlock
-        text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts'"}
-        language={"jsx"}
+        text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';"}
+        language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
-        className="codeBlock"
       />
+      <br/>
       <h2>Creating the Router</h2>
       <CodeBlock
-        text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian/mod.ts'
-import { React } from 'https://dev.jspm.io/react@16.13.1';
-import { App } from 'App.tsx';
+        text={`import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
+import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
 
-class Wrapper extends React.Component {
-  render() {
-    return (
-      <ObsidianWrapper>
-        <App />
-      </ObsidianWrapper>
-    )
+const PORT = 8000;
+
+const app = new Application();
+
+const types = (gql as any)\`
+  // Type definitions
+\`;
+
+const resolvers = {
+  Query: {
+    // Resolvers
   }
-}`}
-        language={"jsx"}
+}
+
+interface ObsRouter extends Router {
+  obsidianSchema?: any;
+}
+
+const GraphQLRouter = await ObsidianRouter<ObsRouter>({
+  Router,
+  typeDefs: types,
+  resolvers: resolvers,
+});
+
+app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
+
+await app.listen({ port: PORT });`}
+        language={"typescript"}
         showLineNumbers={true}
         theme={monokai}
-        className="codeBlock"
       />
+      <br/>
       <h2>Sending ObsidianSchema</h2>
+      <CodeBlock
+        text={`interface initialState {
+  obsidianSchema?: any;
+}
+
+const initialState: initialState = {
+  obsidianSchema: GraphQLRouter.obsidianSchema
+}
+
+const router = new Router();
+router.get('/', handlePage);
+
+function handlePage(ctx: any) {
+  try {
+    const body = (ReactDomServer as any).renderToString(<App />);
+    ctx.response.body = \`<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>SSR React App</title>
+        <script>
+          window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
+        </script>
+      </head>
+      <body>
+        <div id="root">\${body}</div>
+        <script src="/static/client.tsx" defer></script>
+      </body>
+      </html>\`;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+app.use(router.routes(), router.allowedMethods());`}
+        language={"tsx"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
       <h2>Creating the Wrapper</h2>
+      <CodeBlock
+        text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+
+const App = () => {
+  return (
+    <ObsidianWrapper>
+      <WeatherApp />
+    </ObsidianWrapper>
+  );
+};`}
+        language={"tsx"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
       <h2>Making a Query</h2>
+      <CodeBlock
+        text={`import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+
+const WeatherApp = () => {
+  const { gather } = useObsidian();
+  const [weather, setWeather] = useState('Sunny');
+
+  return (
+    <h1>{weather}</h1>
+    <button
+      onClick={() => {
+        gather(\`query { getWeather { id description } }\`)
+        .then(resp => setWeather(resp.data.getWeather.description))
+      }}
+    >Get Weather</button>
+  );
+};`}
+        language={"tsx"}
+        showLineNumbers={true}
+        theme={monokai}
+      />
+      <br/>
     </div>
   )
 }

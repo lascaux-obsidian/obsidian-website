@@ -18,14 +18,14 @@ declare global {
 }
 
 const NavBar = (props: any) => {
-  const { page } = props;
+  const { page, docsPage, setDocsPage } = props;
 
   let curContext;
 
   if (page === 'home') curContext = <MainContext />;
   if (page === 'about') curContext = <AboutContext user={props.user} />;
   if (page === 'demo') curContext = <DemoContext />;
-  if (page === 'docs') curContext = <DocsContext />;
+  if (page === 'docs') curContext = <DocsContext docsPage={docsPage} setDocsPage={setDocsPage} />;
 
   return (
     <div
@@ -52,7 +52,11 @@ const NavBar = (props: any) => {
       </div>
       <div
         className='sideContent'
-        style={page === 'home' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
+        style={
+          page === 'home'
+            ? { backgroundColor: 'rgba(0,0,0,0)', overflow: 'visible' }
+            : {}
+        }
       >
         {curContext}
       </div>

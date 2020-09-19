@@ -15,7 +15,7 @@ const users = [
     firstName: 'Alonso',
     lastName: 'Garza',
     image:
-      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462327/Obsidian/alonso_tjoj05.jpg',
+      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600479739/Obsidian/WhatsApp_Image_2020-09-18_at_8.38.09_PM_pgshgj.jpg',
 
     info: 'Hello there! Did you read my book "Jane Austin: The Alonso Story"?',
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
@@ -28,7 +28,7 @@ const users = [
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462593/Obsidian/image_1_c7sggv.jpg',
     info: 'Hello there! Did you read my book "Dont forget your tie!"?',
-    linkedin: 'https://www.linkedin.com/in/travis-frank-89a526a5/',
+    linkedin: 'https://linkedin.com/in/travis-m-frank',
     github: 'https://github.com/TravisFrankMTG',
   },
   {

@@ -1,8 +1,7 @@
 import { Application, Router } from './serverDeps.ts';
-import { React, ReactDomServer, ObsidianWrapper } from './deps.ts';
+import { React, ReactDomServer } from './deps.ts';
 import App from './client/app.tsx';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
-// import { ObsidianWrapper } from './ObsidianWrapper.jsx';
 
 const PORT = 3000;
 
@@ -82,11 +81,7 @@ export { app };
 
 function handlePage(ctx: any) {
   try {
-    const body = (ReactDomServer as any).renderToString(
-      <ObsidianWrapper>
-        <App state={initialState} />
-      </ObsidianWrapper>
-    );
+    const body = (ReactDomServer as any).renderToString(<App />);
     ctx.response.body = `<!DOCTYPE html>
   <html lang="en">
   <head>
@@ -103,7 +98,7 @@ function handlePage(ctx: any) {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Document</title>
+    <title>Obsidian</title>
     <script>
       window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
     </script>

@@ -13,30 +13,34 @@ declare global {
 const Cache = (props: any) => {
   const { cache } = props;
 
-
   const cachedPair: any = [];
 
   Object.entries(cache).forEach((pair, i, arr) => {
     if (pair[1] instanceof Object) {
       if (i === arr.length) {
         cachedPair.push(
-          <div className="p">
-            <p className="key">{pair[0]} : </p>
-            <NestedCache cache={pair[1]} />
-          </div>)
+          <div className='p'>
+            <p className='key'>{pair[0]} : </p>
+            <NestedCache key={`nestedCache${i}`} cache={pair[1]} />
+          </div>
+        );
       } else {
-        cachedPair.push(<div className="p">{pair[0]} : <NestedCache cache={pair[1]} /></div>)
+        cachedPair.push(
+          <div className='p'>
+            {pair[0]} : <NestedCache key={`nestedCache2${i}`} cache={pair[1]} />
+          </div>
+        );
       }
     } else {
-      cachedPair.push(<p>{pair[0]} : {pair[1]}</p>)
-    }  
-  })
+      cachedPair.push(
+        <p>
+          {pair[0]} : {pair[1]}
+        </p>
+      );
+    }
+  });
 
-  return (
-    <>
-      {cachedPair}
-    </>
-  );
+  return <>{cachedPair}</>;
 };
 
 export default Cache;
