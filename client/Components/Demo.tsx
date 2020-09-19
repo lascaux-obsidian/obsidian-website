@@ -21,8 +21,8 @@ declare global {
 
 const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
-  const { fetcher, cache } = useObsidian();
-
+  const { fetcher, cache, clearCache } = useObsidian();
+  console.log(cache);
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
   const [population, setPopulation] = (React as any).useState(false);
@@ -55,10 +55,8 @@ const Demo = (props: any) => {
   const fetchData = (e: any) => {
     fetcher(query, {
       endpoint: 'https://countries-274616.ew.r.appspot.com',
-      destructure: true,
-    }).then((resp: any) =>
-      setTimeout(setResponse(JSON.stringify(resp.data)), 1000)
-    );
+      sessionStore: false,
+    }).then((resp: any) => setResponse(JSON.stringify(resp.data)));
   };
 
   return (
@@ -149,10 +147,12 @@ const Demo = (props: any) => {
               {response}
             </code>
           </pre>
+          <button onClick={clearCache}>Clear Cache</button>
           <pre className='pre-block'>
             Cache:
             <code className='code-block' id='code-pink'>
-              <Cache cache={cache} />
+              {/* {JSON.stringify(cache)} */}
+              <Cache key='cache' cache={cache} />
             </code>
           </pre>
         </div>
