@@ -167,6 +167,7 @@ path.bullHead {
 
 .sidebar .sideContent {
   height: 85%;
+  overflow: scroll;
 }
 
 @media screen and (max-width: 700px) {
@@ -368,6 +369,7 @@ pre {
 
 /* STYLES DOCS PAGE */
 
+
 .docContainer {
   padding: 2rem 3rem;
   width: 100%;
@@ -393,10 +395,10 @@ pre {
   margin-bottom: 1.5rem;
 }
 
-.docContainer .codeBlock {
-  margin-bottom: 1.5rem;
-}
-
 .docContainer code {
   font-family: monospace !important;
+}
+
+.token.operator {
+  background: transparent !important;
 }

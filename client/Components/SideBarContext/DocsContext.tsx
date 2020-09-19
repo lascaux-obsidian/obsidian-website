@@ -13,32 +13,32 @@ const DocsContext = (props: any) => {
 
   return (
     <div>
-      <ul id="docsTOC">
-        <li>Quick Start</li>
-        <li>Overview</li>
-        <li>Basics
-          <ul>
-            <li>Getting Started</li>
-            <li>Server-Side Rendering</li>
-            <li>Queries</li>
-            <li>Mutations</li>
-            <li>Errors</li>
+      <ul className="list-group">
+        <li className="list-group-item">Quick Start</li>
+        <li className="list-group-item">Overview</li>
+        <li className="list-group-item">Basics
+          <ul className="list-group">
+            <li className="list-group-item">Getting Started</li>
+            <li className="list-group-item">Server-Side Rendering</li>
+            <li className="list-group-item">Queries</li>
+            <li className="list-group-item">Mutations</li>
+            <li className="list-group-item">Errors</li>
           </ul>
         </li>
-        <li>Philosophy</li>
-        <li>Caching
-          <ul>
-            <li>Strategies</li>
-            <li>Client</li>
-            <li>Server</li>
-            <li>Errors</li>
+        <li className="list-group-item">Philosophy</li>
+        <li className="list-group-item">Caching
+          <ul className="list-group">
+            <li className="list-group-item">Strategies</li>
+            <li className="list-group-item">Client</li>
+            <li className="list-group-item">Server</li>
+            <li className="list-group-item">Errors</li>
           </ul>
         </li>
-        <li>Advanced
-          <ul>
-            <li>Persistence</li>
-            <li>Polling</li>
-            <li>Subscriptions</li>
+        <li className="list-group-item">Advanced
+          <ul className="list-group">
+            <li className="list-group-item">Persistence</li>
+            <li className="list-group-item">Polling</li>
+            <li className="list-group-item">Subscriptions</li>
           </ul>
         </li>
       </ul>

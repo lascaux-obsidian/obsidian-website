@@ -9,6 +9,7 @@ declare global {
       h3: any;
       p: any;
       code: any;
+      br: any;
     }
   }
 }
@@ -24,39 +25,56 @@ const QuickStart = (props: any) => {
       <p>In the server:</p>
       <CodeBlock
         text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts'"}
-        language={"jsx"}
+        language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
-        className="codeBlock"
       />
+      <br/>
       <p>In the app:</p>
       <CodeBlock
         text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts'"}
-        language={"jsx"}
+        language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
-        className="codeBlock"
       />
+      <br/>
       <h2>Creating the Router</h2>
       <CodeBlock
-        text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian/mod.ts'
-import { React } from 'https://dev.jspm.io/react@16.13.1';
-import { App } from 'App.tsx';
+        text={`import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
+import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
 
-class Wrapper extends React.Component {
-  render() {
-    return (
-      <ObsidianWrapper>
-        <App />
-      </ObsidianWrapper>
-    )
+const PORT = 8000;
+
+const app = new Application();
+
+const types = (gql as any)\`
+  // Type definitions
+\`;
+
+const resolvers = {
+  Query: {
+    // Resolvers
   }
-}`}
-        language={"jsx"}
+}
+
+interface ObsRouter extends Router {
+  obsidianSchema?: any;
+}
+
+const GraphQLRouter = await ObsidianRouter<ObsRouter>({
+  Router,
+  typeDefs: types,
+  resolvers: resolvers,
+});
+
+app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
+
+await app.listen({ port: PORT });`}
+        language={"typescript"}
         showLineNumbers={true}
         theme={monokai}
-        className="codeBlock"
       />
+      <br/>
       <h2>Sending ObsidianSchema</h2>
       <h2>Creating the Wrapper</h2>
       <h2>Making a Query</h2>
