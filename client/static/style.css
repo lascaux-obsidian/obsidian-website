@@ -72,7 +72,8 @@ body {
   background-color: rgba(219, 219, 219, 0.514);
   margin: 3vh 0 3vh 0;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 /* SIDEBAR STYLING */
@@ -184,14 +185,12 @@ path.bullHead {
     flex-direction: row;
     width: 100%;
     height: 15%;
-
     max-width: 100%;
     justify-content: center;
   }
 
   .navBtn {
     max-width: 15%;
-
     padding: 0;
   }
 
@@ -203,9 +202,10 @@ path.bullHead {
 
   .sidebar {
     flex-direction: row;
-    width: 100%;
+    width: 94%;
     height: 20%;
-    max-width: 100%;
+    max-width: 94%;
+    margin: 15px auto;
   }
 }
 
@@ -228,11 +228,59 @@ path.bullHead {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-size: 1vw;
 }
 pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
+
+.demoInput {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.buildQueryTitle {
+  text-align: center;
+}
+
+.showQuery, .buildQuery {
+  display: inline-block;
+}
+
+#stretchQuery {
+  margin: auto;
+  width: 80%;
+}
+
+.buildQuery {
+  color: rgb(20, 20, 20);
+  border-radius: 10px;
+  background-color: rgb(212, 212, 212);
+  width: 40%;
+  padding: 2%;
+}
+
+.showQuery {
+  width: 40%;
+}
+
+#code-black {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+#code-yellow {
+  background-color: rgb(20, 20, 20);
+  color: rgb(255, 255, 138);
+}
+
+#code-pink {
+  background-color: rgb(20, 20, 20);
+  color: pink;
+}
+
 
 /* Carousel Styling! */
 #about::before,
@@ -366,6 +414,21 @@ pre {
 }
 
 
+.tab {
+  margin-left: 30px;
+}
+
+.nested {
+  margin: 10px 0 0 30px;
+}
+
+.p {
+  margin-bottom: 1rem;
+}
+
+.key {
+  color: rgb(0, 139, 23);
+}
 /* STYLES DOCS PAGE */
 
 .docContainer {
