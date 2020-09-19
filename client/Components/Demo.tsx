@@ -65,90 +65,94 @@ const Demo = (props: any) => {
     <>
       <div className='mainContainer'>
         <div id='demo-block'>
-          <div className="demoInput">
-          <div className="buildQuery">
-            <h2 className="buildQueryTitle">Build A Query</h2>
-          <br></br>
+          <div className='demoInput'>
+            <div className='buildQuery'>
+              <h2 className='buildQueryTitle'>Build A Query</h2>
+              <br></br>
 
-          <br></br>
-          <label htmlFor='country'>Choose a country: </label>
-          <select
-            name='country'
-            id='country'
-            onChange={(e: any) =>
-              setCountry(e.target.value.substr(e.target.value.length - 4))
-            }
-          >
-            <option value='United States of America #4425'>
-              United States
-            </option>
-            <option value='Peru #3297'>Peru</option>
-            <option value='France #1528'>France</option>
-            <option value='Iraq #2071'>Iraq</option>
-          </select>
-          <p>What info would you like to request about this country?</p>
-          <input
-            type='checkbox'
-            id='name'
-            name='name'
-            value='name'
-            onChange={(e: any) => {
-              setName(!name);
-            }}
-          ></input>
-          <label htmlFor='name'>Name of Country</label>
-          <br></br>
-          <input
-            type='checkbox'
-            id='population'
-            name='population'
-            value='population'
-            onChange={(e: any) => {
-              setPopulation(!population);
-            }}
-          ></input>
-          <label htmlFor='population'>Population</label>
-          <br></br>
-          <input
-            type='checkbox'
-            id='flag'
-            name='flag'
-            value='flag'
-            onChange={(e: any) => {
-              setFlag(!flag);
-            }}
-          ></input>
-          <label htmlFor='flag'>Flag</label>
-          <br></br>
-          <input
-            type='checkbox'
-            id='borders'
-            name='borders'
-            value='borders'
-            onChange={(e: any) => {
-              setBorders(!borders);
-            }}
-          ></input>
-          <label htmlFor='borders'>Border Countries</label>
-          <br></br>
-          <button onClick={fetchData}>Fetch</button>
-          </div>
-          <div className="showQuery">
-          <pre className='pre-block' id="stretchQuery">
-            Query:
-            <code className='code-block' id="code-black">{query}</code>
-          </pre>
-          </div>
+              <br></br>
+              <label htmlFor='country'>Choose a country: </label>
+              <select
+                name='country'
+                id='country'
+                onChange={(e: any) =>
+                  setCountry(e.target.value.substr(e.target.value.length - 4))
+                }
+              >
+                <option value='United States of America #4425'>
+                  United States
+                </option>
+                <option value='Peru #3297'>Peru</option>
+                <option value='France #1528'>France</option>
+                <option value='Iraq #2071'>Iraq</option>
+              </select>
+              <p>What info would you like to request about this country?</p>
+              <input
+                type='checkbox'
+                id='name'
+                name='name'
+                value='name'
+                onChange={(e: any) => {
+                  setName(!name);
+                }}
+              ></input>
+              <label htmlFor='name'>Name of Country</label>
+              <br></br>
+              <input
+                type='checkbox'
+                id='population'
+                name='population'
+                value='population'
+                onChange={(e: any) => {
+                  setPopulation(!population);
+                }}
+              ></input>
+              <label htmlFor='population'>Population</label>
+              <br></br>
+              <input
+                type='checkbox'
+                id='flag'
+                name='flag'
+                value='flag'
+                onChange={(e: any) => {
+                  setFlag(!flag);
+                }}
+              ></input>
+              <label htmlFor='flag'>Flag</label>
+              <br></br>
+              <input
+                type='checkbox'
+                id='borders'
+                name='borders'
+                value='borders'
+                onChange={(e: any) => {
+                  setBorders(!borders);
+                }}
+              ></input>
+              <label htmlFor='borders'>Border Countries</label>
+              <br></br>
+              <button onClick={fetchData}>Fetch</button>
+            </div>
+            <div className='showQuery'>
+              <pre className='pre-block' id='stretchQuery'>
+                Query:
+                <code className='code-block' id='code-black'>
+                  {query}
+                </code>
+              </pre>
+            </div>
           </div>
           <br></br>
           <pre className='pre-block'>
             Response:
-            <code className='code-block' id="code-yellow">{response}</code>
+            <code className='code-block' id='code-yellow'>
+              {response}
+            </code>
           </pre>
           <pre className='pre-block'>
             Cache:
-            <code className='code-block' id="code-pink">
-              <Cache cache={cache}/>
+            <code className='code-block' id='code-pink'>
+              <Cache cache={cache} />
             </code>
           </pre>
         </div>
