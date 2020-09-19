@@ -63,22 +63,16 @@ await app.listen({ port: PORT });`}
       <br/>
       <h2>Sending ObsidianSchema</h2>
       <CodeBlock
-        text={`import React from 'https://dev.jspm.io/react@16.13.1';
-import ReactDomServer from 'https://dev.jspm.io/react-dom@16.13.1/server';
-import App from './app.tsx';
-
-interface initialState {
+        text={`interface initialState {
   obsidianSchema?: any;
 }
 
-const initialState: initialState = {};
-
-initialState.obsidianSchema = GraphQLRouter.obsidianSchema;
+const initialState: initialState = {
+  obsidianSchema: GraphQLRouter.obsidianSchema
+}
 
 const router = new Router();
 router.get('/', handlePage);
-
-app.use(router.routes(), router.allowedMethods());
 
 function handlePage(ctx: any) {
   try {
@@ -92,15 +86,17 @@ function handlePage(ctx: any) {
           window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
         </script>
       </head>
-      <body >
+      <body>
         <div id="root">\${body}</div>
-        <script src="/static/client.js" defer></script>
+        <script src="/static/client.tsx" defer></script>
       </body>
       </html>\`;
   } catch (error) {
     console.error(error);
   }
-}`}
+}
+
+app.use(router.routes(), router.allowedMethods());`}
         language={"tsx"}
         showLineNumbers={true}
         theme={monokai}
@@ -113,9 +109,7 @@ function handlePage(ctx: any) {
 const App = () => {
   return (
     <ObsidianWrapper>
-      <div>
-        <h1>Hello World</h1>
-      </div>
+      <WeatherApp />
     </ObsidianWrapper>
   );
 };`}
@@ -126,7 +120,22 @@ const App = () => {
       <br/>
       <h2>Making a Query</h2>
       <CodeBlock
-        text={``}
+        text={`import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+
+const WeatherApp = () => {
+  const { gather } = useObsidian();
+  const [weather, setWeather] = useState('Sunny');
+
+  return (
+    <h1>{weather}</h1>
+    <button
+      onClick={() => {
+        gather(\`query { getWeather { id description } }\`)
+        .then(resp => setWeather(resp.data.getWeather.description))
+      }}
+    >Get Weather</button>
+  );
+};`}
         language={"tsx"}
         showLineNumbers={true}
         theme={monokai}

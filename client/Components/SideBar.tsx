@@ -18,14 +18,14 @@ declare global {
 }
 
 const NavBar = (props: any) => {
-  const { page } = props;
+  const { page, docsPage, setDocsPage } = props;
 
   let curContext;
 
   if (page === 'home') curContext = <MainContext />;
   if (page === 'about') curContext = <AboutContext user={props.user} />;
   if (page === 'demo') curContext = <DemoContext />;
-  if (page === 'docs') curContext = <DocsContext />;
+  if (page === 'docs') curContext = <DocsContext docsPage={docsPage} setDocsPage={setDocsPage} />;
 
   return (
     <div
