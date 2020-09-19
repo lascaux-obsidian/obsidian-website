@@ -52,7 +52,11 @@ const NavBar = (props: any) => {
       </div>
       <div
         className='sideContent'
-        style={page === 'home' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
+        style={
+          page === 'home'
+            ? { backgroundColor: 'rgba(0,0,0,0)', overflow: 'visible' }
+            : {}
+        }
       >
         {curContext}
       </div>

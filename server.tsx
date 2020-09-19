@@ -102,7 +102,7 @@ function handlePage(ctx: any) {
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>Document</title>
+    <title>Obsidian</title>
     <script>
       window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
     </script>
