@@ -17,7 +17,7 @@ const users = [
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600479739/Obsidian/WhatsApp_Image_2020-09-18_at_8.38.09_PM_pgshgj.jpg',
 
-    info: 'Hello there! Did you read my book "Jane Austin: The Alonso Story"?',
+    info: 'Alonso Garza is a full-stack software engineer....',
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
     github: 'https://github.com/Alonsog66',
   },
@@ -34,7 +34,8 @@ const users = [
   {
     firstName: 'Matt',
     lastName: 'Meigs',
-    image: '/static/matt.jpeg',
+    image:
+      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462623/Obsidian/MattMeigsObsidian_iwncyq.jpg',
     info:
       'Hello there! Did you read my book "Appropriate book names for everyone!"?',
     linkedin: 'https://www.linkedin.com/in/matt-meigs/',
