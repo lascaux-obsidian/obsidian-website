@@ -379,7 +379,7 @@ pre {
 
 .slideContent {
   width: 50vw;
-  height: 75vw;
+  height: 65vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -611,5 +611,9 @@ pre {
 
   .social-button {
     padding-top: 0;
+  }
+
+  .slideContent {
+    height: 75vw;
   }
 }
