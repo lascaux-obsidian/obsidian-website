@@ -43,6 +43,15 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 
+a {
+  color: #e83e8c !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .navBar {
   display: flex;
   flex-direction: column;
@@ -202,8 +211,8 @@ path.bullHead {
 .sidebar .sideContent {
   background-color: rgba(219, 219, 219, 0.25);
   height: 85%;
-  overflow: scroll;
-  padding: 2rem;
+  overflow-y: scroll;
+  padding: 0.6rem;
 }
 
 /* SIDEBAR SOCIAL ACCOUNT BUTTONS  */
@@ -231,10 +240,14 @@ path.bullHead {
 
 .pre-block {
   width: 60%;
-}
-.pre-block,
-.code-block {
+  border: 1px solid black;
+  display: block;
   background-color: #fff;
+  padding: 10px;
+  margin: 1vw;
+}
+/* .pre-block, */
+.code-block {
   border: 1px solid black;
   display: block;
   padding: 20px;
@@ -480,10 +493,28 @@ pre {
   margin-bottom: 1.5rem;
 }
 
+.docContainer h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.docContainer h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
 .docContainer p {
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
+}
+
+.docContainer .docAside {
+  border: 2px;
+  border-style: dashed;
+  padding: 1rem;
 }
 
 .docContainer code {
@@ -491,6 +522,7 @@ pre {
 }
 
 .obsidianInline {
+  font-size: 100%;
   color: #212529 !important;
 }
 
