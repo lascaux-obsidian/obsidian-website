@@ -11,23 +11,37 @@ declare global {
   }
 }
 
-
 const AboutContext = (props: any) => {
   const { user } = props;
   return (
-  <div>
-    <hr/>
-    <div>
-      <p className='user-info'>{ user.info }</p>
+    <div id='docsTOC'>
+      <div className='list-group'>
+        <h4
+          className={`list-group-item list-group-item-action 
+        `}
+        >
+          About
+        </h4>
+
+        <div className='list-group-item'>
+          <h6>{user.info}</h6>
+
+          <div className='social-button'>
+            <a
+              href={user.linkedin}
+              className='fab fa-linkedin fa-5x'
+              target='_blank'
+            ></a>
+            <a
+              href={user.github}
+              className='fab fa-github fa-5x'
+              target='_blank'
+            ></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <hr/>
-    <div className="social-button">
-      <a href={ user.linkedin } className="fab fa-linkedin fa-5x" target="_blank"></a>
-      <a href={ user.github } className="fab fa-github fa-5x" target="_blank"></a>
-    </div>
-    <hr/>
-  </div>
-  )
-}
+  );
+};
 
 export default AboutContext;
