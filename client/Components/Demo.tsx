@@ -148,10 +148,10 @@ const Demo = (props: any) => {
             </code>
           </pre>
           <button onClick={clearCache}>Clear Cache</button>
+
           <pre className='pre-block'>
             Cache:
             <code className='code-block' id='code-pink'>
-              {/* {JSON.stringify(cache)} */}
               <Cache key='cache' cache={cache} />
             </code>
           </pre>

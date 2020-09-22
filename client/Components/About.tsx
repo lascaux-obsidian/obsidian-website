@@ -17,7 +17,8 @@ const users = [
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600479739/Obsidian/WhatsApp_Image_2020-09-18_at_8.38.09_PM_pgshgj.jpg',
 
-    info: 'Alonso Garza is a full-stack software engineer....',
+    info:
+      'Alonso Garza is a full-stack software engineer from Austin, Texas. Alonso has a depth of knowledge in React, Node.js, Express, and a passion for solving complex problems and working in teams. Outside of coding, he loves to travel around Latin America and scuba dive!',
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
     github: 'https://github.com/Alonsog66',
   },
@@ -27,7 +28,8 @@ const users = [
     lastName: 'Frank',
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462593/Obsidian/image_1_c7sggv.jpg',
-    info: 'Hello there! Did you read my book "Dont forget your tie!"?',
+    info:
+      'Travis is a full stack software engineer focused on building scalable backend solutions. When he isn’t coding he enjoys playing board games, eating copious amounts of sushi, and conducting pit orchestras.',
     linkedin: 'https://linkedin.com/in/travis-m-frank',
     github: 'https://github.com/TravisFrankMTG',
   },
@@ -37,7 +39,7 @@ const users = [
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462623/Obsidian/MattMeigsObsidian_iwncyq.jpg',
     info:
-      'Hello there! Did you read my book "Appropriate book names for everyone!"?',
+      'Matt is a software engineer interested in clear and responsive frontend web design and algorithmic optimization through the full stack. He’s an expat from the Deep South, a lover of far-flung travel, and a former Broadway actor.',
     linkedin: 'https://www.linkedin.com/in/matt-meigs/',
     github: 'https://github.com/mmeigs',
   },

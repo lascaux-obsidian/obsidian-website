@@ -196,8 +196,8 @@ path.bullHead {
 .sidebar .sideContent {
   background-color: rgba(219, 219, 219, 0.25);
   height: 85%;
-  overflow: scroll;
-  padding: 2rem;
+  overflow-y: scroll;
+  padding: 0.6rem;
 }
 
 /* SIDEBAR SOCIAL ACCOUNT BUTTONS  */
@@ -267,10 +267,14 @@ path.bullHead {
 
 .pre-block {
   width: 60%;
-}
-.pre-block,
-.code-block {
+  border: 1px solid black;
+  display: block;
   background-color: #fff;
+  padding: 10px;
+  margin: 1vw;
+}
+/* .pre-block, */
+.code-block {
   border: 1px solid black;
   display: block;
   padding: 20px;
