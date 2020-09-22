@@ -7,7 +7,7 @@ const GettingStarted = (props: any) => {
       <h1>Getting Started</h1>
       <p>In this section, we'll learn <code className="obsidianInline">obsidian</code> by walking through the setup of a simple full stack server-side rendered React app in Deno.</p>
       <h2>ObsidianRouter</h2>
-      <p>We're going to build the backend of our app with <a href="https://deno.land/x/oak@v6.2.0">Oak</a>, a middleware framework for your Deno server.  ObsidianRouter is an <i>Oak router</i>, so we must build our server with Oak in order to use <code className="obsidianInline">obsidian</code>.</p>
+      <p>We're going to build the backend of our app with <a className="pinkA" href="https://deno.land/x/oak@v6.2.0">Oak</a>, a middleware framework for your Deno server.  ObsidianRouter is an <i>Oak router</i>, so we must build our server with Oak in order to use <code className="obsidianInline">obsidian</code>.</p>
       <h3>Installation</h3>
       <p>Thanks to Deno's ECMAScript package importing, installation of Oak and <code className="obsidianInline">obsidian</code> is incredibly simple.  Just import the pieces of the modules you need at the top of your server, like so:</p>
       <CodeBlock
