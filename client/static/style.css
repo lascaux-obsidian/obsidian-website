@@ -43,6 +43,15 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 
+a {
+  color: #e83e8c !important;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .navBar {
   display: flex;
   flex-direction: column;
@@ -516,10 +525,22 @@ pre {
   margin-bottom: 1.5rem;
 }
 
+.docContainer h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
 .docContainer p {
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 1.5rem;
+}
+
+.docContainer .docAside {
+  border: 2px;
+  border-style: dashed;
+  padding: 1rem;
 }
 
 .docContainer code {
@@ -527,6 +548,7 @@ pre {
 }
 
 .obsidianInline {
+  font-size: 100%;
   color: #212529 !important;
 }
 
