@@ -49,6 +49,7 @@ const GraphQLRouter = await ObsidianRouter<ObsRouter>({
   Router,
   typeDefs: types,
   resolvers: resolvers,
+  redisPort: 6379,
 });
 
 app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
@@ -122,7 +123,7 @@ const App = () => {
 
 const WeatherApp = () => {
   const { gather } = useObsidian();
-  const [weather, setWeather] = useState('Sunny');
+  const [weather, setWeather] = (React as any).useState('Sunny');
 
   return (
     <h1>{weather}</h1>
