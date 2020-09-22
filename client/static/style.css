@@ -531,6 +531,12 @@ pre {
   margin-bottom: 1.5rem;
 }
 
+.docContainer h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
 .docContainer p {
   font-size: 1rem;
   font-weight: 400;

@@ -38,9 +38,7 @@ const types = (gql as any)\`
 \`;
 
 const resolvers = {
-  Query: {
-    // Resolvers
-  }
+  // Resolvers
 }
 
 interface ObsRouter extends Router {
