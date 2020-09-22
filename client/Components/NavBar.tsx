@@ -53,6 +53,20 @@ const NavBar = (props: any) => {
         </svg>
         <h3 className="navBtnText">Docs</h3>
       </button>
+      <div className="navBarGitLink">
+      <a href='https://github.com/oslabs-beta/obsidian'>
+            <img
+              id='githubLogoTop'
+              src='../static/github-icon.svg'
+              alt='GitHub Logo'
+            />
+        </a>
+        </div>
+        <div className="navBarDenoLink">
+        <a href='https://deno.land/x/obsidian'>
+            <img src='../static/Deno-Logo.svg' alt='Deno Logo' />
+        </a>
+        </div>
     </div>
   );
 }

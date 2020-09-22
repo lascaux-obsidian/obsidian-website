@@ -8,3 +8,5 @@ COPY . .
 
 CMD [ "run", "--unstable", "--allow-net", "--allow-env", "--allow-read", "server.tsx", "-c", "tsconfig.json" ]
 
+
+# deno run --unstable --allow-net --allow-env --allow-read server.tsx -c tsconfig.json

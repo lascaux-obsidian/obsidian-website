@@ -43,7 +43,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 
-a {
+.pinkATags a {
   color: #e83e8c !important;
   text-decoration: none;
 }
@@ -68,12 +68,18 @@ a:hover {
   border-radius: 10px;
   /* // border: '1px solid #EBEBEC', */
   background-color: rgba(115, 119, 128, 0.25);
+  border: none;
+  border-style: none;
   padding: 2% 3%;
   height: 20%;
   max-height: 100px;
   min-height: 60px;
   animation: fadeInDown;
   animation-duration: 1s;
+}
+
+.navBtn:active {
+  border: none;
 }
 
 .navBtnText {
@@ -83,6 +89,12 @@ a:hover {
 
 .navBtn svg {
   width: 40%;
+}
+
+.navBarGitLink, .navBarDenoLink {
+  position: absolute;
+  display: none;
+  visibility: hidden;
 }
 
 .mainContainer {
@@ -187,6 +199,8 @@ path.bullHead {
 }
 
 .sidebar .codeLinks img {
+  width: 20px;
+  height: 20px;
   display: inline-block;
   z-index: 2;
 }
@@ -222,54 +236,12 @@ path.bullHead {
 }
 
 .fab:hover {
-  color: black;
+  color: rgb(169, 169, 169);
 }
 
 .user-info {
   text-align: center;
   padding: 20px 3px 0 3px;
-}
-
-@media screen and (max-width: 700px) {
-  html {
-    font-size: 18px;
-  }
-
-  .app {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navBar {
-    flex-direction: row;
-    width: 100%;
-    height: 15%;
-    z-index: 10;
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  .navBtn {
-    max-width: 15%;
-    z-index: 10;
-    padding: 0;
-  }
-
-  .mainContainer {
-    width: 90%;
-    height: 65%;
-    margin: 0 5%;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    z-index: 1;
-    width: 94%;
-    height: 20%;
-    max-width: 94%;
-    margin: 15px auto;
-  }
 }
 
 /* Demo Styling */
@@ -407,7 +379,7 @@ pre {
 
 .slideContent {
   width: 50vw;
-  height: 65vh;
+  height: 75vw;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -564,4 +536,80 @@ pre {
 
 .token.operator {
   background: transparent !important;
+}
+
+
+
+/* phone sizing */
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 1em;
+  }
+
+  .app {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navBar {
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    z-index: 10;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navBtn {
+    max-width: 15%;
+    z-index: 10;
+    padding: 0;
+  }
+
+  .mainContainer {
+    width: 90%;
+    height: 65%;
+    margin: 0 5%;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    z-index: 1;
+    width: 94%;
+    height: 20%;
+    max-width: 94%;
+    margin: 15px auto;
+  }
+
+  .codeLinks {
+    position: absolute;
+    display: none;
+    visibility: hidden;
+  }
+
+  .navBarGitLink {
+    margin-left: 7%;
+  }
+
+  .navBarGitLink, .navBarDenoLink {
+    position: relative;
+    display: inline-block;
+    visibility: visible;
+    max-width: 10%
+  }
+
+  #githubLogoTop {
+    width: 70%;
+  }
+
+  .navBarDenoLink img {
+    width: 90%;
+  }
+
+  .social-button {
+    padding-top: 0;
+  }
 }
