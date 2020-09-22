@@ -59,12 +59,18 @@ body {
   border-radius: 10px;
   /* // border: '1px solid #EBEBEC', */
   background-color: rgba(115, 119, 128, 0.25);
+  border: none;
+  border-style: none;
   padding: 2% 3%;
   height: 20%;
   max-height: 100px;
   min-height: 60px;
   animation: fadeInDown;
   animation-duration: 1s;
+}
+
+.navBtn:active {
+  border: none;
 }
 
 .navBtnText {
@@ -219,48 +225,6 @@ path.bullHead {
 .user-info {
   text-align: center;
   padding: 20px 3px 0 3px;
-}
-
-@media screen and (max-width: 700px) {
-  html {
-    font-size: 18px;
-  }
-
-  .app {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navBar {
-    flex-direction: row;
-    width: 100%;
-    height: 15%;
-    z-index: 10;
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  .navBtn {
-    max-width: 15%;
-    z-index: 10;
-    padding: 0;
-  }
-
-  .mainContainer {
-    width: 90%;
-    height: 65%;
-    margin: 0 5%;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    z-index: 1;
-    width: 94%;
-    height: 20%;
-    max-width: 94%;
-    margin: 15px auto;
-  }
 }
 
 /* Demo Styling */
@@ -532,4 +496,50 @@ pre {
 
 .token.operator {
   background: transparent !important;
+}
+
+
+
+/* phone sizing */
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 1em;
+  }
+
+  .app {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navBar {
+    flex-direction: row;
+    width: 100%;
+    height: 15%;
+    z-index: 10;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .navBtn {
+    max-width: 15%;
+    z-index: 10;
+    padding: 0;
+  }
+
+  .mainContainer {
+    width: 90%;
+    height: 65%;
+    margin: 0 5%;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    z-index: 1;
+    width: 94%;
+    height: 20%;
+    max-width: 94%;
+    margin: 15px auto;
+  }
 }
