@@ -18,7 +18,7 @@ const users = [
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600479739/Obsidian/WhatsApp_Image_2020-09-18_at_8.38.09_PM_pgshgj.jpg',
 
     info:
-      'Alonso Garza is a full-stack software engineer from Austin, Texas. Alonso has a depth of knowledge in React, Node.js, Express, and a passion for solving complex problems and working in teams. Outside of coding, he loves to travel around Latin America and scuba dive!',
+      'Alonso Garza is a full-stack software engineer from Austin, Texas. Alonso specializes in React, Node.js, Express, and is passionate about solving complex problems and working in teams. Outside of coding, he loves to travel around Latin America and scuba dive!',
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
     github: 'https://github.com/Alonsog66',
   },
