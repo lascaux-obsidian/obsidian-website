@@ -79,9 +79,9 @@ a:hover {
   cursor: pointer;
 }
 
-.navBtn:active {
+/* .navBtn:active {
   border: none;
-}
+} */
 
 .navBtnText {
   font-size: 1em;
