@@ -196,6 +196,7 @@ path.bullHead {
 .sidebar .codeLinks .codeLinkDiv {
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 
 .sidebar .codeLinks img {
@@ -205,8 +206,13 @@ path.bullHead {
   z-index: 2;
 }
 
+#denoImg {
+  width: 26px;
+  height: 26px;
+}
+
 #githubLogo {
-  margin-right: 2.5px;
+  /* margin-right: 2.5px; */
 }
 
 .sidebar .codeLinks h4 {
@@ -214,6 +220,7 @@ path.bullHead {
   margin: 0;
   color: #f7f7f7;
   z-index: 2;
+  margin-left: 1%;
 }
 
 .sidebar .sideContent {
