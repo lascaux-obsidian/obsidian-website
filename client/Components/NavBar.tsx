@@ -18,10 +18,23 @@ declare global {
 const NavBar = (props: any) => {
   const { setPage } = props;
 
+  (React as any).useEffect(() => {
+    let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
+
+    window.addEventListener(touchEvent, (e:any) => {
+      console.log(e.target)
+      if (e.target.id === 'ontouchie') {
+        setPage('about')
+      }
+    })
+  }, []);
+
+
   return (
     <div className="navBar">
       {/* <a href="jsx:setPage('docs');">DOCS LETS GO jsx</a> */}
       {/* <a href={() => setPage('docs')}>normal react</a> */}
+      <div id="ontouchie" style={{width: '60px', height: '60px', backgroundColor: 'white'}}>Touch me</div>
       <a href="javascript:setPage('docs');">string func</a>
       <a href="#" onClick={(e:any) => {e.preventDefault(); setPage('about');}}>onclick</a>
       <a href="#" onTouchEnd={(e:any) => {e.preventDefault(); setPage('about');}}>touchend</a>
