@@ -36,18 +36,18 @@ const NavBar = (props: any) => {
       <div className='codeLinks'>
         <a href='https://github.com/oslabs-beta/obsidian'>
           <div className='codeLinkDiv'>
-            <img
+            {/* <img
               id='githubLogo'
               src='../static/github-icon.svg'
               alt='GitHub Logo'
-            />
-            <h4>·GitHub</h4>
+            /> */}
+            <h4>{/* ·GitHub */}</h4>
           </div>
         </a>
         <a href='https://deno.land/x/obsidian'>
           <div className='codeLinkDiv'>
-            <img src='../static/Deno-Logo.svg' alt='Deno Logo' />
-            <h4>·deno.land</h4>
+            {/* <img src='../static/Deno-Logo.svg' alt='Deno Logo' /> */}
+            <h4>{/* ·deno.land */}</h4>
           </div>
         </a>
       </div>
