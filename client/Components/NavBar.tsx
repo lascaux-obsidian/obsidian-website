@@ -20,6 +20,10 @@ const NavBar = (props: any) => {
 
   return (
     <div className="navBar">
+      <a href="jsx:setPage('docs');">DOCS LETS GO jsx</a>
+      <a href={() => setPage('docs')}>normal react</a>
+      <a href={"javascript:setPage('docs');"}>brackets</a>
+      <a href="#" onClick={(e) => {e.preventDefault(); setPage('about');}}>brackets weird</a>
       <a><button className="navBtn" onClick={() => {setPage('home')}} onTouchEnd={() => {setPage('home')}}>
         <svg width="80%" height="70%" viewBox="0 0 16 16" className="bi bi-house-fill" fill="#EBEBEC" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
