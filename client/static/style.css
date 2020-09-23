@@ -155,6 +155,7 @@ div#logo {
   border-radius: 10px;
 }
 
+
 /* path#frontLeg {
   animation: bounce;
   animation-duration: 2s;
@@ -213,7 +214,7 @@ path.bullHead {
 }
 
 #githubLogo {
-  margin-right: 1%;
+  margin-right: 3%;
 }
 
 .sidebar .codeLinks h4 {
@@ -277,6 +278,15 @@ path.bullHead {
   flex-direction: column;
   font-size: 1vw;
 }
+
+#demo-block label {
+  margin: 0 10px;
+}
+
+.optionsForCountry {
+  margin-top: 5%;
+}
+
 pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
@@ -290,6 +300,7 @@ pre {
 
 .buildQueryTitle {
   text-align: center;
+  font-size: 3em;
 }
 
 .showQuery,
@@ -308,6 +319,10 @@ pre {
   background-color: rgb(212, 212, 212);
   width: 40%;
   padding: 2%;
+}
+
+#fetchBtn {
+  margin-top: 5%;
 }
 
 .showQuery {
