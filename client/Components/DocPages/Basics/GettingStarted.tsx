@@ -44,6 +44,7 @@ await app.listen({ port: PORT });`}
         text={`// server.tsx
 const types = (gql as any)\`
   type Movie {
+    id: ID
     title: String
     releaseYear: Int
   }
@@ -65,6 +66,7 @@ const resolvers = {
   Query: {
     getMovie: () => {
       return {
+        id: "1",
         title: "Up",
         releaseYear: 2009
       };
