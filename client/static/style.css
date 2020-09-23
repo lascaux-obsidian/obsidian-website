@@ -76,6 +76,7 @@ a:hover {
   min-height: 60px;
   animation: fadeInDown;
   animation-duration: 1s;
+  cursor: pointer;
 }
 
 .navBtn:active {
@@ -212,7 +213,7 @@ path.bullHead {
 }
 
 #githubLogo {
-  /* margin-right: 2.5px; */
+  margin-right: 1%;
 }
 
 .sidebar .codeLinks h4 {
