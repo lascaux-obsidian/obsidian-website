@@ -401,8 +401,8 @@ pre {
 }
 
 .slideContent {
-  width: 50vw;
-  height: 55vh;
+  width: 45vw;
+  height: 65vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -414,7 +414,7 @@ pre {
   align-content: flex-end;
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)))
-    rotateY(calc(-45deg * var(--dir)));
+    rotateY(calc(-10deg * var(--dir)));
 }
 
 .slideContentInner {
@@ -638,5 +638,7 @@ pre {
 
   .slideContent {
     height: 75vw;
+    transform: perspective(1000px) translateX(calc(100% * var(--offset)))
+    rotateY(calc(-0deg * var(--dir)));
   }
 }
