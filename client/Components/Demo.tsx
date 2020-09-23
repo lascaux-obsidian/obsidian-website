@@ -153,7 +153,11 @@ const Demo = (props: any) => {
               <Cache key='cache' cache={cache} />
             </code>
           </pre>
+          <div className='apiLink'>
+            <p>API used in this demo: <a href="https://github.com/lennertVanSever/graphcountries">https://github.com/lennertVanSever/graphcountries</a></p>
+          </div>
         </div>
+        
       </div>
       <SideBar page={props.page} />
     </>
