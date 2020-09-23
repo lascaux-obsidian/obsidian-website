@@ -134,7 +134,7 @@ function handlePage(ctx: any) {
       />
       <br/>
       <h3>Hydration</h3>
-      <p>We're almost there!  In order to reattach all of our React functionality to our prerendered app, we have to <i>hydrate</i> our root div.  First, let's create the client.tsx file that will contain the hydrate functionality:</p>
+      <p>We're almost there!  In order to reattach all of our React functionality to our pre-rendered app, we have to <i>hydrate</i> our root div.  First, let's create the client.tsx file that will contain the hydrate functionality:</p>
       <CodeBlock
         text={`// client.tsx
 import React from 'https://dev.jspm.io/react@16.13.1';

@@ -534,6 +534,12 @@ pre {
   color: #212529 !important;
 }
 
+.mission {
+  font-style: italic;
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
 .token.operator {
   background: transparent !important;
 }
