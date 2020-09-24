@@ -46,7 +46,7 @@ const NavBar = (props: any) => {
         </a>
         <a href='https://deno.land/x/obsidian'>
           <div className='codeLinkDiv'>
-            <img id="denoImg" src='../static/Deno-Logo.svg' alt='Deno Logo' />
+            <img id='denoImg' src='../static/Deno-Logo.svg' alt='Deno Logo' />
             <h4>deno.land</h4>
           </div>
         </a>

@@ -92,7 +92,8 @@ a:hover {
   width: 40%;
 }
 
-.navBarGitLink, .navBarDenoLink {
+.navBarGitLink,
+.navBarDenoLink {
   position: absolute;
   display: none;
   visibility: hidden;
@@ -154,7 +155,6 @@ div#logo {
 #logo svg {
   border-radius: 10px;
 }
-
 
 /* path#frontLeg {
   animation: bounce;
@@ -301,6 +301,10 @@ pre {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.query-timer {
+  font-size: 1.7rem;
 }
 
 .buildQueryTitle {
@@ -640,11 +644,12 @@ pre {
     margin-left: 7%;
   }
 
-  .navBarGitLink, .navBarDenoLink {
+  .navBarGitLink,
+  .navBarDenoLink {
     position: relative;
     display: inline-block;
     visibility: visible;
-    max-width: 10%
+    max-width: 10%;
   }
 
   #githubLogoTop {
@@ -662,6 +667,6 @@ pre {
   .slideContent {
     height: 75vw;
     transform: perspective(1000px) translateX(calc(100% * var(--offset)))
-    rotateY(calc(-0deg * var(--dir)));
+      rotateY(calc(-0deg * var(--dir)));
   }
 }

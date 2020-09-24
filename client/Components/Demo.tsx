@@ -21,6 +21,8 @@ declare global {
 
 const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
+  const [queryTime, setQueryTime] = (React as any).useState(0);
+
   const { gather, cache, clearCache } = useObsidian();
   console.log(cache);
   const [country, setCountry] = (React as any).useState('4425');
@@ -53,10 +55,14 @@ const Demo = (props: any) => {
   }
   `.trim();
   const fetchData = (e: any) => {
+    const start = Date.now();
     gather(query, {
       endpoint: 'https://countries-274616.ew.r.appspot.com',
       sessionStore: false,
-    }).then((resp: any) => setResponse(JSON.stringify(resp.data)));
+    }).then((resp: any) => {
+      setQueryTime(Date.now() - start);
+      setResponse(JSON.stringify(resp.data));
+    });
   };
 
   return (
@@ -82,7 +88,9 @@ const Demo = (props: any) => {
                 <option value='France #1528'>France</option>
                 <option value='Iraq #2071'>Iraq</option>
               </select>
-              <p className="optionsForCountry">What info would you like to request about this country?</p>
+              <p className='optionsForCountry'>
+                What info would you like to request about this country?
+              </p>
               <input
                 type='checkbox'
                 id='name'
@@ -127,7 +135,14 @@ const Demo = (props: any) => {
               ></input>
               <label htmlFor='borders'>Border Countries</label>
               <br></br>
-              <button id="fetchBtn" onClick={fetchData}>Fetch</button>
+
+              <button id='fetchBtn' onClick={fetchData}>
+                Fetch
+              </button>
+
+              <code className='code-block query-timer' id='code-black'>
+                {`Request Timer: ${queryTime}ms`}
+              </code>
             </div>
             <div className='showQuery'>
               <pre className='pre-block' id='stretchQuery'>
@@ -154,10 +169,14 @@ const Demo = (props: any) => {
             </code>
           </pre>
           <div className='apiLink'>
-            <p>API used in this demo: <a href="https://github.com/lennertVanSever/graphcountries">https://github.com/lennertVanSever/graphcountries</a></p>
+            <p>
+              API used in this demo:{' '}
+              <a href='https://github.com/lennertVanSever/graphcountries'>
+                https://github.com/lennertVanSever/graphcountries
+              </a>
+            </p>
           </div>
         </div>
-        
       </div>
       <SideBar page={props.page} />
     </>

@@ -14,8 +14,8 @@ declare global {
 const AboutContext = (props: any) => {
   const { user } = props;
   return (
-    <div id='docsTOC'>
-      <div className='list-group'>
+    <div id='docsTOC' style={{ height: '100%' }}>
+      <div className='list-group' style={{ height: '100%' }}>
         <h4
           className={`list-group-item list-group-item-action 
         `}
@@ -23,8 +23,16 @@ const AboutContext = (props: any) => {
           About
         </h4>
 
-        <div className='list-group-item'>
-          <h6>{user.info}</h6>
+        <div
+          className='list-group-item'
+          style={{
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
+        >
+          <h5>{user.info}</h5>
 
           <div className='social-button'>
             <a
