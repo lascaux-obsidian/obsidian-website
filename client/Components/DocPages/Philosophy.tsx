@@ -14,7 +14,7 @@ const Philosophy = (props: any) => {
       <p>While building <code className="obsidianInline">obsidian</code>'s caching strategies, speed reigned supreme.  We believe that a caching layer for your GraphQL service has to be fast and efficient.  Your API should not take a large performance hit after incorporating a cache.</p>
       <h3>Opinionated</h3>
       <p className="mission">Caching with obsidian should be structured - structure brings clarity, and clarity brings efficiency</p>
-      <p><code className="obsidianInline">obsidian</code> makes no claim to be a one-size-fits-all solution.  Our API is highly opinionated, enforcing reasonably rigid structure to your application.  In exchange, our caching solutions offer extremely clear strategies, streamlining the development process and maintaining efficiency throughout your GraphQL service.</p>
+      <p><code className="obsidianInline">obsidian</code> makes no claim to be a one-size-fits-all solution.  Our API is highly opinionated, enforcing reasonably rigid structure upon your application.  In exchange, our caching solutions offer extremely clear strategies, streamlining the development process and maintaining efficiency throughout your GraphQL service.</p>
       <h3>Consistent</h3>
       <p className="mission">Caching with obsidian should prize consistency - discerning truth should be automatic and transparent</p>
       <p>Many GraphQL caching solutions give up on consistency and mutations, choosing to give the tools to the developer and letting go of the reigns.  With <code className="obsidianInline">obsidian</code>, consistent truth is a priority and a responsibility, rather than an afterthought.</p>
