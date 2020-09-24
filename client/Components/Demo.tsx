@@ -21,7 +21,7 @@ declare global {
 
 const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
-  const { fetcher, cache, clearCache } = useObsidian();
+  const { gather, cache, clearCache } = useObsidian();
   console.log(cache);
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
@@ -44,7 +44,7 @@ const Demo = (props: any) => {
   `;
 
   const query = `{
-    Country (_id: "${country}") 
+    Country (_id: "${country}")
     {
         _id${name ? '\n        name' : ''}${
     population ? '\n        population' : ''
@@ -53,7 +53,7 @@ const Demo = (props: any) => {
   }
   `.trim();
   const fetchData = (e: any) => {
-    fetcher(query, {
+    gather(query, {
       endpoint: 'https://countries-274616.ew.r.appspot.com',
       sessionStore: false,
     }).then((resp: any) => setResponse(JSON.stringify(resp.data)));

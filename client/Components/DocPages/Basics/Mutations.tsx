@@ -40,7 +40,7 @@ return (
   <div>
     <button
       onClick(() => {
-        mutate(\`mutation deleteMovie(id: 1) { id title releaseYear }\`)
+        mutate(\`mutation { deleteMovie(id: 1) { id title releaseYear } }\`)
         .then(resp => console.log(resp))
       })
     >Delete Movie</button>
