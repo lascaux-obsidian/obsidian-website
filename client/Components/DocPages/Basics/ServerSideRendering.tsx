@@ -5,9 +5,9 @@ const ServerSideRendering = (props: any) => {
   return (
     <div className="docContainer">
       <h1>Server-Side Rendering</h1>
-      <p>In this chapter, we'll implement ObsidianWrapper, <code className="obsidianInline">obsidian</code>'s GraphQL client, in a React app built with server-side rendering.</p>
+      <p>In this chapter, we'll learn how to implement ObsidianWrapper, <code className="obsidianInline">obsidian</code>'s GraphQL client, in a React app built with server-side rendering.</p>
       <h2>ObsidianWrapper</h2>
-      <p>Before we can discuss server-side rendering in Deno, we must first build out our client application.  Setting up ObsidianWrapper is super simple: simply wrap our app with ObsidianWrapper, and attach ObsidianRouter's <code className="obsidianInline">obsidianSchema</code> to the window object in your HTML, like so:</p>
+      <p>Before we can discuss server-side rendering in Deno, we must first build out our client application.  Setting up ObsidianWrapper is super simple: wrap your app with ObsidianWrapper, and attach ObsidianRouter's <code className="obsidianInline">obsidianSchema</code> to the window object, like so:</p>
       <p><code className="obsidianInline">window.__INITIAL_STATE__ = {"{ obsidianSchema: // obsidianSchema here }"}</code></p>
       <h3>Installation</h3>
       <p>Import React and ObsidianWrapper at your top-level component along with any child components:</p>
@@ -134,7 +134,7 @@ function handlePage(ctx: any) {
       />
       <br/>
       <h3>Hydration</h3>
-      <p>We're almost there!  In order to reattach all of our React functionality to our prerendered app, we have to <i>hydrate</i> our root div.  First, let's create the client.tsx file that will contain the hydrate functionality:</p>
+      <p>We're almost there!  In order to reattach all of our React functionality to our pre-rendered app, we have to <i>hydrate</i> our root div.  First, let's create the client.tsx file that will contain the hydrate functionality:</p>
       <CodeBlock
         text={`// client.tsx
 import React from 'https://dev.jspm.io/react@16.13.1';

@@ -21,7 +21,9 @@ declare global {
 
 const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
-  const { fetcher, cache, clearCache } = useObsidian();
+  const [queryTime, setQueryTime] = (React as any).useState(0);
+
+  const { gather, cache, clearCache } = useObsidian();
   console.log(cache);
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
@@ -44,7 +46,7 @@ const Demo = (props: any) => {
   `;
 
   const query = `{
-    Country (_id: "${country}") 
+    Country (_id: "${country}")
     {
         _id${name ? '\n        name' : ''}${
     population ? '\n        population' : ''
@@ -53,10 +55,14 @@ const Demo = (props: any) => {
   }
   `.trim();
   const fetchData = (e: any) => {
-    fetcher(query, {
+    const start = Date.now();
+    gather(query, {
       endpoint: 'https://countries-274616.ew.r.appspot.com',
       sessionStore: false,
-    }).then((resp: any) => setResponse(JSON.stringify(resp.data)));
+    }).then((resp: any) => {
+      setQueryTime(Date.now() - start);
+      setResponse(JSON.stringify(resp.data));
+    });
   };
 
   return (
@@ -66,8 +72,6 @@ const Demo = (props: any) => {
           <div className='demoInput'>
             <div className='buildQuery'>
               <h2 className='buildQueryTitle'>Build A Query</h2>
-              <br></br>
-
               <br></br>
               <label htmlFor='country'>Choose a country: </label>
               <select
@@ -84,7 +88,9 @@ const Demo = (props: any) => {
                 <option value='France #1528'>France</option>
                 <option value='Iraq #2071'>Iraq</option>
               </select>
-              <p>What info would you like to request about this country?</p>
+              <p className='optionsForCountry'>
+                What info would you like to request about this country?
+              </p>
               <input
                 type='checkbox'
                 id='name'
@@ -129,7 +135,14 @@ const Demo = (props: any) => {
               ></input>
               <label htmlFor='borders'>Border Countries</label>
               <br></br>
-              <button onClick={fetchData}>Fetch</button>
+
+              <button id='fetchBtn' onClick={fetchData}>
+                Fetch
+              </button>
+
+              <code className='code-block query-timer' id='code-black'>
+                {`Request Timer: ${queryTime}ms`}
+              </code>
             </div>
             <div className='showQuery'>
               <pre className='pre-block' id='stretchQuery'>
@@ -155,6 +168,14 @@ const Demo = (props: any) => {
               <Cache key='cache' cache={cache} />
             </code>
           </pre>
+          <div className='apiLink'>
+            <p>
+              API used in this demo:{' '}
+              <a href='https://github.com/lennertVanSever/graphcountries'>
+                https://github.com/lennertVanSever/graphcountries
+              </a>
+            </p>
+          </div>
         </div>
       </div>
       <SideBar page={props.page} />

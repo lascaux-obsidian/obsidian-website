@@ -18,7 +18,7 @@ const users = [
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600479739/Obsidian/WhatsApp_Image_2020-09-18_at_8.38.09_PM_pgshgj.jpg',
 
     info:
-      'Alonso Garza is a full-stack software engineer from Austin, Texas. Alonso specializes in React, Node.js, Express, and is passionate about solving complex problems and working in teams. Outside of coding, he loves to travel around Latin America and scuba diving!',
+      'Alonso Garza is a full-stack software engineer from Austin, Texas. Alonso specializes in React, Node.js, Express, and is passionate about solving complex problems and working in teams. Outside of coding, he loves to travel around Latin America and scuba dive!',
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
     github: 'https://github.com/Alonsog66',
   },
@@ -37,7 +37,7 @@ const users = [
     firstName: 'Matt',
     lastName: 'Meigs',
     image:
-      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462623/Obsidian/MattMeigsObsidian_iwncyq.jpg',
+      'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600811069/Obsidian/IMG_2543_vrhknw.jpg',
     info:
       'Matt is a software engineer interested in clear and responsive frontend web design and algorithmic optimization through the full stack. He’s an expat from the Deep South, a lover of far-flung travel, and a former Broadway actor.',
     linkedin: 'https://www.linkedin.com/in/matt-meigs/',
@@ -48,7 +48,8 @@ const users = [
     lastName: 'Caliskan',
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462610/Obsidian/92C676E9-C9C4-4CFB-80A9-876B30C94732_copy_vfsnjl.jpg',
-    info: 'Hello there! Did you read my book "B is for Burak"?',
+    info:
+      'Burak is a software engineer focused on developing full stack applications. Curious and constantly finding ways to use new ideas to solve problems and provide delight. For fun, he enjoys outdoor activities, traveling, and exploring new cuisines.',
     linkedin: 'https://www.linkedin.com/in/burakcaliskan/',
     github: 'https://github.com/CaliskanBurak',
   },

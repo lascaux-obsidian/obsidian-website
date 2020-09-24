@@ -7,7 +7,7 @@ const GettingStarted = (props: any) => {
       <h1>Getting Started</h1>
       <p>In this section, we'll learn <code className="obsidianInline">obsidian</code> by walking through the setup of a simple full stack server-side rendered React app in Deno.</p>
       <h2>ObsidianRouter</h2>
-      <p>We're going to build the backend of our app with <a href="https://deno.land/x/oak@v6.2.0">Oak</a>, a middleware framework for your Deno server.  ObsidianRouter is an <i>Oak router</i>, so we must build our server with Oak in order to use <code className="obsidianInline">obsidian</code>.</p>
+      <p>We're going to build the backend of our app with <a className="pinkA" href="https://deno.land/x/oak@v6.2.0">Oak</a>, a middleware framework for your Deno server.  ObsidianRouter is an <i>Oak router</i>, so we must build our server with Oak in order to use <code className="obsidianInline">obsidian</code>.</p>
       <h3>Installation</h3>
       <p>Thanks to Deno's ECMAScript package importing, installation of Oak and <code className="obsidianInline">obsidian</code> is incredibly simple.  Just import the pieces of the modules you need at the top of your server, like so:</p>
       <CodeBlock
@@ -44,6 +44,7 @@ await app.listen({ port: PORT });`}
         text={`// server.tsx
 const types = (gql as any)\`
   type Movie {
+    id: ID
     title: String
     releaseYear: Int
   }
@@ -65,6 +66,7 @@ const resolvers = {
   Query: {
     getMovie: () => {
       return {
+        id: "1",
         title: "Up",
         releaseYear: 2009
       };
@@ -78,7 +80,7 @@ const resolvers = {
       <br/>
       <p className="docAside"><i>NOTE</i> - Resolvers typically do not return hardcoded data like we have here.  Your resolvers can fetch data from anywhere you might normally fetch data from, like a database or another API, but for the sake of simplicity our example includes a hardcoded response.</p>
       <h3>ObsidianRouter Setup</h3>
-      <p>We now have everything we need to create our GraphQL endpoint using ObsidianRouter.  For now, we'll set <code className="obsidianInline">useCache</code> to <code className="obsidianInline">false</code>- we'll learn more about caching with ObsidianRouter later.  Note that the router should come <i>before</i> your <code className="obsidianInline">app.listen</code>.</p>
+      <p>We now have everything we need to create our GraphQL endpoint using ObsidianRouter.  For now, we'll set <code className="obsidianInline">useCache</code> to <code className="obsidianInline">false</code>- we'll learn more about caching with ObsidianRouter <a href="#" onClick={() => props.setDocsPage('Server')}>later</a>.  Note that the router should come <i>before</i> your <code className="obsidianInline">app.listen</code>.</p>
       <CodeBlock
         text={`// server.tsx
 interface ObsRouter extends Router {
@@ -98,7 +100,7 @@ app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());`}
         theme={monokai}
       />
       <br/>
-      <p className="docAside"><i>NOTE</i> - If you are building your server in TypeScript, as we are here, you will have to extend the Oak Router interface to create the ObsidianRouter.  By exposing the <code className="obsidianInline">obsidianSchema</code> property on the ObsidianRouter, we open the door to a streamlined caching implementation for your client-side code, which we'll explore in Server-Side Rendering.</p>
+      <p className="docAside"><i>NOTE</i> - If you are building your server in TypeScript, as we are here, you will have to extend the Oak Router interface to create the ObsidianRouter.  By exposing the <code className="obsidianInline">obsidianSchema</code> property on the ObsidianRouter, we open the door to a streamlined caching implementation for your client-side code, which we'll explore in <a href="#" onClick={() => props.setDocsPage('ServerSideRendering')}>server-side rendering</a>.</p>
       <h3>Spin Up the Server</h3>
       <p>Let's start our server!  As Deno requires us to explicitly give permissions, our command to start up the server looks like this:</p>
       <p><code className="obsidianInline">deno run --allow-net --unstable server.tsx</code></p>

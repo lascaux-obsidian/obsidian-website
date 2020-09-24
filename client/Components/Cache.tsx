@@ -33,7 +33,7 @@ const Cache = (props: any) => {
       }
     } else {
       cachedPair.push(
-        <p>
+        <p key={`pair${i}`}>
           {pair[0]} : {pair[1]},
         </p>
       );

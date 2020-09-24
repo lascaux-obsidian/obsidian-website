@@ -6,7 +6,7 @@ const QuickStart = (props: any) => {
     <div className="docContainer">
       <h1>Quick Start</h1>
       <p><code className="obsidianInline">obsidian</code> is Deno's first native GraphQL caching client and server module.  Boasting lightning-fast caching and fetching capabilities alongside headlining normalization and destructuring strategies, <code className="obsidianInline">obsidian</code> is equipped to support scalable, highly performant applications.</p>
-      <p>Optimized for use in server-side rendered React apps built with Deno, full stack integration of <code className="obsidianInline">obsidian</code> enables many of its most powerful features, including optimized caching exchanges between client and server as well as server-side user session storage, maintaining the benefits of server-side rendering even after client-side caches have expired.</p>
+      <p>Optimized for use in server-side rendered React apps built with Deno, full stack integration of <code className="obsidianInline">obsidian</code> enables many of its most powerful features, including optimized caching exchanges between client and server and extremely lightweight client-side caching.</p>
       <h2>Installation</h2>
       <p>In the server:</p>
       <CodeBlock
@@ -49,6 +49,7 @@ const GraphQLRouter = await ObsidianRouter<ObsRouter>({
   Router,
   typeDefs: types,
   resolvers: resolvers,
+  redisPort: 6379,
 });
 
 app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
@@ -122,7 +123,7 @@ const App = () => {
 
 const WeatherApp = () => {
   const { gather } = useObsidian();
-  const [weather, setWeather] = useState('Sunny');
+  const [weather, setWeather] = (React as any).useState('Sunny');
 
   return (
     <h1>{weather}</h1>
