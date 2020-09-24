@@ -76,11 +76,12 @@ a:hover {
   min-height: 60px;
   animation: fadeInDown;
   animation-duration: 1s;
+  cursor: pointer;
 }
 
-.navBtn:active {
+/* .navBtn:active {
   border: none;
-}
+} */
 
 .navBtnText {
   font-size: 1em;
@@ -154,6 +155,7 @@ div#logo {
   border-radius: 10px;
 }
 
+
 /* path#frontLeg {
   animation: bounce;
   animation-duration: 2s;
@@ -196,6 +198,7 @@ path.bullHead {
 .sidebar .codeLinks .codeLinkDiv {
   display: flex;
   justify-content: center;
+  align-content: center;
 }
 
 .sidebar .codeLinks img {
@@ -205,8 +208,13 @@ path.bullHead {
   z-index: 2;
 }
 
+#denoImg {
+  width: 26px;
+  height: 26px;
+}
+
 #githubLogo {
-  margin-right: 2.5px;
+  margin-right: 3%;
 }
 
 .sidebar .codeLinks h4 {
@@ -214,6 +222,7 @@ path.bullHead {
   margin: 0;
   color: #f7f7f7;
   z-index: 2;
+  margin-left: 1%;
 }
 
 .sidebar .sideContent {
@@ -269,6 +278,15 @@ path.bullHead {
   flex-direction: column;
   font-size: 1vw;
 }
+
+#demo-block label {
+  margin: 0 10px;
+}
+
+.optionsForCountry {
+  margin-top: 5%;
+}
+
 pre {
   white-space: pre-wrap; /* Since CSS 2.1 */
   word-wrap: break-word; /* Internet Explorer 5.5+ */
@@ -282,6 +300,7 @@ pre {
 
 .buildQueryTitle {
   text-align: center;
+  font-size: 3em;
 }
 
 .showQuery,
@@ -300,6 +319,10 @@ pre {
   background-color: rgb(212, 212, 212);
   width: 40%;
   padding: 2%;
+}
+
+#fetchBtn {
+  margin-top: 5%;
 }
 
 .showQuery {
@@ -378,8 +401,8 @@ pre {
 }
 
 .slideContent {
-  width: 50vw;
-  height: 75vw;
+  width: 45vw;
+  height: 65vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -391,7 +414,7 @@ pre {
   align-content: flex-end;
   transform-style: preserve-3d;
   transform: perspective(1000px) translateX(calc(100% * var(--offset)))
-    rotateY(calc(-45deg * var(--dir)));
+    rotateY(calc(-10deg * var(--dir)));
 }
 
 .slideContentInner {
@@ -545,7 +568,18 @@ pre {
   background: transparent !important;
 }
 
+.apiLink {
+  margin-top: 30px;
+}
 
+.apiLink p {
+  color: rgb(246, 246, 246);
+}
+
+.apiLink a {
+  color: rgb(35, 35, 255);
+  text-emphasis: bold;
+}
 
 /* phone sizing */
 
@@ -618,5 +652,11 @@ pre {
 
   .social-button {
     padding-top: 0;
+  }
+
+  .slideContent {
+    height: 75vw;
+    transform: perspective(1000px) translateX(calc(100% * var(--offset)))
+    rotateY(calc(-0deg * var(--dir)));
   }
 }
