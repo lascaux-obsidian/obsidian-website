@@ -81,22 +81,19 @@ const DocsContext = (props: any) => {
                 setDocsPage('Server');
               }}
             >Server</button>
-            <button
-              className={`list-group-item list-group-item-action ${props.docsPage === 'CachingErrors' ? "active" : ""}`}
+            {/*<button
+              className={`list-group-item list-group-item-action disabled ${props.docsPage === 'CachingErrors' ? "active" : ""}`}
               onClick={() => {
                 setDocsPage('CachingErrors');
               }}
-            >Errors</button>
+            >Errors</button>*/}
           </div>
         </div>
         <div className="list-group-item">
           <h6>Advanced</h6>
           <div className="list-group">
             <button
-              className={`list-group-item list-group-item-action ${props.docsPage === 'Persistence' ? "active" : ""}`}
-              onClick={() => {
-                setDocsPage('Persistence');
-              }}
+              className={`list-group-item list-group-item-action disabled ${props.docsPage === 'Persistence' ? "active" : ""}`}
             >Persistence</button>
             <button
               className={`list-group-item list-group-item-action ${props.docsPage === 'Polling' ? "active" : ""}`}
@@ -105,10 +102,7 @@ const DocsContext = (props: any) => {
               }}
             >Polling</button>
             <button
-              className={`list-group-item list-group-item-action ${props.docsPage === 'Subscriptions' ? "active" : ""}`}
-              onClick={() => {
-                setDocsPage('Subscriptions');
-              }}
+              className={`list-group-item list-group-item-action disabled ${props.docsPage === 'Subscriptions' ? "active" : ""}`}
             >Subscriptions</button>
           </div>
         </div>

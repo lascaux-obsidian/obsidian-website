@@ -41,16 +41,16 @@ const Docs = (props: any) => {
   if (docsPage === 'Polling') curDocsPage = <Polling />;
   if (docsPage === 'Subscriptions') curDocsPage = <Subscriptions />;
 
-  if (docsPage === 'BasicsErrors') curDocsPage = <BasicsErrors />;
-  if (docsPage === 'GettingStarted') curDocsPage = <GettingStarted />;
-  if (docsPage === 'Mutations') curDocsPage = <Mutations />;
-  if (docsPage === 'Queries') curDocsPage = <Queries />;
+  if (docsPage === 'BasicsErrors') curDocsPage = <BasicsErrors setDocsPage={setDocsPage} />;
+  if (docsPage === 'GettingStarted') curDocsPage = <GettingStarted setDocsPage={setDocsPage} />;
+  if (docsPage === 'Mutations') curDocsPage = <Mutations setDocsPage={setDocsPage} />;
+  if (docsPage === 'Queries') curDocsPage = <Queries setDocsPage={setDocsPage} />;
   if (docsPage === 'ServerSideRendering') curDocsPage = <ServerSideRendering />;
 
-  if (docsPage === 'Client') curDocsPage = <Client />;
+  if (docsPage === 'Client') curDocsPage = <Client setDocsPage={setDocsPage} />;
   if (docsPage === 'CachingErrors') curDocsPage = <CachingErrors />;
   if (docsPage === 'Server') curDocsPage = <Server />;
-  if (docsPage === 'Strategies') curDocsPage = <Strategies />;
+  if (docsPage === 'Strategies') curDocsPage = <Strategies setDocsPage={setDocsPage} />;
 
   return (
     <>

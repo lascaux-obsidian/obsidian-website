@@ -55,14 +55,14 @@ return (
         <li><strong>options</strong> - (optional) An object with further parameters
           <ul>
             <li><strong>endpoint</strong> - (default: <code className="obsidianInline">'/graphql'</code>) The endpoint where <code className="obsidianInline">obsidian</code> should send this request</li>
-            <li><strong>pollInterval</strong> - (default: <code className="obsidianInline">null</code>) How often <code className="obsidianInline">obsidian</code> should execute this query, in ms; learn more in the Advanced section</li>
-            <li><strong>destruture</strong> - (default: <code className="obsidianInline">true</code>) Set to false to use only whole-query caching; see the Caching section for more details</li>
-            <li><strong>sessionStore</strong> - (default: <code className="obsidianInline">false</code>) Set to true to store your cache in session storage instead of global memory; see the Caching section for more details</li>
+            <li><strong>pollInterval</strong> - (default: <code className="obsidianInline">null</code>) How often <code className="obsidianInline">obsidian</code> should execute this query, in ms; learn more in the <a href="#" onClick={() => props.setDocsPage('Polling')}>Advanced</a> section</li>
+            <li><strong>destruture</strong> - (default: <code className="obsidianInline">true</code>) Set to <code className="obsidianInline">false</code> to use only whole-query caching; see the <a href="#" onClick={() => props.setDocsPage('Strategies')}>Caching</a> section for more details</li>
+            <li><strong>sessionStore</strong> - (default: <code className="obsidianInline">false</code>) Set to <code className="obsidianInline">true</code> to store your cache in session storage instead of global memory; see the <a href="#" onClick={() => props.setDocsPage('Client')}>Caching</a> section for more details</li>
           </ul>
         </li>
       </ol>
       <p>As you can see, invoking <code className="obsidianInline">gather</code> with a query as it's only argument will make a request to your '/graphql' endpoint only once, utilizing the destructure caching strategy and storing the cached data in global memory.</p>
-      <p>We'll explore caching in more detail in the Caching section.  For now, let's use <code className="obsidianInline">gather</code> to showcase a simple GraphQL request:</p>
+      <p>We'll explore caching in more detail in the <a href="#" onClick={() => props.setDocsPage('Strategies')}>Caching</a> section.  For now, let's use <code className="obsidianInline">gather</code> to showcase a simple GraphQL request:</p>
       <CodeBlock
         text={`// MainContainer.tsx
 import React from 'https://dev.jspm.io/react@16.13.1';
@@ -78,7 +78,7 @@ const MainContainer = () => {
       <p>Check out our favorite movie by clicking the button below</p>
       <button
         onClick(() => {
-          gather(\`query { getMovie { id title releaseYear } }\`, '/graphql')
+          gather(\`query { getMovie { id title releaseYear } }\`)
           .then(resp => setMovie(resp.data.getMovie))
         })
       >Get Movie</button>

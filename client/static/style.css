@@ -270,6 +270,11 @@ path.bullHead {
   padding: 20px;
   margin: 1vw;
 }
+
+.code-block p {
+  margin-top: 1rem;
+}
+
 #demo-block {
   padding: 2vh;
   display: flex;
@@ -557,6 +562,13 @@ pre {
   color: #212529 !important;
 }
 
+.mission {
+  font-style: italic;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .token.operator {
   background: transparent !important;
 }
@@ -571,7 +583,7 @@ pre {
 
 .apiLink a {
   color: rgb(35, 35, 255);
-  text-emphasis: bold;
+  text-emphasis-style: bold;
 }
 
 /* phone sizing */
