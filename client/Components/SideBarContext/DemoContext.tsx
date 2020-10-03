@@ -69,7 +69,7 @@ const DemoContext = (props: any) => {
           `}
             >
               The cache also stores entire queries and responses to improve
-              lookup time. These are not displated in the code block to improve
+              lookup time. These are not displayed in the code block to improve
               readabiliy.
             </p>
           </div>
