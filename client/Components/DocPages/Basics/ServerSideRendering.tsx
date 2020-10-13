@@ -14,7 +14,7 @@ const ServerSideRendering = (props: any) => {
       <CodeBlock
         text={`// App.tsx
 import React from 'https://dev.jspm.io/react@16.13.1';
-import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 import MainContainer from './MainContainer.tsx';`}
         language={"tsx"}
         showLineNumbers={true}

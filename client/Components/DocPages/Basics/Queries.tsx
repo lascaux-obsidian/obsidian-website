@@ -10,7 +10,7 @@ const Queries = (props: any) => {
       <p>After setting up ObsidianWrapper, <code className="obsidianInline">obsidian</code> exposes a custom React hook, <code className="obsidianInline">useObsidian</code>, that can be used to globally access fetching and caching capabilities.  Destructure the hook inside your React components to access <code className="obsidianInline">obsidian</code> functionality:</p>
       <CodeBlock
         text={`// MainContainer.tsx
-import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const MainContainer = () => {
   const { hunt, gather } = useObsidian();
@@ -66,7 +66,7 @@ return (
       <CodeBlock
         text={`// MainContainer.tsx
 import React from 'https://dev.jspm.io/react@16.13.1';
-import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const MainContainer = () => {
   const { hunt, gather } = useObsidian();

@@ -11,7 +11,7 @@ const Mutations = (props: any) => {
       <p>Just as with <code className="obsidianInline">hunt</code> and <code className="obsidianInline">gather</code>, <code className="obsidianInline">mutate</code> is made available via <code className="obsidianInline">useObsidian</code>.  To send a mutation, first destructure the hook:</p>
       <CodeBlock
         text={`// DeleteButton.tsx
-import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const DeleteButton = () => {
   const { mutate } = useObsidian();

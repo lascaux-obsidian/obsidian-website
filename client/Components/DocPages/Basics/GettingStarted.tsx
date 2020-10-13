@@ -13,7 +13,7 @@ const GettingStarted = (props: any) => {
       <CodeBlock
         text={`// server.tsx
 import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
-import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';`}
+import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';`}
         language={"typescript"}
         showLineNumbers={true}
         theme={monokai}

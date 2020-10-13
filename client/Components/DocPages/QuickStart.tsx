@@ -10,7 +10,7 @@ const QuickStart = (props: any) => {
       <h2>Installation</h2>
       <p>In the server:</p>
       <CodeBlock
-        text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';"}
+        text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';"}
         language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
@@ -18,7 +18,7 @@ const QuickStart = (props: any) => {
       <br/>
       <p>In the app:</p>
       <CodeBlock
-        text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';"}
+        text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';"}
         language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
@@ -27,7 +27,7 @@ const QuickStart = (props: any) => {
       <h2>Creating the Router</h2>
       <CodeBlock
         text={`import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
-import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';
 
 const PORT = 8000;
 
@@ -103,7 +103,7 @@ app.use(router.routes(), router.allowedMethods());`}
       <br/>
       <h2>Creating the Wrapper</h2>
       <CodeBlock
-        text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+        text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const App = () => {
   return (
@@ -119,7 +119,7 @@ const App = () => {
       <br/>
       <h2>Making a Query</h2>
       <CodeBlock
-        text={`import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+        text={`import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const WeatherApp = () => {
   const { gather } = useObsidian();
