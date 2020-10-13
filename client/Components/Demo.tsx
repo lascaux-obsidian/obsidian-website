@@ -1,5 +1,4 @@
 import { React, useObsidian } from '../../deps.ts';
-// import { useObsidian } from '../../ObsidianWrapper.jsx';
 import SideBar from './SideBar.tsx';
 import Cache from './Cache.tsx';
 
@@ -61,6 +60,7 @@ const Demo = (props: any) => {
       sessionStore: false,
     }).then((resp: any) => {
       setQueryTime(Date.now() - start);
+      if (!Array.isArray(resp.data.Country)) resp.data.Country = [resp.data.Country];
       setResponse(JSON.stringify(resp.data));
     });
   };

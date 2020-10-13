@@ -9,7 +9,7 @@ const Client = (props: any) => {
       <h2>ObsidianWrapper</h2>
       <p>While working with ObsidianWrapper, you have multiple opportunities to hone your caching strategy.  At a global level, when first wrapping your app with ObsidianWrapper, you may optionally assign a client property to ObsidianWrapper.  This client property should be a new ObsidianClient object, a class you can import from Obsidian:</p>
       <CodeBlock
-        text={`import { ObsidianClient } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';`}
+        text={`import { ObsidianClient } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';`}
         language={"tsx"}
         showLineNumbers={false}
         theme={monokai}
@@ -24,7 +24,7 @@ const Client = (props: any) => {
       <p>An example of setting global options in ObsidianWrapper:</p>
       <CodeBlock
         text={`import React from 'https://dev.jspm.io/react@16.13.1';
-import { ObsidianWrapper, ObsidianClient } from 'https://deno.land/x/obsidian@v1.0.0/mod.ts';
+import { ObsidianWrapper, ObsidianClient } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const client = new ObsidianClient({
   globalSessionStore: true,
