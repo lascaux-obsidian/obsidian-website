@@ -4,7 +4,7 @@ import ReactDom from 'https://dev.jspm.io/react-dom@16.13.1';
 import {
   ObsidianWrapper,
   useObsidian,
-} from '../obsidian/clientMod.ts';
+} from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 import rcb from 'https://dev.jspm.io/react-code-blocks';
 
