@@ -103,7 +103,6 @@ function Carousel({ user, index, changeUser }) {
     <div className='slides'>
       <button onClick={() => changeUser(index, -1)}>‹</button>
       <div ref={useTilt()} className='slide' data-active={true}>
-        <div className='slideBackground' />
         <div
           className='slideContent'
           style={{
