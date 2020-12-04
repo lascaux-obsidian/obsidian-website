@@ -1,4 +1,6 @@
-import { React, useObsidian } from '../../deps.ts';
+import { React, 
+  // useObsidian 
+} from '../../deps.ts';
 import SideBar from './SideBar.tsx';
 import Cache from './Cache.tsx';
 
@@ -22,8 +24,8 @@ const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
   const [queryTime, setQueryTime] = (React as any).useState(0);
 
-  const { gather, cache, clearCache } = useObsidian();
-  console.log(cache);
+  // const { gather, cache, clearCache } = useObsidian();
+  // console.log(cache);
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
   const [population, setPopulation] = (React as any).useState(false);
@@ -55,14 +57,14 @@ const Demo = (props: any) => {
   `.trim();
   const fetchData = (e: any) => {
     const start = Date.now();
-    gather(query, {
-      endpoint: 'https://countries-274616.ew.r.appspot.com',
-      sessionStore: false,
-    }).then((resp: any) => {
-      setQueryTime(Date.now() - start);
-      if (!Array.isArray(resp.data.Country)) resp.data.Country = [resp.data.Country];
-      setResponse(JSON.stringify(resp.data));
-    });
+    // gather(query, {
+    //   endpoint: 'https://countries-274616.ew.r.appspot.com',
+    //   sessionStore: false,
+    // }).then((resp: any) => {
+    //   setQueryTime(Date.now() - start);
+    //   if (!Array.isArray(resp.data.Country)) resp.data.Country = [resp.data.Country];
+    //   setResponse(JSON.stringify(resp.data));
+    // });
   };
 
   return (
@@ -160,12 +162,12 @@ const Demo = (props: any) => {
               {response}
             </code>
           </pre>
-          <button onClick={clearCache}>Clear Cache</button>
+          {/* <button onClick={clearCache}>Clear Cache</button> */}
 
           <pre className='pre-block'>
             Cache:
             <code className='code-block' id='code-pink'>
-              <Cache key='cache' cache={cache} />
+              {/* <Cache key='cache' cache={cache} /> */}
             </code>
           </pre>
           <div className='apiLink'>
