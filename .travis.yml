@@ -1,19 +1,19 @@
 sudo: required
 
 services:
-    - docker
+  - docker
 before_install:
-    - docker build -t lascaux-obsidian/obsidian-website .
+  - docker build -t lascaux-obsidian/obsidian-website .
 script:
-    - docker run lascaux-obsidian/obsidian-website test -A --unstable deno.test.ts
+  - docker run lascaux-obsidian/obsidian-website
 deploy:
-    provider: elasticbeanstalk
-    region: "us-east-1"
-    app: "ObsidianSite"
-    env: "obsidiansite-prod"
-    bucket_name: "elasticbeanstalk-us-east-1-069525016859"
-    bucket_path: "ObsidianSite"
-    access_key_id: "$AWS_ACCESS_KEY_ID"
-    secret_access_key: "$AWS_SECRET_ACCESS_KEY"
-    on:
-        branch: master
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'ObsidianSite'
+  env: 'obsidiansite-prod'
+  bucket_name: 'elasticbeanstalk-us-east-1-069525016859'
+  bucket_path: 'ObsidianSite'
+  access_key_id: '$AWS_ACCESS_KEY_ID'
+  secret_access_key: '$AWS_SECRET_ACCESS_KEY'
+  on:
+    branch: master
