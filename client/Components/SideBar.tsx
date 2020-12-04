@@ -1,8 +1,8 @@
 import { React } from '../../deps.ts';
-import DocsContext from './SideBarContext/DocsContext.tsx';
+// import DocsContext from './SideBarContext/DocsContext.tsx';
 import MainContext from './SideBarContext/MainContext.tsx';
 import AboutContext from './SideBarContext/AboutContext.tsx';
-import DemoContext from './SideBarContext/DemoContext.tsx';
+// import DemoContext from './SideBarContext/DemoContext.tsx';
 
 declare global {
   namespace JSX {
@@ -24,9 +24,9 @@ const NavBar = (props: any) => {
 
   if (page === 'home') curContext = <MainContext />;
   if (page === 'about') curContext = <AboutContext user={props.user} />;
-  if (page === 'demo') curContext = <DemoContext />;
-  if (page === 'docs')
-    curContext = <DocsContext docsPage={docsPage} setDocsPage={setDocsPage} />;
+  // if (page === 'demo') curContext = <DemoContext />;
+  // if (page === 'docs')
+  //   curContext = <DocsContext docsPage={docsPage} setDocsPage={setDocsPage} />;
 
   return (
     <div

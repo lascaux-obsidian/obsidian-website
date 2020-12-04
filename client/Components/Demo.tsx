@@ -16,6 +16,7 @@ declare global {
       option: any;
       p: any;
       input: any;
+      h2: any;
     }
   }
 }
