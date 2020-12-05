@@ -3,6 +3,6 @@ import {
   Router,
   Context,
   send,
-} from 'https://deno.land/x/oak@v6.0.1/mod.ts';
+} from 'https://deno.land/x/oak/mod.ts';
 
 export { Application, Router, Context, send };
