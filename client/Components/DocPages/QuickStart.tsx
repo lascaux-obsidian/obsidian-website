@@ -17,7 +17,11 @@ const QuickStart = (props: any) => {
         showLineNumbers={false}
         theme={monokai}
       /> */}
-      <code>{"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';"}</code>
+      <pre>
+        <code>
+          {"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';"}
+        </code>
+      </pre>
       <br/>
       <p>In the app:</p>
       {/* <CodeBlock
@@ -26,7 +30,11 @@ const QuickStart = (props: any) => {
         showLineNumbers={false}
         theme={monokai}
       /> */}
-      <code>{"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';"}</code>
+      <pre>
+        <code>
+          {"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';"}
+        </code>
+      </pre>
       <br/>
       <h2>Creating the Router</h2>
       {/* <CodeBlock
@@ -63,6 +71,39 @@ await app.listen({ port: PORT });`}
         showLineNumbers={true}
         theme={monokai}
       /> */}
+      <pre>
+        <code>
+        {`import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
+import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';
+
+const PORT = 8000;
+
+const app = new Application();
+
+const types = (gql as any)\`
+  // Type definitions
+\`;
+
+const resolvers = {
+  // Resolvers
+}
+
+interface ObsRouter extends Router {
+  obsidianSchema?: any;
+}
+
+const GraphQLRouter = await ObsidianRouter<ObsRouter>({
+  Router,
+  typeDefs: types,
+  resolvers: resolvers,
+  redisPort: 6379,
+});
+
+app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
+
+await app.listen({ port: PORT });`}
+        </code>
+      </pre>
       <br/>
       <h2>Sending ObsidianSchema</h2>
       {/* <CodeBlock
@@ -104,6 +145,44 @@ app.use(router.routes(), router.allowedMethods());`}
         showLineNumbers={true}
         theme={monokai}
       /> */}
+      <pre>
+        <code>
+        {`interface initialState {
+  obsidianSchema?: any;
+}
+
+const initialState: initialState = {
+  obsidianSchema: GraphQLRouter.obsidianSchema
+}
+
+const router = new Router();
+router.get('/', handlePage);
+
+function handlePage(ctx: any) {
+  try {
+    const body = (ReactDomServer as any).renderToString(<App />);
+    ctx.response.body = \`<!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>SSR React App</title>
+        <script>
+          window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
+        </script>
+      </head>
+      <body>
+        <div id="root">\${body}</div>
+        <script src="/static/client.tsx" defer></script>
+      </body>
+      </html>\`;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+app.use(router.routes(), router.allowedMethods());`}
+        </code>
+      </pre>
       <br/>
       <h2>Creating the Wrapper</h2>
       {/* <CodeBlock
@@ -120,6 +199,19 @@ const App = () => {
         showLineNumbers={true}
         theme={monokai}
       /> */}
+      <pre>
+        <code>
+        {`import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
+
+const App = () => {
+  return (
+    <ObsidianWrapper>
+      <WeatherApp />
+    </ObsidianWrapper>
+  );
+};`}
+        </code>
+      </pre>
       <br/>
       <h2>Making a Query</h2>
       {/* <CodeBlock
@@ -143,6 +235,26 @@ const WeatherApp = () => {
         showLineNumbers={true}
         theme={monokai}
       /> */}
+      <pre>
+        <code>
+        {`import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
+
+const WeatherApp = () => {
+  const { gather } = useObsidian();
+  const [weather, setWeather] = (React as any).useState('Sunny');
+
+  return (
+    <h1>{weather}</h1>
+    <button
+      onClick={() => {
+        gather(\`query { getWeather { id description } }\`)
+        .then(resp => setWeather(resp.data.getWeather.description))
+      }}
+    >Get Weather</button>
+  );
+};`}
+        </code>
+      </pre>
       <br/>
     </div>
   )
