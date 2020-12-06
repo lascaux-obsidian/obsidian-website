@@ -1,4 +1,6 @@
-import { React, CodeBlock, monokai } from '../../../deps.ts';
+import { React, 
+  // CodeBlock, monokai 
+} from '../../../deps.ts';
 
 const QuickStart = (props: any) => {
 
@@ -9,23 +11,25 @@ const QuickStart = (props: any) => {
       <p>Optimized for use in server-side rendered React apps built with Deno, full stack integration of <code className="obsidianInline">obsidian</code> enables many of its most powerful features, including optimized caching exchanges between client and server and extremely lightweight client-side caching.</p>
       <h2>Installation</h2>
       <p>In the server:</p>
-      <CodeBlock
+      {/* <CodeBlock
         text={"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';"}
         language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
-      />
+      /> */}
+      <code>{"import { ObsidianRouter } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';"}</code>
       <br/>
       <p>In the app:</p>
-      <CodeBlock
+      {/* <CodeBlock
         text={"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';"}
         language={"typescript"}
         showLineNumbers={false}
         theme={monokai}
-      />
+      /> */}
+      <code>{"import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';"}</code>
       <br/>
       <h2>Creating the Router</h2>
-      <CodeBlock
+      {/* <CodeBlock
         text={`import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
 import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian@v1.0.1/mod.ts';
 
@@ -58,10 +62,10 @@ await app.listen({ port: PORT });`}
         language={"typescript"}
         showLineNumbers={true}
         theme={monokai}
-      />
+      /> */}
       <br/>
       <h2>Sending ObsidianSchema</h2>
-      <CodeBlock
+      {/* <CodeBlock
         text={`interface initialState {
   obsidianSchema?: any;
 }
@@ -99,10 +103,10 @@ app.use(router.routes(), router.allowedMethods());`}
         language={"tsx"}
         showLineNumbers={true}
         theme={monokai}
-      />
+      /> */}
       <br/>
       <h2>Creating the Wrapper</h2>
-      <CodeBlock
+      {/* <CodeBlock
         text={`import { ObsidianWrapper } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const App = () => {
@@ -115,10 +119,10 @@ const App = () => {
         language={"tsx"}
         showLineNumbers={true}
         theme={monokai}
-      />
+      /> */}
       <br/>
       <h2>Making a Query</h2>
-      <CodeBlock
+      {/* <CodeBlock
         text={`import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
 const WeatherApp = () => {
@@ -138,7 +142,7 @@ const WeatherApp = () => {
         language={"tsx"}
         showLineNumbers={true}
         theme={monokai}
-      />
+      /> */}
       <br/>
     </div>
   )
