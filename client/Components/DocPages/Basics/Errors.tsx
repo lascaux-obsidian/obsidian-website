@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const BasicsErrors = (props: any) => {
 
@@ -13,16 +13,17 @@ const BasicsErrors = (props: any) => {
       <h3>Cannot read property obsidianSchema of undefined</h3>
       <p>This error is thrown when using <code className="obsidianInline">gather</code> without a properly sent <code className="obsidianInline">obsidianSchema</code>.  Make sure you're sending <code className="obsidianInline">obsidianSchema</code> via the window object, like so:</p>
       <CodeBlock
-        text={`// server.tsx
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`// server.tsx
 
 // inside HTML head
 <script>
   window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
 </script>`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <p>Check out the chapter on server-side rendering to see an example.</p>
       <h3>Cannot convert undefined or null to object</h3>
