@@ -1,4 +1,4 @@
-FROM hayd/alpine-deno:1.3.0
+FROM hayd/alpine-deno:1.5.2
 
 EXPOSE 3000
 
