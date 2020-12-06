@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const CachingErrors = (props: any) => {
 

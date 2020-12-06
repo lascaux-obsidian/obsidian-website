@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const Mutations = (props: any) => {
 
@@ -10,18 +10,19 @@ const Mutations = (props: any) => {
       <p>To maintain and ascertain the truth of our cache, GraphQL mutations must be handled differently than queries.  Mutations can alter the data inside our cache, so by default <code className="obsidianInline">obsidian</code> clears the cache each time it mutates.  To learn more about mutations, caching, and <code className="obsidianInline">obsidian</code>'s caching philosophy, see the <a href="#" onClick={() => props.setDocsPage('Philosophy')}>Caching</a> section.</p>
       <p>Just as with <code className="obsidianInline">hunt</code> and <code className="obsidianInline">gather</code>, <code className="obsidianInline">mutate</code> is made available via <code className="obsidianInline">useObsidian</code>.  To send a mutation, first destructure the hook:</p>
       <CodeBlock
-        text={`// DeleteButton.tsx
-import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`// DeleteButton.tsx
+import { useObsidian } from 'https://deno.land/x/obsidian/clientMod.ts';
 
 const DeleteButton = () => {
   const { mutate } = useObsidian();
 
   // jsx below
 };`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <p><code className="obsidianInline">mutate</code> has two parameters:</p>
       <ol>
@@ -35,7 +36,11 @@ const DeleteButton = () => {
       </ol>
       <p>Send mutations just as you would a query:</p>
       <CodeBlock
-        text={`// DeleteButton.tsx
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`// DeleteButton.tsx
 return (
   <div>
     <button
@@ -46,10 +51,7 @@ return (
     >Delete Movie</button>
   </div>
 );`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <h4>Recap & Next Up</h4>
       <p>In this chapter we covered how to send mutations using <code className="obsidianInline">mutate</code>.  To round out the Basics section, we'll examine some common errors you might find when using <code className="obsidianInline">obsidian</code>.</p>

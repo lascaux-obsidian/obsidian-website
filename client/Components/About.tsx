@@ -29,7 +29,7 @@ const users = [
     image:
       'https://res.cloudinary.com/dkxftbzuu/image/upload/v1600462593/Obsidian/image_1_c7sggv.jpg',
     info:
-      'Travis is a full stack software engineer focused on building scalable backend solutions. When he isn’t coding he enjoys playing board games, eating copious amounts of sushi, and conducting pit orchestras.',
+      'Travis is a software engineer at Place Exchange focused on building scalable backend solutions. When he isn’t coding he enjoys playing board games, eating copious amounts of sushi, and conducting pit orchestras.',
     linkedin: 'https://linkedin.com/in/travis-m-frank',
     github: 'https://github.com/TravisFrankMTG',
   },

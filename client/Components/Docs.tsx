@@ -4,20 +4,20 @@ import QuickStart from './DocPages/QuickStart.tsx';
 import Philosophy from './DocPages/Philosophy.tsx';
 import Overview from './DocPages/Overview.tsx';
 
-// import Persistence from './DocPages/Advanced/Persistence.tsx';
-// import Polling from './DocPages/Advanced/Polling.tsx';
-// import Subscriptions from './DocPages/Advanced/Subscriptions.tsx';
+import Persistence from './DocPages/Advanced/Persistence.tsx';
+import Polling from './DocPages/Advanced/Polling.tsx';
+import Subscriptions from './DocPages/Advanced/Subscriptions.tsx';
 
-// import BasicsErrors from './DocPages/Basics/Errors.tsx';
-// import GettingStarted from './DocPages/Basics/GettingStarted.tsx';
-// import Mutations from './DocPages/Basics/Mutations.tsx';
-// import Queries from './DocPages/Basics/Queries.tsx';
-// import ServerSideRendering from './DocPages/Basics/ServerSideRendering.tsx';
+import BasicsErrors from './DocPages/Basics/Errors.tsx';
+import GettingStarted from './DocPages/Basics/GettingStarted.tsx';
+import Mutations from './DocPages/Basics/Mutations.tsx';
+import Queries from './DocPages/Basics/Queries.tsx';
+import ServerSideRendering from './DocPages/Basics/ServerSideRendering.tsx';
 
-// import Client from './DocPages/Caching/Client.tsx';
-// import CachingErrors from './DocPages/Caching/Errors.tsx';
-// import Server from './DocPages/Caching/Server.tsx';
-// import Strategies from './DocPages/Caching/Strategies.tsx';
+import Client from './DocPages/Caching/Client.tsx';
+import CachingErrors from './DocPages/Caching/Errors.tsx';
+import Server from './DocPages/Caching/Server.tsx';
+import Strategies from './DocPages/Caching/Strategies.tsx';
 
 import SideBar from './SideBar.tsx';
 
@@ -37,20 +37,20 @@ const Docs = (props: any) => {
   if (docsPage === 'Overview') curDocsPage = <Overview />;
   if (docsPage === 'Philosophy') curDocsPage = <Philosophy />;
 
-  // if (docsPage === 'Persistence') curDocsPage = <Persistence />;
-  // if (docsPage === 'Polling') curDocsPage = <Polling />;
-  // if (docsPage === 'Subscriptions') curDocsPage = <Subscriptions />;
+  if (docsPage === 'Persistence') curDocsPage = <Persistence />;
+  if (docsPage === 'Polling') curDocsPage = <Polling />;
+  if (docsPage === 'Subscriptions') curDocsPage = <Subscriptions />;
 
-  // if (docsPage === 'BasicsErrors') curDocsPage = <BasicsErrors setDocsPage={setDocsPage} />;
-  // if (docsPage === 'GettingStarted') curDocsPage = <GettingStarted setDocsPage={setDocsPage} />;
-  // if (docsPage === 'Mutations') curDocsPage = <Mutations setDocsPage={setDocsPage} />;
-  // if (docsPage === 'Queries') curDocsPage = <Queries setDocsPage={setDocsPage} />;
-  // if (docsPage === 'ServerSideRendering') curDocsPage = <ServerSideRendering />;
+  if (docsPage === 'BasicsErrors') curDocsPage = <BasicsErrors setDocsPage={setDocsPage} />;
+  if (docsPage === 'GettingStarted') curDocsPage = <GettingStarted setDocsPage={setDocsPage} />;
+  if (docsPage === 'Mutations') curDocsPage = <Mutations setDocsPage={setDocsPage} />;
+  if (docsPage === 'Queries') curDocsPage = <Queries setDocsPage={setDocsPage} />;
+  if (docsPage === 'ServerSideRendering') curDocsPage = <ServerSideRendering />;
 
-  // if (docsPage === 'Client') curDocsPage = <Client setDocsPage={setDocsPage} />;
-  // if (docsPage === 'CachingErrors') curDocsPage = <CachingErrors />;
-  // if (docsPage === 'Server') curDocsPage = <Server />;
-  // if (docsPage === 'Strategies') curDocsPage = <Strategies setDocsPage={setDocsPage} />;
+  if (docsPage === 'Client') curDocsPage = <Client setDocsPage={setDocsPage} />;
+  if (docsPage === 'CachingErrors') curDocsPage = <CachingErrors />;
+  if (docsPage === 'Server') curDocsPage = <Server />;
+  if (docsPage === 'Strategies') curDocsPage = <Strategies setDocsPage={setDocsPage} />;
 
   return (
     <>

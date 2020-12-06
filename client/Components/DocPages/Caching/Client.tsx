@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const Client = (props: any) => {
 
@@ -9,11 +9,12 @@ const Client = (props: any) => {
       <h2>ObsidianWrapper</h2>
       <p>While working with ObsidianWrapper, you have multiple opportunities to hone your caching strategy.  At a global level, when first wrapping your app with ObsidianWrapper, you may optionally assign a client property to ObsidianWrapper.  This client property should be a new ObsidianClient object, a class you can import from Obsidian:</p>
       <CodeBlock
-        text={`import { ObsidianClient } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';`}
-        language={"tsx"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`import { ObsidianClient } from 'https://deno.land/x/obsidian/clientMod.ts';`}
+      </CodeBlock>
       <br/>
       <p>The ObsidianClient constructor accepts one parameter, an object with three optional properties:</p>
       <ul>
@@ -23,8 +24,12 @@ const Client = (props: any) => {
       </ul>
       <p>An example of setting global options in ObsidianWrapper:</p>
       <CodeBlock
-        text={`import React from 'https://dev.jspm.io/react@16.13.1';
-import { ObsidianWrapper, ObsidianClient } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`import React from 'https://dev.jspm.io/react@16.13.1';
+import { ObsidianWrapper, ObsidianClient } from 'https://deno.land/x/obsidian/clientMod.ts';
 
 const client = new ObsidianClient({
   globalSessionStore: true,
@@ -38,20 +43,18 @@ const App = () => {
     </ObsidianWrapper>
   );
 };`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <h3>hunt</h3>
       <p>While you may specify options at a global level, further specifity may be required for individual GraphQL queries.  If you would like to utilize a cacheless caching strategy, simply execute your GraphQL queries with the <code className="obsidianInline">hunt</code> method.  <code className="obsidianInline">hunt</code> bypasses the caching layer and makes a POST request to your specified endpoint:</p>
       <CodeBlock
-        text={`hunt(\`query { getMovie { id title releaseYear } }\`, '/graphql')
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`hunt(\`query { getMovie { id title releaseYear } }\`, '/graphql')
 .then(resp => console.log(resp))`}
-        language={"tsx"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <h3>gather</h3>
       <p>Your global client options will apply to any <code className="obsidianInline">gather</code> requests in your app, but the need may arise for caching to be tuned at an individual request level.  The <code className="obsidianInline">gather</code> method accepts a second optional parameter, an object with four optional properties:</p>
@@ -63,15 +66,16 @@ const App = () => {
       </ul>
       <p>An example of <code className="obsidianInline">gather</code> with optional parameters:</p>
       <CodeBlock
-        text={`gather(\`query { getMovie { id title releaseYear } }\`, {
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`gather(\`query { getMovie { id title releaseYear } }\`, {
   destruture: false,
   sessionStore: true
 })
 .then(resp => console.log(resp))`}
-        language={"tsx"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <h3>mutate</h3>
       <p><code className="obsidianInline">mutate</code> comes with one optional parameter, an object with two optional properties:</p>
@@ -81,14 +85,15 @@ const App = () => {
       </ul>
       <p>An example of <code className="obsidianInline">mutate</code> with optional parameters:</p>
       <CodeBlock
-        text={`gather(\`query { deleteMovie { id title releaseYear } }\`, {
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`gather(\`query { deleteMovie { id title releaseYear } }\`, {
   clearCache: false
 })
 .then(resp => console.log(resp))`}
-        language={"tsx"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <h4>Recap & Next Up</h4>
       <p>In this chapter we learned how to control our caching strategy in the <code className="obsidianInline">obsidian</code> client, ObsidianWrapper.  Next, we'll dive into caching options in ObsidianRouter.</p>

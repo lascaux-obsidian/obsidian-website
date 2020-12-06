@@ -472,8 +472,8 @@ pre {
 
 #docsTOC .list-group-item.active {
   color: rgba(5, 5, 5, 1) !important;
-  border-color: rgb(166, 226, 46) !important;
-  background-color: rgb(166, 226, 46) !important;
+  border-color: rgb(80, 250, 123) !important;
+  background-color: rgb(80, 250, 123) !important;
 }
 
 #docsTOC .list-group-item {

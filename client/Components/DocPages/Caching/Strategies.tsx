@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const Strategies = (props: any) => {
 
@@ -19,19 +19,24 @@ const Strategies = (props: any) => {
       <p>Normalized caching is <code className="obsidianInline">obsidian</code>'s headlining caching strategy.  As responses from your GraphQL queries exit <code className="obsidianInline">obsidian</code>, they are <i>normalized</i> and stored in the cache at an individual field level.  Then, by parsing incoming queries and <i>destructuring</i> their contents, <code className="obsidianInline">obsidian</code> is able to reconstruct a response object from the cache.  This removes replication of data in the cache, improves memory management, and opens the door to mutation consistency in the cache layer.</p>
       <p>To facilitate the normalized caching strategy, <code className="obsidianInline">obsidian</code> requires your responses to always return IDs coupled with each GraphQL object type.  What exactly does that mean?  We can learn more by looking at an example:</p>
       <CodeBlock
-        text={`type Movie {
+        language="graphql"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`type Movie {
   id: ID!
   title: String!
   releaseYear: Int
 }`}
-        language={"gql"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <p>This is a GraphQL object type- it's comprised of many fields, each of which can be assigned a Scalar value (Int, Float, String, Boolean, or ID) or another object type.  For example, our Movie type could also have a field comprised of an array of actors that appear in the film:</p>
       <CodeBlock
-        text={`type Movie {
+        language="graphql"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`type Movie {
   id: ID!
   title: String!
   releaseYear: Int
@@ -43,14 +48,15 @@ type Actor {
   firstName: String
   lastName: String
 }`}
-        language={"gql"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <p>Note that for both object types, we have an id field.  To utilize the normalized caching strategy in <code className="obsidianInline">obsidian</code>, you must request the id field of each object type you recieve in every query.  For example, if you'd like to query for just the actors in a particular movie, your query should look like this:</p>
       <CodeBlock
-        text={`query {
+        language="graphql"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`query {
   getMovie(id: "1") {
     id
     actors {
@@ -60,23 +66,21 @@ type Actor {
     }
   }
 }`}
-        language={"gql"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <p>We requested the id of both the Movie object type and the Actor object type.  Conversely, if you don't need any information about the actors in a movie, there's no need to ask for their id as you won't be accessing any info found on the Actor object type:</p>
       <CodeBlock
-        text={`query {
+        language="graphql"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`query {
   getMovie(id: "1") {
     id
     title
   }
 }`}
-        language={"gql"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <p>Normalized caching is incredibly robust, enabling <code className="obsidianInline">obsidian</code> to maintain consistency with greater precision, and thus ships as the default option when utilizing ObsidianRouter and ObsidianWrapper.</p>
       <p>Normalized caching is recommended for more complex and robust GraphQL applications.  If you app is often making queries for subsets of information on object types or making many similar but unique API calls, normalized caching can drastically improve load times and help maintain global consistency.</p>

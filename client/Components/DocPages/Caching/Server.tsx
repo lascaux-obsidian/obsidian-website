@@ -1,4 +1,4 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const Server = (props: any) => {
 
@@ -23,7 +23,11 @@ const Server = (props: any) => {
       </ul>
       <p>An example of ObsidianRouter with optional parameters:</p>
       <CodeBlock
-        text={`const GraphQLRouter = await ObsidianRouter<ObsRouter>({
+        language="tsx"
+        showLineNumbers={true}
+        style={dracula}
+      >
+        {`const GraphQLRouter = await ObsidianRouter<ObsRouter>({
   Router,
   typeDefs: types,
   resolvers: resolvers,
@@ -34,10 +38,7 @@ const Server = (props: any) => {
   usePlayground: false,
   redisPort: 1111
 });`}
-        language={"tsx"}
-        showLineNumbers={false}
-        theme={monokai}
-      />
+      </CodeBlock>
       <br/>
       <h4>Recap</h4>
       <p>This section has walked through caching in <code className="obsidianInline">obsidian</code>, including our approach to GraphQL caching and the various caching strategies <code className="obsidianInline">obsidian</code> offers.</p>
