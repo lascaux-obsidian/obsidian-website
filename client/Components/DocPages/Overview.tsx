@@ -1,4 +1,6 @@
-import { React, CodeBlock, monokai } from '../../../deps.ts';
+import { React, 
+  // CodeBlock, monokai 
+} from '../../../deps.ts';
 
 const Overview = (props: any) => {
 

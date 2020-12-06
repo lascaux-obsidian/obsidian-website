@@ -6,12 +6,12 @@ import ReactDom from 'https://dev.jspm.io/react-dom';
 //   useObsidian,
 // } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
 
-import rcb from 'https://dev.jspm.io/react-code-blocks';
+// import rcb from 'https://dev.jspm.io/react-code-blocks';
 
-const realRCB: any = rcb;
-const { CodeBlock, CopyBlock, monokai } = realRCB;
+// const realRCB: any = rcb;
+// const { CodeBlock, CopyBlock, monokai } = realRCB;
 
-monokai.backgroundColor = 'rgba(5, 5, 5, 0.93)';
+// monokai.backgroundColor = 'rgba(5, 5, 5, 0.93)';
 
 export {
   React,
@@ -19,7 +19,7 @@ export {
   ReactDom,
   // ObsidianWrapper,
   // useObsidian,
-  CodeBlock,
-  CopyBlock,
-  monokai,
+  // CodeBlock,
+  // CopyBlock,
+  // monokai,
 };
