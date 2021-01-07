@@ -25,7 +25,7 @@ const Overview = (props: any) => {
       <h2>The Module</h2>
       <p>
         <code className="obsidianInline">obsidian</code> is a Deno module,
-        published at <a href="https://deno.land/x/obsidianv1.0.0">deno.land</a>.
+        published at <a href="https://deno.land/x/obsidian@2.0.1">deno.land</a>.
         There are two distinct parts to{' '}
         <code className="obsidianInline">obsidian</code>: ObsidianRouter, a
         caching GraphQL router built upon Deno's{' '}

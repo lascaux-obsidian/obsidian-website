@@ -3,7 +3,7 @@ import { React, ReactDomServer } from './deps.ts';
 import App from './client/app.tsx';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
 
-const PORT = 3333;
+const PORT = 3000;
 
 // Create a new server
 const app = new Application();
@@ -22,31 +22,6 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set('X-Response-Time', `${ms}ms`);
 });
 
-// Initial state
-const initialState = {
-  obsidianSchema: {
-    returnTypes: {
-      Country: { kind: 'NamedType', type: 'Country' },
-    },
-    argTypes: {
-      Country: { _id: 'ID' },
-    },
-    obsidianTypeSchema: {
-      Country: {
-        _id: { type: 'ID', scalar: true },
-        name: { type: 'String', scalar: true },
-        capital: { type: 'String', scalar: true },
-        population: { type: 'Int', scalar: true },
-        flag: { type: 'Flag', scalar: false },
-        borders: { type: 'Country', scalar: false },
-      },
-      Flag: {
-        _id: { type: 'ID', scalar: true },
-        emoji: { type: 'String', scalar: true },
-      },
-    },
-  },
-};
 
 // Router for base path
 const router = new Router();
@@ -100,9 +75,6 @@ function handlePage(ctx: any) {
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <title>Obsidian</title>
-    <script>
-      window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-    </script>
   </head>
   <body >
     <div id="root">${body}</div>
