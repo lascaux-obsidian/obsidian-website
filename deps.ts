@@ -5,7 +5,7 @@ import ReactDom from 'https://dev.jspm.io/react-dom';
 import {
   ObsidianWrapper,
   useObsidian,
-} from '../obsidian/src/ObsidianWrapper.jsx';
+} from 'https://deno.land/x/obsidian/clientMod.ts';
 
 import rsh from 'https://dev.jspm.io/react-syntax-highlighter';
 import codeStyles from 'https://dev.jspm.io/npm:react-syntax-highlighter@15.3.1/dist/cjs/styles/prism';
