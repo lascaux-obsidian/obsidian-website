@@ -3,7 +3,7 @@ import { React, ReactDomServer } from './deps.ts';
 import App from './client/app.tsx';
 import { staticFileMiddleware } from './staticFileMiddleware.ts';
 
-const PORT = 3000;
+const PORT = 3333;
 
 // Create a new server
 const app = new Application();
