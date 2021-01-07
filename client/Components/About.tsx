@@ -17,7 +17,7 @@ const users = [
     image:
       'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609990785/Derek-headshot_ofzix3.jpg',
     info:
-      'Derek is a full-stack software engineer with a focus on the MERN tech stack. Outside of coding he loves boardgames and rock climbing',
+      'Derek is a full-stack software engineer with a focus on the MERN tech stack. Outside of coding he loves boardgames and rock climbing.',
     linkedin: 'https://www.linkedin.com/in/dsymiller',
     github: 'https://github.com/dsymiller',
   },
