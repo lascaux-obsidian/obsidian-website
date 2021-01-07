@@ -2,11 +2,6 @@ import React from 'https://dev.jspm.io/react';
 import ReactDomServer from 'https://dev.jspm.io/react-dom/server';
 import ReactDom from 'https://dev.jspm.io/react-dom';
 
-import {
-  ObsidianWrapper,
-  useObsidian,
-} from 'https://deno.land/x/obsidian/clientMod.ts';
-
 import rsh from 'https://dev.jspm.io/react-syntax-highlighter';
 import codeStyles from 'https://dev.jspm.io/npm:react-syntax-highlighter@15.3.1/dist/cjs/styles/prism';
 
@@ -22,8 +17,6 @@ export {
   React,
   ReactDomServer,
   ReactDom,
-  ObsidianWrapper,
-  useObsidian,
   CodeBlock,
   dracula,
 };

@@ -52,7 +52,7 @@ a:hover {
 .navBtn {
   border-radius: 10px;
   /* // border: '1px solid #EBEBEC', */
-  background-color: rgba(115, 119, 128, 0.25);
+  background-color: rgb(53, 54, 56);
   border: none;
   border-style: none;
   padding: 2% 3%;
@@ -63,11 +63,17 @@ a:hover {
   animation-duration: 1s;
   cursor: pointer;
 }
-
+#demo-form {
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
 /* .navBtn:active {
   border: none;
 } */
-
+.navBtn:focus {
+  border: none;
+}
 .navBtnText {
   font-size: 1em;
   color: white;
@@ -581,7 +587,8 @@ pre {
     align-items: center;
   }
 
-  .navBtn {
+  .navBtn,
+  #demo-form {
     max-width: 15%;
     z-index: 10;
     padding: 0;

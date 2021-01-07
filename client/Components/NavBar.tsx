@@ -90,7 +90,11 @@ const NavBar = (props: any) => {
         </svg>
         <h3 className="navBtnText">Team</h3>
       </button>
-      <form action="http://demo.obsidian.land">
+      <form
+        id="demo-form"
+        className="navBtn"
+        action="http://demo.obsidian.land"
+      >
         <button className="navBtn" type="submit">
           <svg
             width="80%"
