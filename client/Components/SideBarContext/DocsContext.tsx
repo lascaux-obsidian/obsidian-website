@@ -4,8 +4,8 @@ const DocsContext = (props: any) => {
   const { setDocsPage } = props;
 
   return (
-    <div id='docsTOC'>
-      <div className='list-group pink-a-tags'>
+    <div id="docsTOC">
+      <div className="list-group pink-a-tags">
         <button
           className={`list-group-item list-group-item-action ${
             props.docsPage === 'QuickStart' ? 'active' : ''
@@ -26,9 +26,9 @@ const DocsContext = (props: any) => {
         >
           Overview
         </button>
-        <div className='list-group-item'>
+        <div className="list-group-item">
           <h6>Basics</h6>
-          <div className='list-group'>
+          <div className="list-group">
             <button
               className={`list-group-item list-group-item-action ${
                 props.docsPage === 'GettingStarted' ? 'active' : ''
@@ -91,9 +91,9 @@ const DocsContext = (props: any) => {
         >
           Philosophy
         </button>
-        <div className='list-group-item'>
+        <div className="list-group-item">
           <h6>Caching</h6>
-          <div className='list-group'>
+          <div className="list-group">
             <button
               className={`list-group-item list-group-item-action ${
                 props.docsPage === 'Strategies' ? 'active' : ''
@@ -132,16 +132,9 @@ const DocsContext = (props: any) => {
             >Errors</button>*/}
           </div>
         </div>
-        <div className='list-group-item'>
+        <div className="list-group-item">
           <h6>Advanced</h6>
-          <div className='list-group'>
-            <button
-              className={`list-group-item list-group-item-action disabled ${
-                props.docsPage === 'Persistence' ? 'active' : ''
-              }`}
-            >
-              Persistence
-            </button>
+          <div className="list-group">
             <button
               className={`list-group-item list-group-item-action ${
                 props.docsPage === 'Polling' ? 'active' : ''
@@ -151,13 +144,6 @@ const DocsContext = (props: any) => {
               }}
             >
               Polling
-            </button>
-            <button
-              className={`list-group-item list-group-item-action disabled ${
-                props.docsPage === 'Subscriptions' ? 'active' : ''
-              }`}
-            >
-              Subscriptions
             </button>
           </div>
         </div>

@@ -12,6 +12,56 @@ declare global {
 
 const users = [
   {
+    firstName: 'Derek',
+    lastName: 'Miller',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609990785/Derek-headshot_ofzix3.jpg',
+    info:
+      'Derek is a full-stack software engineer with a focus on the MERN tech stack. Outside of coding he loves boardgames and rock climbing',
+    linkedin: 'https://www.linkedin.com/in/dsymiller',
+    github: 'https://github.com/dsymiller',
+  },
+  {
+    firstName: 'Esma',
+    lastName: 'Sahraoui',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609992320/IMG_2063_htwead.jpg',
+    info:
+      'Esma is a software engineer experienced in both front and back-end development with a primary focus and inspiration for projects that involve servers and databases as well as building responsive user interfaces for web applications. In her free time, she is driven by traveling to discover new cultures and kayaking across rivers.',
+    linkedin: 'https://www.linkedin.com/in/esma-sahraoui/',
+    github: 'https://github.com/EsmaShr',
+  },
+  {
+    firstName: 'Eric',
+    lastName: 'Marcatoma',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609989762/AE476873-B676-4D4D-AF9A-548B386F7AD7_1_201_a_mxvsgu.jpg',
+    info:
+      'Eric is a software engineer from NYC who focuses on front-end development. During his spare time he loves to go to the gym, play basketball and trying new restaurants in his city.',
+    linkedin: 'https://www.linkedin.com/in/ericmarc159',
+    github: 'https://github.com/ericmarc159',
+  },
+  {
+    firstName: 'Lourent',
+    lastName: 'Flores',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609990832/headshot_e4ijvy.png',
+    info:
+      'Lourent is a full-stack software engineer specializing in React and Node.js, with a passion for learning new technologies and optimizing frontend web design.',
+    linkedin: 'https://www.linkedin.com/in/lourent-flores/',
+    github: 'https://github.com/lourentflores',
+  },
+  {
+    firstName: 'Spencer',
+    lastName: 'Stockton',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609994346/obsidianpic_gzxcqe.jpg',
+    info:
+      'Spencer is a software engineer that enjoys working on solving complex problems across the entire tech stack.  When he is not programming, you can find him running on the East River or attending a concert around NYC.',
+    linkedin: 'https://www.linkedin.com/in/spencer-stockton-643823a4/',
+    github: 'https://github.com/tonstock',
+  },
+  {
     firstName: 'Alonso',
     lastName: 'Garza',
     image:
@@ -22,7 +72,6 @@ const users = [
     linkedin: 'https://www.linkedin.com/in/e-alonso-garza/',
     github: 'https://github.com/Alonsog66',
   },
-
   {
     firstName: 'Travis',
     lastName: 'Frank',
@@ -64,8 +113,8 @@ const About = (props: any) => {
   };
   return (
     <>
-      <div className='mainContainer'>
-        <div id='about' className='animate__animated animate__fadeInDown'>
+      <div className="mainContainer">
+        <div id="about" className="animate__animated animate__fadeInDown">
           <Carousel
             changeUser={changeUser}
             index={currentIndx}
