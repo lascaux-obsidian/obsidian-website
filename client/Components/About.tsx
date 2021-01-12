@@ -12,16 +12,6 @@ declare global {
 
 const users = [
   {
-    firstName: 'Derek',
-    lastName: 'Miller',
-    image:
-      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609990785/Derek-headshot_ofzix3.jpg',
-    info:
-      'Derek is a full-stack software engineer with a focus on the MERN tech stack. Outside of coding he loves boardgames and rock climbing.',
-    linkedin: 'https://www.linkedin.com/in/dsymiller',
-    github: 'https://github.com/dsymiller',
-  },
-  {
     firstName: 'Esma',
     lastName: 'Sahraoui',
     image:
@@ -30,6 +20,15 @@ const users = [
       'Esma is a software engineer experienced in both front and back-end development with a primary focus and inspiration for projects that involve servers and databases as well as building responsive user interfaces for web applications. In her free time, she is driven by traveling to discover new cultures and kayaking across rivers.',
     linkedin: 'https://www.linkedin.com/in/esma-sahraoui/',
     github: 'https://github.com/EsmaShr',
+  },{
+    firstName: 'Derek',
+    lastName: 'Miller',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609990785/Derek-headshot_ofzix3.jpg',
+    info:
+      'Derek is a full-stack software engineer with a focus on the MERN tech stack. Outside of coding he loves boardgames and rock climbing.',
+    linkedin: 'https://www.linkedin.com/in/dsymiller',
+    github: 'https://github.com/dsymiller',
   },
   {
     firstName: 'Eric',
