@@ -68,7 +68,8 @@ const Demo = (props: any) => {
   return (
     <>
       <div className='mainContainer'>
-        <div id='demo-block'>
+      <iframe src="http://demo.obsidian.land/?" width="100%" height="100%"></iframe>
+        {/* <div id='demo-block'>
           <div className='demoInput'>
             <div className='buildQuery'>
               <h2 className='buildQueryTitle'>Build A Query</h2>
@@ -176,7 +177,7 @@ const Demo = (props: any) => {
               </a>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       <SideBar page={props.page} />
     </>
