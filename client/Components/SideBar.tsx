@@ -23,7 +23,8 @@ const NavBar = (props: any) => {
   let curContext;
 
   if (page === 'home') curContext = <MainContext />;
-  if (page === 'about') curContext = <AboutContext user={props.user} />;
+  // if (page === 'about') curContext = <AboutContext user={props.user} />;
+  if (page === 'about') curContext = '' ;
   if (page === 'demo') curContext = <DemoContext />;
   if (page === 'docs')
     curContext = <DocsContext docsPage={docsPage} setDocsPage={setDocsPage} />;
@@ -31,7 +32,7 @@ const NavBar = (props: any) => {
   return (
     <div
       className='sidebar'
-      style={page === 'home' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
+      style={page === 'home'|| page==='about' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
     >
       <div className='codeLinks'>
         <a href='https://github.com/oslabs-beta/obsidian'>
@@ -54,7 +55,7 @@ const NavBar = (props: any) => {
       <div
         className='sideContent'
         style={
-          page === 'home'
+          page === 'home'|| page==='about'
             ? { backgroundColor: 'rgba(0,0,0,0)', overflow: 'visible' }
             : {}
         }

@@ -1,5 +1,6 @@
 import { React } from '../../deps.ts';
-import Carousel from './Carousel.jsx';
+// import Carousel from './Carousel.jsx';
+import TeamMember from './TeamMember.jsx'
 import SideBar from './SideBar.tsx';
 
 declare global {
@@ -103,6 +104,8 @@ const users = [
   },
 ];
 
+
+
 const About = (props: any) => {
   const [currentIndx, setUser] = (React as any).useState(0);
   const changeUser = (index: any, change: any) => {
@@ -110,17 +113,22 @@ const About = (props: any) => {
     if (newIndex < 0 || newIndex === users.length) return;
     else setUser(newIndex);
   };
+   console.log(TeamMember);
+  const teamMembers = users.map((person, i )=>
+   (<TeamMember person={person} />)
+  )
   return (
     <>
       <div className="mainContainer">
-        <div id="about" className="animate__animated animate__fadeInDown">
-          <Carousel
-            changeUser={changeUser}
-            index={currentIndx}
-            user={users[currentIndx]}
-          />
-        </div>
-      </div>
+
+          <h1 class='header'>Contributors</h1>
+          <div class="devGrid">
+
+     
+          {teamMembers}
+          </div>
+          </div>
+  
 
       <SideBar page={props.page} user={users[currentIndx]} />
     </>
