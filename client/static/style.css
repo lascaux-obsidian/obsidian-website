@@ -231,12 +231,12 @@ path.bullHead {
 }
 
 .fab {
-  color: grey;
+  color: black;
   margin: 5px;
 }
 
 .fab:hover {
-  color: rgb(169, 169, 169);
+  color: #fff;
 }
 
 .user-info {
@@ -306,7 +306,7 @@ path.bullHead {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  border-radius: 30px;
 
   transition: transform 0.5s ease-in-out;
   opacity: 0.7;
@@ -393,7 +393,7 @@ path.bullHead {
 .docContainer h1,
 .mainContainer h1 {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
@@ -536,12 +536,6 @@ path.bullHead {
   .social-button {
     padding-top: 0;
   }
-
-  .slideContent {
-    height: 35vw;
-    transform: perspective(1000px) translateX(calc(100% * var(--offset)))
-      rotateY(calc(-0deg * var(--dir)));
-  }
 }
 
 .container {
@@ -578,6 +572,7 @@ path.bullHead {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  padding: 1.5vw;
 }
 
 .developerImage {
