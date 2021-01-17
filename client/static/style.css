@@ -231,117 +231,17 @@ path.bullHead {
 }
 
 .fab {
-  color: grey;
+  color: black;
   margin: 5px;
 }
 
 .fab:hover {
-  color: rgb(169, 169, 169);
+  color: #fff;
 }
 
 .user-info {
   text-align: center;
   padding: 20px 3px 0 3px;
-}
-
-/* Demo Styling */
-
-.pre-block {
-  width: 60%;
-  border: 1px solid black;
-  display: block;
-  background-color: #fff;
-  padding: 10px;
-  margin: 1vw;
-}
-/* .pre-block, */
-.code-block {
-  border: 1px solid black;
-  display: block;
-  padding: 20px;
-  margin: 1vw;
-}
-
-.code-block p {
-  margin-top: 1rem;
-}
-
-#demo-block {
-  padding: 2vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 1vw;
-}
-
-#demo-block label {
-  margin: 0 10px;
-}
-
-.optionsForCountry {
-  margin-top: 5%;
-}
-
-pre {
-  white-space: pre-wrap; /* Since CSS 2.1 */
-  word-wrap: break-word; /* Internet Explorer 5.5+ */
-}
-
-.demoInput {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.query-timer {
-  font-size: 1.7rem;
-}
-
-.buildQueryTitle {
-  text-align: center;
-  font-size: 3em;
-}
-
-.showQuery,
-.buildQuery {
-  display: inline-block;
-}
-
-#stretchQuery {
-  margin: auto;
-  width: 80%;
-}
-
-.buildQuery {
-  color: rgb(20, 20, 20);
-  border-radius: 10px;
-  background-color: rgb(212, 212, 212);
-  width: 40%;
-  padding: 2%;
-}
-
-#fetchBtn {
-  margin-top: 5%;
-}
-
-.showQuery {
-  width: 40%;
-}
-
-#code-black {
-  background-color: rgb(20, 20, 20);
-  color: white;
-}
-
-#code-yellow {
-  background-color: rgb(20, 20, 20);
-  color: rgb(255, 255, 138);
-}
-
-#code-pink {
-  background-color: rgb(20, 20, 20);
-  color: pink;
 }
 
 /* Carousel Styling! */
@@ -401,20 +301,15 @@ pre {
 }
 
 .slideContent {
-  width: 45vw;
-  height: 65vh;
+  /* width: 15vw; */
+  height: 25vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  border-radius: 30px;
 
   transition: transform 0.5s ease-in-out;
   opacity: 0.7;
-  display: grid;
-  align-content: flex-end;
-  transform-style: preserve-3d;
-  transform: perspective(1000px) translateX(calc(100% * var(--offset)))
-    rotateY(calc(-10deg * var(--dir)));
 }
 
 .slideContentInner {
@@ -495,8 +390,10 @@ pre {
   background-color: rgba(219, 219, 219, 0.7);
 }
 
-.docContainer h1 {
-  font-size: 4rem;
+.docContainer h1,
+.mainContainer h1 {
+  text-align: center;
+  font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
 }
@@ -585,6 +482,7 @@ pre {
     max-width: 100%;
     justify-content: center;
     align-items: center;
+    margin-right: 0.5vw;
   }
 
   .navBtn,
@@ -638,10 +536,52 @@ pre {
   .social-button {
     padding-top: 0;
   }
+}
 
-  .slideContent {
-    height: 75vw;
-    transform: perspective(1000px) translateX(calc(100% * var(--offset)))
-      rotateY(calc(-0deg * var(--dir)));
-  }
+.container {
+  max-width: 1280px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.team {
+  text-align: center;
+}
+
+.team h2 {
+  margin-bottom: 8%;
+}
+
+.team-wrapper {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.developerBio {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.developerName {
+  margin: 0;
+}
+
+.devGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1.5vw;
+}
+
+.developerImage {
+  width: 80%;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+a.githubLink {
+  color: white;
+  text-decoration: none;
 }
