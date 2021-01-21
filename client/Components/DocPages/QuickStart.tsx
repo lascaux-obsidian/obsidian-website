@@ -1,37 +1,41 @@
 import { React, CodeBlock, dracula } from '../../../deps.ts';
 
 const QuickStart = (props: any) => {
-
   return (
     <div className="docContainer">
       <h1>Quick Start</h1>
-      <p><code className="obsidianInline">obsidian</code> is Deno's first native GraphQL caching client and server module.  Boasting lightning-fast caching and fetching capabilities alongside headlining normalization and destructuring strategies, <code className="obsidianInline">obsidian</code> is equipped to support scalable, highly performant applications.</p>
-      <p>Optimized for use in server-side rendered React apps built with Deno, full stack integration of <code className="obsidianInline">obsidian</code> enables many of its most powerful features, including optimized caching exchanges between client and server and extremely lightweight client-side caching.</p>
+      <p>
+        <code className="obsidianInline">obsidian</code> is Deno's first native
+        GraphQL caching client and server module. Boasting lightning-fast
+        caching and fetching capabilities alongside headlining normalization and
+        destructuring strategies,{' '}
+        <code className="obsidianInline">obsidian</code> is equipped to support
+        scalable, highly performant applications.
+      </p>
+      <p>
+        Optimized for use in server-side rendered React apps built with Deno,
+        full stack integration of{' '}
+        <code className="obsidianInline">obsidian</code> enables many of its
+        most powerful features, including optimized caching exchanges between
+        client and server and extremely lightweight client-side caching.
+      </p>
       <h2>Installation</h2>
       <p>In the server:</p>
-      <CodeBlock
-        language="typescript"
-        showLineNumbers={true}
-        style={dracula}
-      >
-        {"import { ObsidianRouter } from 'https://deno.land/x/obsidian/mod.ts';"}
+      <CodeBlock language="typescript" showLineNumbers={true} style={dracula}>
+        {
+          "import { ObsidianRouter } from 'https://deno.land/x/obsidian/mod.ts';"
+        }
       </CodeBlock>
-      <br/>
+      <br />
       <p>In the app:</p>
-      <CodeBlock
-        language="typescript"
-        showLineNumbers={true}
-        style={dracula}
-      >
-        {"import { ObsidianWrapper } from 'https://deno.land/x/obsidian/clientMod.ts';"}
+      <CodeBlock language="typescript" showLineNumbers={true} style={dracula}>
+        {
+          "import { ObsidianWrapper } from 'https://deno.land/x/obsidian/clientMod.ts';"
+        }
       </CodeBlock>
-      <br/>
+      <br />
       <h2>Creating the Router</h2>
-      <CodeBlock
-        language="typescript"
-        showLineNumbers={true}
-        style={dracula}
-      >
+      <CodeBlock language="typescript" showLineNumbers={true} style={dracula}>
         {`import { Application, Router } from 'https://deno.land/x/oak@v6.0.1/mod.ts';
 import { ObsidianRouter, gql } from 'https://deno.land/x/obsidian/mod.ts';
 
@@ -58,25 +62,6 @@ const GraphQLRouter = await ObsidianRouter<ObsRouter>({
   redisPort: 6379,
 });
 
-app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
-
-await app.listen({ port: PORT });`}
-      </CodeBlock>
-      <br/>
-      <h2>Sending ObsidianSchema</h2>
-      <CodeBlock
-        language="tsx"
-        showLineNumbers={true}
-        style={dracula}
-      >
-        {`interface initialState {
-  obsidianSchema?: any;
-}
-
-const initialState: initialState = {
-  obsidianSchema: GraphQLRouter.obsidianSchema
-}
-
 const router = new Router();
 router.get('/', handlePage);
 
@@ -88,9 +73,6 @@ function handlePage(ctx: any) {
       <head>
         <meta charset="UTF-8">
         <title>SSR React App</title>
-        <script>
-          window.__INITIAL_STATE__ = \${JSON.stringify(initialState)};
-        </script>
       </head>
       <body>
         <div id="root">\${body}</div>
@@ -99,55 +81,88 @@ function handlePage(ctx: any) {
       </html>\`;
   } catch (error) {
     console.error(error);
-  }
-}
+  
+app.use(GraphQLRouter.routes(), GraphQLRouter.allowedMethods());
 
-app.use(router.routes(), router.allowedMethods());`}
+await app.listen({ port: PORT });`}
       </CodeBlock>
-      <br/>
+      <br />
       <h2>Creating the Wrapper</h2>
-      <CodeBlock
-        language="tsx"
-        showLineNumbers={true}
-        style={dracula}
-      >
+      <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
         {`import { ObsidianWrapper } from 'https://deno.land/x/obsidian/clientMod.ts';
 
 const App = () => {
   return (
     <ObsidianWrapper>
-      <WeatherApp />
+      <MovieApp />
     </ObsidianWrapper>
   );
 };`}
       </CodeBlock>
-      <br/>
+      <br />
       <h2>Making a Query</h2>
-      <CodeBlock
-        language="tsx"
-        showLineNumbers={true}
-        style={dracula}
-      >
-        {`import { useObsidian } from 'https://deno.land/x/obsidian/clientMod.ts';
+      <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
+        {`import { useObsidian, BrowserCache } from 'https://deno.land/x/obsidian/clientMod.ts';
 
-const WeatherApp = () => {
-  const { gather } = useObsidian();
-  const [weather, setWeather] = (React as any).useState('Sunny');
+const MovieApp = () => {
+  const { query, cache, setCache } = useObsidian();
+  const [movies, setMovies] = (React as any).useState('');
+
+  const queryStr = \`query { 
+      movies {
+        id
+        title
+        releaseYear
+        genre
+      }
+    }
+  \`
 
   return (
-    <h1>{weather}</h1>
+    <h1>{movies}</h1>
     <button
       onClick={() => {
-        gather(\`query { getWeather { id description } }\`)
-        .then(resp => setWeather(resp.data.getWeather.description))
+        query(queryStr)
+        .then(resp => setMovies(resp.data))
+        .then(resp => setCache(new BrowserCache(cache.storage)))
       }}
-    >Get Weather</button>
+    >Get Movies</button>
   );
 };`}
       </CodeBlock>
-      <br/>
+      <br />
+      <h2>Making a Mutation</h2>
+      <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
+        {`import { useObsidian, BrowserCache } from 'https://deno.land/x/obsidian/clientMod.ts';
+
+const MovieApp = () => {
+  const { mutate, cache, setCache } = useObsidian();
+  const [movies, setMovies] = (React as any).useState('');
+
+  const queryStr = \`mutation {
+    addMovie(input: {title: "Cruel Intentions", releaseYear: 1999, genre: "DRAMA" }) {
+      id
+      title
+      releaseYear
+      genre
+    }
+  }
+  \`;
+
+  return (
+    <h1>{movies}</h1>
+    <button
+      onClick={() => {
+        mutate(queryStr)
+        .then(resp => setMovies(resp.data))
+        .then(resp => setCache(new BrowserCache(cache.storage)))
+      }}
+    >Add Movie</button>
+  );
+};`}
+      </CodeBlock>
     </div>
-  )
-}
+  );
+};
 
 export default QuickStart;
