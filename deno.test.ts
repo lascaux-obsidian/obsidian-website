@@ -1,4 +1,4 @@
-// import { superoak } from 'https://deno.land/x/superoak@2.1./mod.ts';
+// import { superoak } from 'https://deno.land/x/superoak@2.1.0/mod.ts';
 // import { describe, it } from 'https://deno.land/x/superoak@2.1.0/test/utils.ts';
 // import { expect } from 'https://deno.land/x/superoak@2.1.0/test/deps.ts';
 // import { app } from './server.tsx';
