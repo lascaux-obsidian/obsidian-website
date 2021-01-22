@@ -463,6 +463,7 @@ path.bullHead {
 
 #mobile-collapse {
   display: none;
+  opacity: 0;
 }
 
 /* phone sizing */
@@ -514,11 +515,23 @@ path.bullHead {
   #mobile-collapse {
     width: 6vh;
     height: 6vh;
-    background-color: lightblue;
+    background-color: rgba(0,0,0,0);
+    color: white;
     display: block;
     position: relative;
-    margin-top: 4%;
+    border-radius: 20px;
+    margin-top: 1%;
+    opacity: 1;
+    border: none;
   }
+
+  #mobile-collapse:focus {
+    outline: none;
+  }
+
+  /* .sideContent {
+    padding: 0;
+  } */
 
   .codeLinks {
     position: absolute;
@@ -548,6 +561,31 @@ path.bullHead {
 
   .social-button {
     padding-top: 0;
+  }
+  /* fix font size in Docs */
+  .docContainer {
+    padding: 2rem 1rem;
+  }
+  
+  .docContainer h1,
+  .mainContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .docContainer h2 {
+    font-size: 2rem;
+  }
+  
+  .docContainer h3 {
+    font-size: 1.8rem;
+  }
+  
+  .docContainer h3 {
+    font-size: 1.5rem;
+  }
+  
+  .docContainer p {
+    font-size: 1rem;
   }
 }
 
