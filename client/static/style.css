@@ -461,9 +461,13 @@ path.bullHead {
   text-emphasis-style: bold;
 }
 
+#mobile-collapse {
+  display: none;
+}
+
 /* phone sizing */
 
-@media screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
   html {
     font-size: 1em;
   }
@@ -505,6 +509,15 @@ path.bullHead {
     height: 20%;
     max-width: 94%;
     margin: 15px auto;
+  }
+
+  #mobile-collapse {
+    width: 6vh;
+    height: 6vh;
+    background-color: lightblue;
+    display: block;
+    position: relative;
+    margin-top: 4%;
   }
 
   .codeLinks {

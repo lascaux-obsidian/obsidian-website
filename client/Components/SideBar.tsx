@@ -27,11 +27,21 @@ const NavBar = (props: any) => {
   if (page === 'demo') curContext = <DemoContext />;
   if (page === 'docs')
     curContext = <DocsContext docsPage={docsPage} setDocsPage={setDocsPage} />;
+  
+  const [open, setOpen] = (React as any).useState(false);
+
+  const sidebarStyle = () => {
+    const styleObj = open ? { height: '70%' } : { height: '20%' };
+    const homeAbout = { backgroundColor: 'rgba(0,0,0,0)' };
+
+    return page === 'home'|| page==='about' ? Object.assign(styleObj, homeAbout) : styleObj;
+  };
 
   return (
     <div
       className='sidebar'
-      style={page === 'home'|| page==='about' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
+      // style={page === 'home'|| page==='about' ? { backgroundColor: 'rgba(0,0,0,0)' } : {}}
+      style={sidebarStyle()}
     >
       <div className='codeLinks'>
         <a href='https://github.com/oslabs-beta/obsidian'>
@@ -51,6 +61,11 @@ const NavBar = (props: any) => {
           </div>
         </a>
       </div>
+      <button id='mobile-collapse' style={
+          page === 'home'|| page==='about'
+            ? { backgroundColor: 'rgba(0,0,0,0)', overflow: 'visible' }
+            : {}
+        } onClick={() => setOpen(!open)}>^</button>
       <div
         className='sideContent'
         style={
