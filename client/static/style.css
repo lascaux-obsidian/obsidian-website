@@ -461,9 +461,14 @@ path.bullHead {
   text-emphasis-style: bold;
 }
 
+#mobile-collapse {
+  display: none;
+  opacity: 0;
+}
+
 /* phone sizing */
 
-@media screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
   html {
     font-size: 1em;
   }
@@ -500,12 +505,35 @@ path.bullHead {
 
   .sidebar {
     flex-direction: row;
+    justify-content: flex-start;
     z-index: 1;
     width: 94%;
     height: 20%;
     max-width: 94%;
     margin: 15px auto;
   }
+
+  #mobile-collapse {
+    width: 6vh;
+    height: 6vh;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    /* margin-top: 1%; */
+    margin: 1% 3% 1% 1%;
+    opacity: 1;
+    border: none;
+  }
+
+  #mobile-collapse:focus {
+    outline: none;
+  }
+
+  /* .sideContent {
+    padding: 0;
+  } */
 
   .codeLinks {
     position: absolute;
@@ -535,6 +563,31 @@ path.bullHead {
 
   .social-button {
     padding-top: 0;
+  }
+  /* fix font size in Docs */
+  .docContainer {
+    padding: 2rem 1rem;
+  }
+  
+  .docContainer h1,
+  .mainContainer h1 {
+    font-size: 2.5rem;
+  }
+  
+  .docContainer h2 {
+    font-size: 2rem;
+  }
+  
+  .docContainer h3 {
+    font-size: 1.8rem;
+  }
+  
+  .docContainer h3 {
+    font-size: 1.5rem;
+  }
+  
+  .docContainer p {
+    font-size: 1rem;
   }
 }
 
