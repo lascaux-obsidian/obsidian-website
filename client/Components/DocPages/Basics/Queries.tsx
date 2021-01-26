@@ -1,75 +1,155 @@
-import { React, CodeBlock, monokai } from '../../../../deps.ts';
+import { React, CodeBlock, dracula } from '../../../../deps.ts';
 
 const Queries = (props: any) => {
-
   return (
     <div className="docContainer">
       <h1>Queries</h1>
-      <p>In this chapter, we'll cover how to query using <code className="obsidianInline">obsidian</code>, and discuss the options available to you when querying.</p>
+      <p>
+        In this chapter, we'll cover how to fetch GraphQL data in React using
+        <code className="obsidianInline"> obsidian query</code>, and discuss the
+        options available to you when querying.
+      </p>
       <h2>useObsidian</h2>
-      <p>After setting up ObsidianWrapper, <code className="obsidianInline">obsidian</code> exposes a custom React hook, <code className="obsidianInline">useObsidian</code>, that can be used to globally access fetching and caching capabilities.  Destructure the hook inside your React components to access <code className="obsidianInline">obsidian</code> functionality:</p>
-      <CodeBlock
-        text={`// MainContainer.tsx
-import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
+      <p>
+        After setting up ObsidianWrapper,
+        <code className="obsidianInline"> obsidian</code> exposes a custom React
+        hook, <code className="obsidianInline">useObsidian</code>, that can be
+        used to globally access fetching and caching capabilities. Destructure
+        the hook inside your React components to access
+        <code className="obsidianInline"> obsidian</code> functionality:
+      </p>
+      <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
+        {`// MainContainer.tsx
+import { useObsidian } from 'https://deno.land/x/obsidian/clientMod.ts';
 
 const MainContainer = () => {
-  const { hunt, gather } = useObsidian();
+  const { query } = useObsidian();
 
   // jsx below
 };`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
-      <br/>
-      <h2>hunt</h2>
-      <p>To query without caching, <code className="obsidianInline">obsidian</code> offers the <code className="obsidianInline">hunt</code> method.  <code className="obsidianInline">hunt</code> has two required parameters:</p>
+      </CodeBlock>
+      <br />
+      <h2>Executing a query</h2>
+      <p>
+        To run a simple query within a React component, call
+        <code className="obsidianInline"> obsidian query</code> and pass it a
+        GraphQL query string as a required first parameter. When your component
+        renders, the <code className="obsidianInline">obsidian query </code>
+        returns a response object from Obsidian Client that contains data you
+        can use to render your UI. Let's look at an example:
+      </p>
+      <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
+        {`// MainContainer.tsx
+
+const allMoviesQuery = \`query{
+  movies{
+    id
+    title
+  }
+}\`
+async function getAllMovies() {
+  const data = await query(allMoviesQuery);
+  return (
+    <select name="dog" onChange={onDogSelected}>
+      {data.dogs.map(dog => (
+        <option key={dog.id} value={dog.breed}>
+          {dog.breed}
+        </option>
+      ))}
+    </select>
+  );
+}`}
+      </CodeBlock>
+      <br />
+      <p>
+        Whenever Obsidian Client fetches query results from your server, it
+        automatically caches those results locally. This makes subsequent
+        executions of the same query extremely fast. To utilize the caching
+        capabilities of obsidian and to have more control over how the data is
+        fetched, we’re providing some configuration options as a second and
+        optional parameter to the
+        <code className="obsidianInline"> obsidian query</code> in addition to
+        the query string:
+      </p>
       <ol>
-        <li><strong>query</strong> - Your GraphQL query string</li>
-        <li><strong>endpoint</strong> - The endpoint where <code className="obsidianInline">obsidian</code> should send this request</li>
-      </ol>
-      <p><code className="obsidianInline">hunt</code> responds just like the fetch API, returning a promise that can be consumed with a <code className="obsidianInline">.then()</code>.  Let's see it in action:</p>
-      <CodeBlock
-        text={`// MainContainer.tsx
-return (
-  <div>
-    <button
-      onClick(() => {
-        hunt(\`query { getMovie { id title releaseYear } }\`, '/graphql')
-        .then(resp => console.log(resp))
-      })
-    >Get Movie</button>
-  </div>
-);`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
-      <br/>
-      <p><code className="obsidianInline">hunt</code> slims your GraphQL requests down to their core: query and endpoint.  While that's a fine improvement, <code className="obsidianInline">obsidian</code> really shines when using <code className="obsidianInline">gather</code>.</p>
-      <p className="docAside"><i>NOTE</i> - <code className="obsidianInline">hunt</code> is especially useful for quickly and easily querying foreign GraphQL endpoints.  As <code className="obsidianInline">obsidian</code> relies upon <code className="obsidianInline">obsidianSchema</code> for its normalization caching strategy, foreign endpoints will not be compatible with <code className="obsidianInline">obsidian</code>'s normalization caching strategy.</p>
-      <h2>gather</h2>
-      <p>To utilize the caching capabilities of <code className="obsidianInline">obsidian</code>, we'll want to query our GraphQL endpoint with <code className="obsidianInline">gather</code>.  <code className="obsidianInline">gather</code> is a deceptively simple method, since it behaves just like <code className="obsidianInline">hunt</code> on the surface.  But unlike <code className="obsidianInline">hunt</code>, <code className="obsidianInline">gather</code> provides access to <code className="obsidianInline">obsidian</code>'s caching strategies.  <code className="obsidianInline">gather</code> accepts two parameters:</p>
-      <ol>
-        <li><strong>query</strong> - Your GraphQL query string</li>
-        <li><strong>options</strong> - (optional) An object with further parameters
+        <li>
+          <strong>query</strong> - Your GraphQL query string.
+        </li>
+        <li>
+          <strong>options</strong> - (optional) An object with further
+          parameters.
           <ul>
-            <li><strong>endpoint</strong> - (default: <code className="obsidianInline">'/graphql'</code>) The endpoint where <code className="obsidianInline">obsidian</code> should send this request</li>
-            <li><strong>pollInterval</strong> - (default: <code className="obsidianInline">null</code>) How often <code className="obsidianInline">obsidian</code> should execute this query, in ms; learn more in the <a href="#" onClick={() => props.setDocsPage('Polling')}>Advanced</a> section</li>
-            <li><strong>destruture</strong> - (default: <code className="obsidianInline">true</code>) Set to <code className="obsidianInline">false</code> to use only whole-query caching; see the <a href="#" onClick={() => props.setDocsPage('Strategies')}>Caching</a> section for more details</li>
-            <li><strong>sessionStore</strong> - (default: <code className="obsidianInline">false</code>) Set to <code className="obsidianInline">true</code> to store your cache in session storage instead of global memory; see the <a href="#" onClick={() => props.setDocsPage('Client')}>Caching</a> section for more details</li>
+            <li>
+              <strong>endpoint</strong> - (default:
+              <code className="obsidianInline">'/graphql'</code>) The endpoint
+              where <code className="obsidianInline">obsidian</code> should send
+              this request.
+            </li>
+            <li>
+              <strong>cacheRead</strong> - (default:
+              <code className="obsidianInline"> true</code>) Determines whether
+              the cache should be checked before making a server request.
+            </li>
+            <li>
+              <strong>cacheWrite</strong> - (default:
+              <code className="obsidianInline"> true</code>) Determines whether
+              the response from a server request should be written into the
+              cache. See the{' '}
+              <a href="#" onClick={() => props.setDocsPage('Client')}>
+                Caching
+              </a>{' '}
+              section for more details.
+            </li>
+            <li>
+              <strong>pollInterval</strong> - (default:
+              <code className="obsidianInline"> null</code>) How often
+              <code className="obsidianInline"> obsidian</code> should execute
+              this query, in ms. Learn more in the
+              <a href="#" onClick={() => props.setDocsPage('Polling')}>
+                {' '}
+                Advanced{' '}
+              </a>
+              section.
+            </li>
+            <li>
+              <strong>wholeQuery</strong> - (default:
+              <code className="obsidianInline"> false</code>) Set to
+              <code className="obsidianInline"> true</code> to conduct
+              wholeQuery writes or retrieval from the cache. See the
+              <a href="#" onClick={() => props.setDocsPage('Client')}>
+                {' '}
+                Caching{' '}
+              </a>
+              section for more details.
+            </li>
           </ul>
         </li>
       </ol>
-      <p>As you can see, invoking <code className="obsidianInline">gather</code> with a query as it's only argument will make a request to your '/graphql' endpoint only once, utilizing the destructure caching strategy and storing the cached data in global memory.</p>
-      <p>We'll explore caching in more detail in the <a href="#" onClick={() => props.setDocsPage('Strategies')}>Caching</a> section.  For now, let's use <code className="obsidianInline">gather</code> to showcase a simple GraphQL request:</p>
-      <CodeBlock
-        text={`// MainContainer.tsx
-import React from 'https://dev.jspm.io/react@16.13.1';
-import { useObsidian } from 'https://deno.land/x/obsidian@v1.0.1/clientMod.ts';
+      <p>
+        As you can see, invoking{' '}
+        <code className="obsidianInline">obsidian query</code> with a query
+        string as its only argument will make a request to your '/graphql'
+        endpoint only once, utilizing the destructure caching strategy and
+        storing the cached data in global memory.
+      </p>
+      <p>
+        We'll explore caching in more detail in the
+        <a href="#" onClick={() => props.setDocsPage('Strategies')}>
+          {' '}
+          Caching
+        </a>{' '}
+        section. For now, let's use
+        <code className="obsidianInline"> obsidian query</code> to showcase a
+        simple GraphQL request that responds just like the fetch API, returning
+        a promise that can be consumed with a .then():
+      </p>
+      <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
+        {`// MainContainer.tsx
+import React from 'https://dev.jspm.io/react';
+import { useObsidian } from 'https://deno.land/x/obsidian/clientMod.ts';
 
 const MainContainer = () => {
-  const { hunt, gather } = useObsidian();
+  const { query } = useObsidian();
   const [movie, setMovie] = (React as any).useState({});
 
   return (
@@ -78,7 +158,7 @@ const MainContainer = () => {
       <p>Check out our favorite movie by clicking the button below</p>
       <button
         onClick(() => {
-          gather(\`query { getMovie { id title releaseYear } }\`)
+          query(\`query { getMovie { id title releaseYear } }\`)
           .then(resp => setMovie(resp.data.getMovie))
         })
       >Get Movie</button>
@@ -89,16 +169,23 @@ const MainContainer = () => {
 };
 
 export default MainContainer;`}
-        language={"tsx"}
-        showLineNumbers={true}
-        theme={monokai}
-      />
-      <br/>
-      <p>That's it!  Subsequent <code className="obsidianInline">gather</code> queries will utilize the cache to reconstruct the result without querying the GraphQL endpoint.</p>
+      </CodeBlock>
+      <br />
+      <p>
+        That's it! Subsequent queries will utilize the cache to reconstruct the
+        result without querying the GraphQL endpoint.
+      </p>
       <h4>Recap & Next Up</h4>
-      <p>In this chapter we covered <code className="obsidianInline">useObsidian</code> and the basic use cases of the <code className="obsidianInline">hunt</code> and <code className="obsidianInline">gather</code> methods.  Next up, we'll cover mutations and the <code className="obsidianInline">mutate</code> method <code className="obsidianInline">obsidian</code> supplies.</p>
+      <p>
+        In this chapter we covered{' '}
+        <code className="obsidianInline">useObsidian</code> and the basic use
+        cases of the <code className="obsidianInline">query</code> method. Next
+        up, we'll cover mutations and the
+        <code className="obsidianInline"> mutate</code> method
+        <code className="obsidianInline"> obsidian</code> supplies.
+      </p>
     </div>
-  )
-}
+  );
+};
 
 export default Queries;

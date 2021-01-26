@@ -4,6 +4,9 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       div: any;
+      h4: any;
+      h6: any;
+      p: any;
     }
   }
 }
@@ -20,16 +23,14 @@ const DemoContext = (props: any) => {
         </h4>
 
         <div className='list-group-item'>
-          <h6>Build A Query</h6>
+          <h6>Execute A Query</h6>
           <div className='list-group'>
             <p
               className={`list-group-item list-group-item-action 
               
           `}
             >
-              This block provides the ability to construct a query. Select a
-              country and properties that you desire and note that a GraphQL
-              query is constructed with your inputs.
+              Utilize the input fields on the left to make a GraphQL query or mutation.
             </p>
           </div>
         </div>
