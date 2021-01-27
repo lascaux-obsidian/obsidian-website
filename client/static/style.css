@@ -475,19 +475,25 @@ path.bullHead {
 
   .app {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+  }
+
+  .mainContainerLogo {
+    height: 60vh;
   }
 
   .navBar {
     flex-direction: row;
     width: 100%;
-    height: 15%;
+    height: 11%;
     z-index: 10;
     max-width: 100%;
     justify-content: center;
     align-items: center;
     margin-right: 0.5vw;
+    padding: 0;
+    margin-top: 5%;
   }
 
   .navBtn,
@@ -504,6 +510,7 @@ path.bullHead {
   }
 
   .sidebar {
+    position: absolute;
     flex-direction: row;
     justify-content: flex-start;
     z-index: 1;
@@ -511,6 +518,8 @@ path.bullHead {
     height: 20%;
     max-width: 94%;
     margin: 15px auto;
+    background-color: rgba(0,0,0,0.9);
+    transition: height 1s, top 1s;
   }
 
   #mobile-collapse {
