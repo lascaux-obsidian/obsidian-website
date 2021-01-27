@@ -63,6 +63,105 @@ a:hover {
   animation-duration: 1s;
   cursor: pointer;
 }
+/* Demo Styling */
+
+.pre-block {
+  width: 60%;
+  border: 1px solid black;
+  display: block;
+  background-color: #fff;
+  padding: 10px;
+  margin: 1vw;
+}
+/* .pre-block, */
+.code-block {
+  border: 1px solid black;
+  display: block;
+  padding: 20px;
+  margin: 1vw;
+}
+
+.code-block p {
+  margin-top: 1rem;
+}
+
+#demo-block {
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1vw;
+}
+
+#demo-block label {
+  margin: 0 10px;
+}
+
+.optionsForCountry {
+  margin-top: 5%;
+}
+
+pre {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.demoInput {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.query-timer {
+  font-size: 1.7rem;
+}
+
+.buildQueryTitle {
+  text-align: center;
+  font-size: 3em;
+}
+
+.showQuery,
+.buildQuery {
+  display: inline-block;
+}
+
+#stretchQuery {
+  margin: auto;
+  width: 80%;
+}
+
+.buildQuery {
+  color: rgb(20, 20, 20);
+  border-radius: 10px;
+  background-color: rgb(212, 212, 212);
+  width: 40%;
+  padding: 2%;
+}
+
+#fetchBtn {
+  margin-top: 5%;
+}
+
+.showQuery {
+  width: 40%;
+}
+
+#code-black {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+#code-yellow {
+  background-color: rgb(20, 20, 20);
+  color: rgb(255, 255, 138);
+}
+
+#code-pink {
+  background-color: rgb(20, 20, 20);
+  color: pink;
+}
 #demo-form {
   padding: 1rem;
   justify-content: center;
@@ -516,7 +615,7 @@ path.bullHead {
   #mobile-collapse {
     width: 6vh;
     height: 6vh;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     color: white;
     display: block;
     position: relative;
@@ -568,24 +667,24 @@ path.bullHead {
   .docContainer {
     padding: 2rem 1rem;
   }
-  
+
   .docContainer h1,
   .mainContainer h1 {
     font-size: 2.5rem;
   }
-  
+
   .docContainer h2 {
     font-size: 2rem;
   }
-  
+
   .docContainer h3 {
     font-size: 1.8rem;
   }
-  
+
   .docContainer h3 {
     font-size: 1.5rem;
   }
-  
+
   .docContainer p {
     font-size: 1rem;
   }

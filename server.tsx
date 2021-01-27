@@ -21,7 +21,30 @@ app.use(async (ctx, next) => {
   const ms = Date.now() - start;
   ctx.response.headers.set('X-Response-Time', `${ms}ms`);
 });
-
+const initialState = {
+  obsidianSchema: {
+    returnTypes: {
+      Country: { kind: 'NamedType', type: 'Country' },
+    },
+    argTypes: {
+      Country: { _id: 'ID' },
+    },
+    obsidianTypeSchema: {
+      Country: {
+        _id: { type: 'ID', scalar: true },
+        name: { type: 'String', scalar: true },
+        capital: { type: 'String', scalar: true },
+        population: { type: 'Int', scalar: true },
+        flag: { type: 'Flag', scalar: false },
+        borders: { type: 'Country', scalar: false },
+      },
+      Flag: {
+        _id: { type: 'ID', scalar: true },
+        emoji: { type: 'String', scalar: true },
+      },
+    },
+  },
+};
 
 // Router for base path
 const router = new Router();
@@ -48,11 +71,15 @@ app.addEventListener('listen', () => {
   console.log(`Listening at http://localhost:${PORT}`);
 });
 
-if (import.meta.main) {
-  await app.listen({ port: PORT });
-}
+// if (import.meta.main) {
+  // await 
+  app.listen({ port: PORT });
+// }
 
 export { app };
+
+
+
 
 function handlePage(ctx: any) {
   try {
@@ -81,6 +108,9 @@ function handlePage(ctx: any) {
     <link rel="stylesheet" href="/static/style.css">
   
     <title>Obsidian</title>
+    <script>
+    window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
+  </script>
   </head>
   <body >
     <div id="root">${body}</div>
