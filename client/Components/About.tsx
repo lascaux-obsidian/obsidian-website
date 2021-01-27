@@ -20,7 +20,7 @@ const About = (props: any) => {
       <div className="mainContainer">
 
           
-          <div class="devGrid">     
+          <div className="devGrid">     
           <Team/>
           </div>
           </div>

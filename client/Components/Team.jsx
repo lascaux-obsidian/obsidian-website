@@ -95,12 +95,14 @@ const users = [
   },
 ];
 
-const teamMembers = users.map((user) => <TeamMember user={user} />);
+const teamMembers = users.map((user, i) => (
+  <TeamMember key={`TeamMember-${i}`} user={user} />
+));
 function Team() {
   return (
-    <section class='team-section text-center'>
+    <section className='team-section text-center'>
       <h1>Contributors</h1>
-      <div class='row'>{teamMembers}</div>
+      <div className='row'>{teamMembers}</div>
     </section>
   );
 }
