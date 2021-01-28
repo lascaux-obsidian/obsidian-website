@@ -9,6 +9,7 @@ const TeamMember = ({
         <div
           className='slideContent z-depth-1'
           style={{
+            backgroundColor: 'black',
             backgroundImage: `url('${image}')`,
           }}
         ></div>
