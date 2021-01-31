@@ -159,6 +159,7 @@ pre {
 }
 
 #code-pink {
+  line-height: 0.5rem;
   background-color: rgb(20, 20, 20);
   color: pink;
 }
@@ -617,7 +618,7 @@ path.bullHead {
     height: 20%;
     max-width: 94%;
     margin: 15px auto;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.9);
     transition: height 1s, top 1s;
   }
 

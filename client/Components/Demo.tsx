@@ -1,4 +1,4 @@
-import { React, useObsidian } from '../../deps.ts';
+import { React, useObsidian, BrowserCache } from '../../deps.ts';
 import SideBar from './SideBar.tsx';
 import Cache from './Cache.tsx';
 
@@ -22,12 +22,25 @@ const Demo = (props: any) => {
   const [response, setResponse] = (React as any).useState('');
   const [queryTime, setQueryTime] = (React as any).useState(0);
 
-  const { gather, cache, clearCache } = useObsidian();
+  const { query, cache, setCache, clearCache } = useObsidian();
   const [country, setCountry] = (React as any).useState('4425');
   const [name, setName] = (React as any).useState(false);
   const [population, setPopulation] = (React as any).useState(false);
   const [flag, setFlag] = (React as any).useState(false);
   const [borders, setBorders] = (React as any).useState(false);
+  const [resfresh, setRefresh] = (React as any).useState(false);
+
+
+
+  const refreshCache = () => {
+    setTimeout(()=>{
+      setRefresh(!resfresh);
+    }, 0);
+  }
+
+  const clearCacheUpdate = () => {
+    clearCache(), refreshCache();
+  }
 
   const bordersQuery = `
         borders {
@@ -43,7 +56,7 @@ const Demo = (props: any) => {
       }
   `;
 
-  const query = `{
+  const queryStr = `{
     Country (_id: "${country}")
     {
         _id${name ? '\n        name' : ''}${
@@ -54,14 +67,19 @@ const Demo = (props: any) => {
   `.trim();
   const fetchData = (e: any) => {
     const start = Date.now();
-    gather(query, {
+    query(queryStr, {
       endpoint: 'https://countries-274616.ew.r.appspot.com',
       sessionStore: false,
     }).then((resp: any) => {
       setQueryTime(Date.now() - start);
       if (!Array.isArray(resp.data.Country)) resp.data.Country = [resp.data.Country];
       setResponse(JSON.stringify(resp.data));
-    }).catch((e:any)=>console.log(e));
+      return resp;
+    }).then((resp:any)=>{
+      setCache(new BrowserCache(cache.storage))
+      refreshCache();
+    })
+    .catch((e:any)=>console.log(e));
   };
 
   return (
@@ -147,7 +165,7 @@ const Demo = (props: any) => {
               <pre className='pre-block' id='stretchQuery'>
                 Query:
                 <code className='code-block' id='code-black'>
-                  {query}
+                  {queryStr}
                 </code>
               </pre>
             </div>
@@ -159,12 +177,11 @@ const Demo = (props: any) => {
               {response}
             </code>
           </pre>
-          <button onClick={clearCache}>Clear Cache</button>
-
+          <button onClick={clearCacheUpdate}>Clear Cache</button>
           <pre className='pre-block'>
             Cache:
             <code className='code-block' id='code-pink'>
-              <Cache key='cache' cache={cache} />
+              <Cache key='cache' cache={cache.storage} />
             </code>
           </pre>
           <div className='apiLink'>
