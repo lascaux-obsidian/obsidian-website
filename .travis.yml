@@ -10,7 +10,7 @@ deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
   app: 'ObsidianSite'
-  env: 'obsidiansite-dev'
+  env: 'obsidiansite-prod'
   bucket_name: 'elasticbeanstalk-us-east-1-069525016859'
   bucket_path: 'ObsidianSite'
   access_key_id: '$AWS_ACCESS_KEY_ID'
