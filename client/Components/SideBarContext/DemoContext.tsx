@@ -23,16 +23,14 @@ const DemoContext = (props: any) => {
         </h4>
 
         <div className='list-group-item'>
-          <h6>Build A Query</h6>
+        <h6>Execute A Query</h6>
           <div className='list-group'>
             <p
               className={`list-group-item list-group-item-action 
               
           `}
             >
-              This block provides the ability to construct a query. Select a
-              country and properties that you desire and note that a GraphQL
-              query is constructed with your inputs.
+              Utilize the input fields on the left to make a GraphQL query or mutation.
             </p>
           </div>
         </div>
@@ -57,23 +55,9 @@ const DemoContext = (props: any) => {
           `}
             >
               Finally, we can see our destructured query and responses which are
-              currently stored in this application. If you query for a specific
+              currently stored in a Redis cache. If you query for a specific
               property that is stored in the cache, the Obsidian algorithm will
-              find and return it. Eliminating the need to query the API once
-              again.
-            </p>
-          </div>
-        </div>
-        <div className='list-group-item'>
-          <h6>Note</h6>
-          <div className='list-group'>
-            <p
-              className={`list-group-item list-group-item-action 
-          `}
-            >
-              The cache also stores entire queries and responses to improve
-              lookup time. These are not displayed in the code block to improve
-              readabiliy.
+              find and return it. Eliminating the need to query the database again.
             </p>
           </div>
         </div>
