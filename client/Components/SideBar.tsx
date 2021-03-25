@@ -50,7 +50,7 @@ const NavBar = (props: any) => {
       style={sidebarStyle}
     >
       <div className='codeLinks'>
-        <a href='https://github.com/oslabs-beta/obsidian'>
+        <a href='https://github.com/open-source-labs/obsidian'>
           <div className='codeLinkDiv'>
             <img
               id='githubLogo'
