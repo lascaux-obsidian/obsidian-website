@@ -7,6 +7,7 @@ const TeamMember = ({
     <div className='col-lg-3 col-md-6 mb-lg-0 mb-5'>
       <div className='avatar mx-auto'>
         <div
+          rel='prefetch'
           className='slideContent z-depth-1'
           style={{
             backgroundColor: 'black',

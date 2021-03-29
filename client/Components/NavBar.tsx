@@ -139,7 +139,7 @@ const NavBar = (props: any) => {
         <h3 className='navBtnText'>Docs</h3>
       </button>
       <div className='navBarGitLink'>
-        <a href='https://github.com/oslabs-beta/obsidian'>
+        <a href='https://github.com/open-source-labs/obsidian'>
           <img
             id='githubLogoTop'
             src='../static/github-icon.svg'
