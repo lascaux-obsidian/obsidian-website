@@ -144,7 +144,7 @@ import App from './App.tsx';
       </CodeBlock>
       <br />
       <p>
-        In the server, we'll use Deno's native bundle method to wrap up all of
+        In the server, we'll use Deno's native emit method to wrap up all of
         the React logic contained in our app, ready to be reattached to the DOM
         via hydration:
       </p>
