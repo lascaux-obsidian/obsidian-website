@@ -25,7 +25,7 @@ const Demo = (props: any) => {
     <>
       <div className='mainContainer'>
         {/* <div id='demo-block'> */}
-          <iframe src='http://demo.obsidian.land/'height="100%" width="100%"></iframe>
+          <iframe src='http://demonstration.obsidian.land/'height="100%" width="100%"></iframe>
         {/* </div> */}
       </div>
       <SideBar page={props.page} />
