@@ -619,6 +619,9 @@ path.bullHead {
     height: 65%;
     margin: 0 5%;
   }
+  .demoContainer {
+    margin: 0;
+  }
 
   .sidebar {
     position: absolute;
