@@ -18,17 +18,18 @@ declare global {
 }
 
 const Demo = (props: any) => {
-  
-
-
   return (
     <>
-      <div className='mainContainer'>
+      <div className='demoContainer'>
         {/* <div id='demo-block'> */}
-          <iframe src='http://demo.obsidian.land/'height="100%" width="100%"></iframe>
+        <iframe
+          src='http://demo.obsidian.land/'
+          height='100%'
+          width='100%'
+        ></iframe>
         {/* </div> */}
       </div>
-      <SideBar page={props.page} />
+      {/* <SideBar page={props.page} /> */}
     </>
   );
 };
