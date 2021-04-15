@@ -144,13 +144,15 @@ import App from './App.tsx';
       </CodeBlock>
       <br />
       <p>
-        In the server, we'll use Deno's native bundle method to wrap up all of
+        In the server, we'll use Deno's native emit method to wrap up all of
         the React logic contained in our app, ready to be reattached to the DOM
         via hydration:
       </p>
       <CodeBlock language="tsx" showLineNumbers={true} style={dracula}>
         {`// server.tsx
-const [_, clientJS] = await Deno.bundle('./client/client.tsx');`}
+const { files, diagnostics } = await Deno.emit('./client/client.tsx', {
+  bundle: 'esm',
+});`}
       </CodeBlock>
       <br />
       <p>
@@ -163,7 +165,7 @@ const hydrateRouter = new Router();
 
 hydrateRouter.get('/static/client.js', (context) => {
   context.response.headers.set('Content-Type', 'text/html');
-  context.response.body = clientJS;
+  context.response.body = files['deno:///bundle.js'];
 });
 
 app.use(hydrateRouter.routes(), hydrateRouter.allowedMethods());`}
