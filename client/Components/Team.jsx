@@ -3,15 +3,59 @@ import TeamMember from './TeamMember.jsx';
 
 const users = [
   {
-    firstName: 'Esma',
-    lastName: 'Sahraoui',
+    firstName: 'Nhan',
+    lastName: 'Ly',
     image:
-      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609992320/IMG_2063_htwead.jpg',
+      'https://res.cloudinary.com/dyigtncwy/image/upload/v1618454676/Nhan_hlhra2.jpg',
     info:
-      'Esma is a full-stack software engineer with a passion for building servers as well as building responsive user interfaces for web applications. In her free time, she is driven by traveling to discover new cultures and kayaking across rivers.',
-    linkedin: 'https://www.linkedin.com/in/esma-sahraoui/',
-    github: 'https://github.com/EsmaShr',
+      'Nhan is a software engineer that enjoys working on the entire stack and particularly enjoys playing with algorithms and learning about new technologies. When not coding Nhan usually listening to podcasts, reading, and taking (too long) breaks at the gym between sets.',
+    linkedin: 'https://www.linkedin.com/in/nhanly/',
+    github: 'https://github.com/NhanTLy',
   },
+
+  {
+    firstName: 'Damon',
+    lastName: 'Alfaro',
+    image:
+      'https://res.cloudinary.com/dyigtncwy/image/upload/v1618454676/Damon_j1ehdh.jpg',
+    info:
+      'As a software engineer Damon enjoys databases and experimenting with emerging back-end technologies. He spends his free time backpacking, running, and traveling in his converted school bus RV.',
+    linkedin: 'https://www.linkedin.com/in/damon-alfaro-28530a74/',
+    github: 'https://github.com/djdalfaro',
+  },
+
+  {
+    firstName: 'Adam',
+    lastName: 'Wilson',
+    image:
+      'https://res.cloudinary.com/dyigtncwy/image/upload/v1618454676/Adam_ddx07d.jpg',
+    info:
+      'Adam is a full-stack software engineer originally from Cleveland, OH. He enjoys developing efficient and responsive web applications in addition to performant APIs, using React and Node.js. His favorite things include tacos and Irish wolfhounds.',
+    linkedin: 'https://www.linkedin.com/in/adam-wilson-houston/',
+    github: 'https://github.com/aswilson87',
+  },
+  {
+    firstName: 'Christy',
+    lastName: 'Gomez',
+    image:
+      'https://res.cloudinary.com/dyigtncwy/image/upload/v1618456773/IMG_1522_h9j9vi.jpg',
+    info:
+      'Christy is a software engineer focused on developing full stack applications with responsive design. She enjoys salsa dancing, trying new restaurants, unplanned traveling, and being eco-friendly.',
+    linkedin: 'https://www.linkedin.com/in/christy-gomez/',
+    github: 'https://github.com/christygomez',
+  },
+
+  {
+    firstName: 'Geovanni',
+    lastName: 'Alarcon',
+    image:
+      'https://res.cloudinary.com/dyigtncwy/image/upload/v1618459654/geo2_jxodpa.jpg',
+    info:
+      'Geo is a software engineer who loves building scalable and responsive software tools for the developer community. For fun, he enjoys traveling, and picnics.',
+    linkedin: 'https://www.linkedin.com/in/geo-alarcon/',
+    github: 'https://github.com/gealarcon',
+  },
+
   {
     firstName: 'Derek',
     lastName: 'Miller',
