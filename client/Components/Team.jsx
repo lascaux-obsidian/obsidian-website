@@ -61,7 +61,7 @@ const users = [
       'Esma is a full-stack software engineer with a passion for building servers as well as building responsive user interfaces for web applications. In her free time, she is driven by traveling to discover new cultures and kayaking across rivers.',
     linkedin: 'https://www.linkedin.com/in/esma-sahraoui/',
     github: 'https://github.com/EsmaShr',
-    },
+  },
   {
     firstName: 'Derek',
     lastName: 'Miller',
