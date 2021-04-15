@@ -12,7 +12,6 @@ const users = [
     linkedin: 'https://www.linkedin.com/in/nhanly/',
     github: 'https://github.com/NhanTLy',
   },
-
   {
     firstName: 'Damon',
     lastName: 'Alfaro',
@@ -23,7 +22,6 @@ const users = [
     linkedin: 'https://www.linkedin.com/in/damon-alfaro-28530a74/',
     github: 'https://github.com/djdalfaro',
   },
-
   {
     firstName: 'Adam',
     lastName: 'Wilson',
@@ -44,7 +42,6 @@ const users = [
     linkedin: 'https://www.linkedin.com/in/christy-gomez/',
     github: 'https://github.com/christygomez',
   },
-
   {
     firstName: 'Geovanni',
     lastName: 'Alarcon',
@@ -55,7 +52,16 @@ const users = [
     linkedin: 'https://www.linkedin.com/in/geo-alarcon/',
     github: 'https://github.com/gealarcon',
   },
-
+  {
+    firstName: 'Esma',
+    lastName: 'Sahraoui',
+    image:
+      'https://res.cloudinary.com/dsmiftdyz/image/upload/v1609992320/IMG_2063_htwead.jpg',
+    info:
+      'Esma is a full-stack software engineer with a passion for building servers as well as building responsive user interfaces for web applications. In her free time, she is driven by traveling to discover new cultures and kayaking across rivers.',
+    linkedin: 'https://www.linkedin.com/in/esma-sahraoui/',
+    github: 'https://github.com/EsmaShr',
+    },
   {
     firstName: 'Derek',
     lastName: 'Miller',
