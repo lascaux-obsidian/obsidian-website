@@ -52,13 +52,16 @@ const router = new Router();
 router.get('/', handlePage);
 
 // Bundle the client-side code
-const [_, clientJS] = await Deno.bundle('./client/client.tsx');
+// const [_, clientJS] = await Deno.bundle('./client/client.tsx');
+
+const {files, diagnostics } = await Deno.emit('./client/client.tsx', {bundle: 'module'});
 
 // Router for bundle
 const serverrouter = new Router();
 serverrouter.get('/static/client.js', (context) => {
   context.response.headers.set('Content-Type', 'text/html');
-  context.response.body = clientJS;
+  // context.response.body = clientJS;
+  context.response.body = files['deno:///bundle.js'];
 });
 
 // Implement the routes on the server
