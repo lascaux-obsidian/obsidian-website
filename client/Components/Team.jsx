@@ -5,8 +5,9 @@ const users = [
 	{
 		firstName: 'Raymond',
 		lastName: 'Ahn',
-		image: 'https://res.cloudinary.com/os-labs/image/upload/v1625079464/Profile_Pic_tcytta.jpg',
-		info: '',
+		image:
+			'https://res.cloudinary.com/os-labs/image/upload/v1625079464/Profile_Pic_tcytta.jpg',
+		info: 'Raymond is a full-stack software engineer whose focus is on developing scalable and responsive programs through algorithmic optimization. During his spare time, he enjoys exploring new cuisines, game nights, fitness, traveling, and anything music-related.',
 		linkedin: 'https://www.linkedin.com/in/raymondahn/',
 		github: 'https://github.com/raymondcodes',
 	},
@@ -21,24 +22,27 @@ const users = [
 	{
 		firstName: 'Justin',
 		lastName: 'McKay',
-		image: 'https://res.cloudinary.com/os-labs/image/upload/v1625079448/Screen_Shot_2021-06-28_at_11.24.08_AM_kyfviq.png',
-		info: '',
+		image:
+			'https://res.cloudinary.com/os-labs/image/upload/v1625079448/Screen_Shot_2021-06-28_at_11.24.08_AM_kyfviq.png',
+		info: 'Justin is a software engineer with a passion for solving complex problems and full stack system design. When not coding he enjoys music theory, fitness, and cold water.',
 		linkedin: 'https://www.linkedin.com/in/justinwmckay/',
 		github: 'https://github.com/justinwmckay',
 	},
 	{
 		firstName: 'Cameron',
 		lastName: 'Simmons',
-		image: 'https://res.cloudinary.com/os-labs/image/upload/v1625002810/3C1B71E4-CD2A-4D11-BBF0-B054E80BC132_1_201_a_afrjry.jpg',
-		info: 'Cameron is a full-stack engineer who ',
+		image:
+			'https://res.cloudinary.com/os-labs/image/upload/v1625002810/3C1B71E4-CD2A-4D11-BBF0-B054E80BC132_1_201_a_afrjry.jpg',
+		info: 'Cameron is a full-stack software engineer who gets excited about creating responsive and effective applications. In his spare time he enjoys producing music and being outdoors.',
 		linkedin: 'https://www.linkedin.com/in/camsimmons/',
 		github: 'https://github.com/cssim22',
 	},
 	{
 		firstName: 'Patrick',
 		lastName: 'Sullivan',
-		image: 'https://res.cloudinary.com/os-labs/image/upload/v1625079443/PJS-Passport_hv6kvx.jpg',
-		info: '',
+		image:
+			'https://res.cloudinary.com/os-labs/image/upload/v1625079443/PJS-Passport_hv6kvx.jpg',
+		info: 'Patrick is a full-stack software engineer passionate about back-end tech.  He loves backpacking in the Pacific Northwest and the Rockies, growing vegetables, and living fully.',
 		linkedin: 'https://www.linkedin.com/in/patrick-j-m-sullivan/',
 		github: 'https://github.com/pjmsullivan',
 	},
