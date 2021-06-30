@@ -9,7 +9,7 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
-  app: 'obs_website'
+  app: 'obs-website'
   env: 'obs-website-prod'
   bucket_name: 'elasticbeanstalk-us-east-1-416954177761'
   bucket_path: 'obs_website'
