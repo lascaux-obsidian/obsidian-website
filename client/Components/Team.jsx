@@ -14,8 +14,8 @@ const users = [
 	{
 		firstName: 'Kyung',
 		lastName: 'Lee',
-		image: '',
-		info: '',
+		image: 'https://res.cloudinary.com/os-labs/image/upload/v1625091906/IMG_1195_ptmaex.jpg',
+		info: 'Kyung is a software engineer who loves diving deep into technologies and building robust and efficient web applications. Apart from coding, his hobbies include watching MMA and eating tacos or anything spicy.',
 		linkedin: 'https://www.linkedin.com/in/kyung-lee-9414a6215/',
 		github: 'https://github.com/kyunglee1',
 	},
@@ -33,7 +33,7 @@ const users = [
 		lastName: 'Simmons',
 		image:
 			'https://res.cloudinary.com/os-labs/image/upload/v1625002810/3C1B71E4-CD2A-4D11-BBF0-B054E80BC132_1_201_a_afrjry.jpg',
-		info: 'Cameron is a full-stack software engineer who gets excited about creating responsive and effective applications. In his spare time he enjoys producing music and being outdoors.',
+		info: 'Cameron is a full-stack software engineer who gets excited about fast, full-featured applications and staying up-to-date on the latest tech trends. In his spare time he enjoys producing music and being outdoors.',
 		linkedin: 'https://www.linkedin.com/in/camsimmons/',
 		github: 'https://github.com/cssim22',
 	},
